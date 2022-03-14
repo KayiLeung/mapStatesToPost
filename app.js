@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 const users = require("./routes/api/users")
 const passport = require("passport");
 app.use(passport.initialize());
-// require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 mongoose
   .connect(db, { useNewUrlParser: true })
