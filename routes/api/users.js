@@ -5,6 +5,8 @@ const User = require("../../models/User");
 const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const passport = require('passport');
+const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require('../../validation/login');
 
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
@@ -12,7 +14,7 @@ router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
     res.json({
       id: req.user.id,
-      handle: req.user.username,
+      username: req.user.username,
       email: req.user.email
     });
   })
