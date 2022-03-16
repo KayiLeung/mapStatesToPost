@@ -10,6 +10,7 @@ class Modal extends React.Component {
     }
     
     close(){
+        this.props.removeErrors();
         this.props.closeModal()
     }
 

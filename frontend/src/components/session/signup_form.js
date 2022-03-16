@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -46,26 +47,47 @@ class SignupForm extends React.Component {
     };
 
     // this.props.signup(user, this.props.history); 
-    this.props.signup(user).then(this.props.openModal('login'));
+    this.props.signup(user).then(this.handleCloseModal);
+  }
+
+  handleCloseModal(){
+    if (this.props.signedIn) {
+      this.props.closeModal();
+    }
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
+    const { errors } = this.props
+    if (errors) {
+      return(
+        <ul>
+          {Object.keys(errors).map((error, i) => (
+              <li key={`error-${i}`}>
+                {errors[error]}
+              </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return ""
+    }
   }
 
   render() {
     return (
-      <div className="signup-form-container">
-        <form>
-          <div className="signup-form">
+      <div className="signup-formbox">
+        <div className="signup-header">
+          <h2>Sign Up!</h2>
+          <p>Its quick and easy!</p>
+          <hr className="hr-top" />
+        </div>
+
+        <div className="signup-errors">
+          {this.renderErrors()}
+        </div>
+
+        <form className="signup-form">
+          <div>
             <br/>
               <input type="text"
                 value={this.state.username}
@@ -91,8 +113,7 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            <div className="submitbutton" onClick={this.handleSubmit}>Signup</div>
-            {this.renderErrors()}
+            <div className="signupbutton" onClick={this.handleSubmit}>Signup</div>
           </div>
         </form>
       </div>
