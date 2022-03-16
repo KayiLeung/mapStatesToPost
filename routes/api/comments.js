@@ -47,6 +47,15 @@ router.get('/:id', (req, res) => {
     }
   );
 
- 
+ // user deletes comment
+router.delete('/:id', (req, res) => {
+  Comment.findById(req.params.id)
+      .then(comment => comment.remove())
+      .then(res.json("Comment deleted"))
+      .catch(err =>
+          res.status(404).json({ nocommentfound: 'No comment found' })
+      );
+});
+
 
 module.exports = router;
