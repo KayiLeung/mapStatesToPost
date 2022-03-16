@@ -5,6 +5,7 @@ const passport = require('passport');
 const Post = require("../../models/Post");
 const posts = require("../../validation/posts");
 const validatePostInput = require("../../validation/posts")
+const upload = require("../../services/photo_upload");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the posts route" }));
 
@@ -28,23 +29,34 @@ router.get('/:id', (req, res) => {
 });
 
 // user can create posts, protected
-router.post('/',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
+  router.post('/upload', passport.authenticate('jwt', { session: false }), upload.single('uploaded_file'),
+    async (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
-  
+      
+      const user = await User.findById(req.user.id)
       if (!isValid) {
         return res.status(400).json(errors);
       }
   
       const newPost = new Post({
         caption: req.body.caption,
-        user: req.user.id
+        user: req.user.id,
+        photo: req.file
       });
-  
+
+      const file = req.file;
+
+      if (!req.file) {
+        res.status(400).json({ errors: [{ file: "Please upload a file" }] })
+      }
+
+
+      
       newPost.save().then(post => res.json(post));
+      res.send('Successfully uploaded')
     }
   );
 
+ 
 
 module.exports = router;
