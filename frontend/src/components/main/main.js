@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginFormContainer from '../session/login_form_container';
 import './main.css'
 
 class MainPage extends React.Component {
@@ -18,13 +19,18 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="header">
-          <h1>mapStateToPosts</h1>
-        </div>
-        <div className="buttons">
-          <div className="login button" onClick={this.openLoginForm}>Log in</div>
-          <div className="signup button" onClick={this.openSignupForm}>Signup</div>
+      <div className="mainpage">
+        <div className="mainpagecontent">
+          <div className="header">
+            <h1>MapStateToPosts</h1>
+          </div>
+          <div className='formbody'>
+            <LoginFormContainer />
+          </div>
+          <div className="buttons">
+            {/* <div className="login button" onClick={this.openLoginForm}>Log in</div> */}
+            {/* <div className="signup button" onClick={this.openSignupForm}>Signup</div> */}
+          </div>
         </div>
       </div>
     );

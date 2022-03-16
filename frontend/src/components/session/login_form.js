@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import "./form.css"
+import "./loginform.css"
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -14,6 +14,8 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.handleModal = this.handleModal.bind(this);
+    this.renderSignup = this.renderSignup.bind(this);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -38,25 +40,60 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user).then(this.props.closeModal());
+    this.props.login(user);
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
+    const { errors, modal } = this.props
+    if (errors && !modal) {
+      return(
+        <ul>
+          {Object.keys(errors).map((error, i) => (
+              <li key={`error-${i}`}>
+                {errors[error]}
+              </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return ""
+    }
+  }
+
+  handleModal(){
+    this.props.removeErrors();
+    this.props.openModal('signup')
+  }
+
+  renderSignup(){
+    if (this.props.signedIn) {
+      return(
+        <div className='success'>
+          <p>You're registered now!</p>
+          <p>Please log in!</p>
+        </div>
+      )
+    } else {
+      return(
+        <div className='register' onClick={this.handleModal}>or register here!</div>
+      )
+    }
   }
 
   render() {
     return (
-      <div>
-        <form>
+      <div className="login-formbox">
+        <div className="login-header">
+          <h2>Log In</h2>
+          {this.renderSignup()}
+          <hr className="hr-top" />
+        </div>
+        
+        <div className="login-errors">
+          {this.renderErrors()}
+        </div>
+        
+        <form className='login-form'>
           <div>
               <input type="text"
                 value={this.state.email}
@@ -70,8 +107,7 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             <br/>
-            <div className="submitbutton" onClick={this.handleSubmit}>Login</div>
-            {this.renderErrors()}
+            <div className="loginbutton" onClick={this.handleSubmit}>Login</div>
           </div>
         </form>
       </div>
