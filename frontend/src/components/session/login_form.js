@@ -75,7 +75,7 @@ class LoginForm extends React.Component {
       )
     } else {
       return(
-        <div className='register' onClick={this.handleModal}>or register here!</div>
+        <div className='register' onClick={this.handleModal}>or click here to register!</div>
       )
     }
   }
