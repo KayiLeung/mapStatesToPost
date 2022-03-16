@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './post_create_form.css';
+
 
 class PostCreateForm extends React.Component{
   constructor(props) {
@@ -55,7 +57,7 @@ class PostCreateForm extends React.Component{
               onChange={this.update('date')}
              />
           </label>
-          <label>Description
+          <label>Description/Body
             <textarea 
               onChange={this.update('body')}
               

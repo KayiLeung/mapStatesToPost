@@ -1,0 +1,57 @@
+.postcard-form-container {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+  
+form {
+      padding: 20px;
+      flex-direction: column; 
+      justify-self: center;
+      min-width: 350px;
+      max-width: 700px;
+}
+  
+.postcard-form-container h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 26px;
+        margin: 20px 0;
+        border-bottom: 1px solid slategray;
+}
+  
+.postcard-form-container label {
+        display:flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        width: 100%;
+        position: relative;
+      }
+      
+.postcard-form-container input, textarea {
+        width: 100%;
+        margin: 7px 0;
+        padding: 5px 10px;
+        cursor: text;
+        box-shadow: 0 0 0 2px $red;
+        outline: none; 
+      }
+
+  
+.back-btn {
+  width: 660px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.cancel-btn {
+  color: lighten($blue, 10%);
+  font-size: 14px;
+
+}
+
+
+  
