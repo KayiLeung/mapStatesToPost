@@ -9,7 +9,7 @@ const path = require('path')
 const fs = require('fs')
 const multer = require('multer')
 const upload = require("../../services/photo_upload");
-// const cors = require('cors')
+
 // const deleteImage = require("../../services/imageDelete");
 
 
@@ -17,7 +17,7 @@ const upload = require("../../services/photo_upload");
 router.get('/',(req, res) => res.json({ msg: "This is the photos index" })),
 router.get("/test", (req, res) => res.json({ msg: "This is the photos route" }));
 
-// const upload = multer({ dest: './public/data/uploads/' })
+
 
 
 router.post('/upload', upload.single('uploaded_file'), async(req,res) => {
