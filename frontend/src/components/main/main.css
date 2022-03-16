@@ -1,6 +1,39 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.mainpage {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url('./mainbg.jpg');
+    background-size: 1760px 900px;
+    background-repeat: no-repeat;
+}
+
+.mainpagecontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.mainpagecontent > * {
+    margin: 20px;
+}
+/* .formbody {
+    border: 1.5px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+} */
+
 .header {
     display: flex;
     justify-content: center;
+    font-family: 'Homemade Apple', cursive;
+    font-size: 25px;
 }
 
 .buttons {
