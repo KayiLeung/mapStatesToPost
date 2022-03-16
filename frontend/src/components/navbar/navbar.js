@@ -1,46 +1,44 @@
-import React, { Component } from 'react';
-import './home.css';
-import USAMap from "react-usa-map";
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom'
+import './navbar.css'
 
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+    this.getLinks = this.getLinks.bind(this);
+  }
 
-class HomePage extends Component {
-  mapHandler = (event) => {
-    // alert(event.target.dataset.name);
-    let statesName = event.target.dataset.name
-    this.props.history.push("/posts/new");
-    
-  };
+  logoutUser(e) {
+      e.preventDefault();
+      this.props.logout();
+  }
 
-  statesFilling = () => {
-    // currentUser.states.map |state|{
-    // "state": {
-    //   fill: "green",
-    // }}
-
-    // stateObject[state.name] = {fill: “green”}
-    
-    return {
-      "NJ": {
-        fill: "green",
-      },
-      "NY": {
-        fill: "green"
-      },
-      "CA": {
-        fill: "green"
-      },
-      "AK": {
-        fill: "green"
+  // Selectively render links dependent on whether the user is logged in
+  getLinks() {
+      if (this.props.loggedIn) {
+        return (
+            <div>
+                <Link to={'/tweets'}>All Tweets</Link>
+                <Link to={'/profile'}>Profile</Link>
+                <Link to={'/new_tweet'}>Write a Tweet</Link>
+                <button onClick={this.logoutUser}>Logout</button>
+            </div>
+        );
+      } else {
+        return (
+            <div>
+                <Link to={'/signup'}>Signup</Link>
+                <Link to={'/login'}>Login</Link>
+            </div>
+        );
       }
-    };
-  };
+  }
 
   render() {
-    return (
-      <div className="App">
-
-            <section className="nav_bar">
+      return (
+        <div>
+                        <section className="nav_bar">
                 <div className="nav_logo">
                     <Link to="/home">
                       <h1 id="nav_text">mapStatestoPost</h1>
@@ -73,39 +71,9 @@ class HomePage extends Component {
 
                 </div>
           </section>
-
-        <div className="map">
-        <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
-
         </div>
-        {/* <div className="svg">   
-        <svg width="250" height="175">
-         <defs>
-       		  <clipPath id="myCircle">
-               <circle cx="125" cy="70" r="50" fill="#FFFFFF" />
-            </clipPath>
-         </defs>
-         <image width="250" height="175" href="https://www.tutorialspoint.com/videotutorials/images/coding_ground_home.jpg" clip-path="url(#myCircle)" />
-          </svg>
-        </div> */}
-
-        <section className="footer">
-            <div className="footer_copyright">
-                  <p id="footer_text">Copyright ©2022</p>
-            </div>
-        </section>
-
-      
-
-
-
-
-        
-      </div>
-      
-      
-    );
+      );
   }
 }
 
-export default HomePage;
+export default NavBar;
