@@ -6,6 +6,7 @@ const Comment = require("../../models/Comment");
 const comments = require("../../validation/comments");
 const validateCommentInput = require("../../validation/comments")
 const upload = require("../../services/photo_upload");
+const { findOneAndUpdate } = require("../../models/Comment");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the comments route" }));
 
@@ -46,6 +47,15 @@ router.get('/:id', (req, res) => {
       newComment.save().then(comment => res.json(comment));
     }
   );
+
+  // user can edit their existing comment
+  // router.patch("/:id", (req, res) => {
+  //   const newComment = Comment.findById(req.params.id)
+
+  //   newComment.body = req.body.body
+    
+  //   newComment.save().then(comment => res.json(comment));
+  // })
 
  // user deletes comment
 router.delete('/:id', (req, res) => {
