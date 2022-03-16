@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './home.css';
 import USAMap from "react-usa-map";
-import Dropdown from './drop_down'; 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class HomePage extends Component {
@@ -31,9 +30,9 @@ class HomePage extends Component {
 
             <section className="nav_bar">
                 <div className="nav_logo">
-                    {/* <Link to="/portfolio"> */}
+                    <Link to="/home">
                       <h1 id="nav_text">mapStatestoPost</h1>
-                      {/* </Link> */}
+                      </Link>
                 </div>
                 <div className="user_msg">
                 Welcome back, User!
@@ -41,7 +40,6 @@ class HomePage extends Component {
                 <div className={`nav_btn`}>
 
                     
-                    {/* <a href="https://github.com/KayiLeung/mapStatesToPost">GitHub</a> */}
                     <div className="drop-down-menu2">
                       <button className='drop-down-menu-bt'><a href="https://github.com/KayiLeung/mapStatesToPost">Github</a></button>
                         <div className='dropdown-content'>
@@ -61,8 +59,6 @@ class HomePage extends Component {
                         </div>
                     </div>
 
-                        {/* <button>Profile</button>
-                    <button onClick={this.props.logout}>Logout</button> */}
                 </div>
           </section>
 
