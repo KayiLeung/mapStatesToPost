@@ -22,7 +22,7 @@ class MainPage extends React.Component {
       <div className="mainpage">
         <div className="mainpagecontent">
           <div className="header">
-            <h1>MapStateToPosts</h1>
+            <h1>MapStatesToPost</h1>
           </div>
           <div className='formbody'>
             <LoginFormContainer />
