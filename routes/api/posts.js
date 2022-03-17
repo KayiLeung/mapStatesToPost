@@ -35,23 +35,24 @@ router.get('/:id', (req, res) => {
 });
 
 // user can create posts, protected
-  router.post('/upload', passport.authenticate('jwt', { session: false }), upload.single('uploaded_file'),
+  router.post('/upload', passport.authenticate('jwt', { session: false }), upload.single('photo'),
     async (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
       
       const user = await User.findById(req.user.id)
+
       if (!isValid) {
         return res.status(400).json(errors);
       }
-
+      
       const newPost = new Post({
         caption: req.body.caption,
         user: req.user.id,
-        // photo: req.body.photo
+        photo: req.file
       }); 
-      // if (!req.body.photo) {
-      //   return res.status(400).json({ errors: [{ photo: "Please upload a file" }] })
-      // }
+      if (!req.file) {
+        return res.status(401).json({ errors: [{ photo: "Please upload a file" }] })
+      }
 
       newPost.save(); 
       res.json(newPost.toObject());
