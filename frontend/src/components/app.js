@@ -9,19 +9,20 @@ import HomePageContainer from './home/home_container';
 import ModalContainer from './modal/modal_container';
 import PostCreateContainer from './posts/post_create_container';
 import PostShowContainer from './posts/post_show_container';
+import NavBarContainer from './navbar/navbar_container';
+
 
 
 
 const App = () => (
   <div>
-    {/* <NavbarContainer /> */}
+    <NavBarContainer />
     <ModalContainer />
     <Switch>
         <AuthRoute exact path="/" component={MainPageContainer} />
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
         <ProtectedRoute exact path="/posts/postId" component={PostShowContainer} /> 
-
 
     </Switch>
   </div>

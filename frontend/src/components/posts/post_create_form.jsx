@@ -7,69 +7,64 @@ class PostCreateForm extends React.Component{
   constructor(props) {
     super(props)
 
-    this.state = this.props.newPostcard;
+    this.state = {
+      caption: "",
+      newPost: ""
+  }
   
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.handlePositionInput = this.handlePositionInput.bind(this);
   }
 
-  handlePositionInput(position) {
-    this.setState({
-      lat: position.lat,
-      lng: position.lng,
-    });
-  }
 
   handleSubmit(e) {
     e.preventDefault();
+    let post = {
+      caption: this.state.caption
+    };
+
+    this.props.createPost(post); 
+    this.setState({caption: ''})
     
   }
 
-  update(field) {
-    return e => {
-      this.setState({
-        [field]: e.target.value
-      })
-    }
+  update() {
+    return e => this.setState({
+      caption: e.currentTarget.value
+    });
   }
 
   render() {
 
 
     return(
-      <div className="postcard-form-container">
+      <div className="post-create-container">
         <form onSubmit={this.handleSubmit}>
+
           <div className="back-btn">
             <Link to={`/`}>Back to Map</Link>
-            <p></p>
           </div>
+
           <h1>Create New Post</h1>
-          <label>Title
-            <input 
-              type="text"
-              onChange={this.update('title')}
-               />
+          <div>
+            <label>Caption
+                      <input type="textarea"
+                        value={this.state.caption}
+                        onChange={this.update()}
+                        placeholder="Write your caption..."
+                      />
           </label>
+          </div>
+
           <label>Date
-            <input 
-              type="date"
-              onChange={this.update('date')}
-             />
+
           </label>
-          <label>Description/Body
-            <textarea 
-              onChange={this.update('body')}
-              
-              rows="6"
-              cols="50" />
-          </label>
+
         <label>Image</label>
         <button>Upload</button>
-          <input 
-            onClick={this.handleSubmit}
-            type="submit" 
-            value="Create Post" />
+
+          <input type="submit" value="Create Post" />
+
           <Link className="cancel-btn" to={`/`}>Cancel</Link>
         </form>
 
