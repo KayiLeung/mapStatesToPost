@@ -13,8 +13,9 @@ router.get('/', (req, res) => {
   Post.find()
       .sort({ date: -1 })
       .then(posts => res.json(posts))
-      .catch(err => res.status(404).json({ notweetsfound: 'No posts found' }));
+      .catch(err => res.status(404).json({ nopostsfound: 'No posts found' }));
 });
+
 // retrieves single user's posts (user's posts index)
 router.get('/user/:user_id', (req, res) => {
     Post.find({user: req.params.user_id})
@@ -49,6 +50,9 @@ router.get('/:id', (req, res) => {
         caption: req.body.caption,
         user: req.user.id,
         photo: req.file
+        stateName: req.body.stateName,
+        // photo: req.body.photo
+
       }); 
       if (!req.file) {
         return res.status(401).json({ errors: [{ photo: "Please upload a file" }] })
@@ -59,7 +63,5 @@ router.get('/:id', (req, res) => {
       // res.send('Successfully uploaded')
     }
   );
-
- 
 
 module.exports = router;

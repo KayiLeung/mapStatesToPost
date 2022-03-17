@@ -12,7 +12,7 @@ import PostShowContainer from './posts/post_show_container';
 import NavBarContainer from './navbar/navbar_container';
 
 
-
+import CommentTestContainer from './comments/comment_test_container';
 
 const App = () => (
   <div>
@@ -23,7 +23,7 @@ const App = () => (
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
         <ProtectedRoute exact path="/posts/postId" component={PostShowContainer} /> 
-
+        <ProtectedRoute exact path="/comments" component={CommentTestContainer} />
     </Switch>
   </div>
 );
