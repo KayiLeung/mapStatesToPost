@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './home.css';
 import USAMap from "react-usa-map";
+import PostsIndex from '../posts/posts_index'; 
+
 // import { Link } from 'react-router-dom';
 
 
@@ -38,24 +40,20 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="home">
+        
 
            
-
-        <div className="map">
-        <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
-
+        <div className="home_body">
+          <div className="home_container">
+            <div className="home_map">
+              <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
+            </div>
+            <div className="home_index">
+              {/* <PostsIndex posts={this.props.post} /> */}
+            </div>
+          </div>
         </div>
-        {/* <div className="svg">   
-        <svg width="250" height="175">
-         <defs>
-       		  <clipPath id="myCircle">
-               <circle cx="125" cy="70" r="50" fill="#FFFFFF" />
-            </clipPath>
-         </defs>
-         <image width="250" height="175" href="https://www.tutorialspoint.com/videotutorials/images/coding_ground_home.jpg" clip-path="url(#myCircle)" />
-          </svg>
-        </div> */}
 
         <section className="footer">
             <div className="footer_copyright">
@@ -63,11 +61,7 @@ class HomePage extends Component {
             </div>
         </section>
 
-      
-
-
-
-
+       
         
       </div>
       

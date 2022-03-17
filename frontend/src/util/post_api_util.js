@@ -9,5 +9,6 @@ export const getUserPosts = id => {
 };
 
 export const writePost = data => {
+
   return axios.post('/api/posts/upload', data)
 }

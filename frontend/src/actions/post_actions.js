@@ -31,8 +31,13 @@ export const fetchUserPosts = id => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const createPost = data => dispatch => (
+export const createPost = data => dispatch => {
+  
+  return (
   writePost(data)
-    .then(post => dispatch(receiveNewPost(post)))
+    .then(post => {
+      return dispatch(receiveNewPost(post)
+      )})
     .catch(err => console.log(err))
-);
+  )
+};

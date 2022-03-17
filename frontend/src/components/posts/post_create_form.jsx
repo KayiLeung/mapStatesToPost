@@ -9,7 +9,7 @@ class PostCreateForm extends React.Component{
 
     this.state = {
       caption: "",
-      newPost: ""
+      photo: ""
   }
   
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,19 +19,17 @@ class PostCreateForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    let post = {
-      caption: this.state.caption
-    };
 
-    this.props.createPost(post); 
-    this.setState({caption: ''})
+    this.props.createPost(this.state); 
     
   }
 
-  update() {
-    return e => this.setState({
-      caption: e.currentTarget.value
-    });
+  update(field) {
+    return e => {
+      this.setState({
+        [field]: e.target.value
+      })
+    }
   }
 
   render() {
@@ -48,20 +46,29 @@ class PostCreateForm extends React.Component{
           <h1>Create New Post</h1>
           <div>
             <label>Caption
-                      <input type="textarea"
-                        value={this.state.caption}
-                        onChange={this.update()}
-                        placeholder="Write your caption..."
-                      />
+            <textarea 
+              onChange={this.update('caption')}
+              value={this.state.caption}
+              rows="6"
+              cols="50" />
           </label>
           </div>
 
           <label>Date
-
+            <input 
+              type="date"
+              onChange={this.update('date')}
+              value={this.state.date}
+              
+             />
           </label>
 
         <label>Image</label>
-        <button>Upload</button>
+            <input 
+              type="file"
+              // onChange={this.update('photo')}
+              // value={this.state.photo} 
+             />
 
           <input type="submit" value="Create Post" />
 
