@@ -10,12 +10,16 @@ const PostSchema = new Schema({
     type: String,
     required: true
   },
-  date: {
-    type: Date,
-    default: Date.now
+  stateName: {
+    type: String,
+    required: true
   },
   photo: {
     type: Object
+  },
+  date: {
+    type: Date,
+    default: Date.now
   },
 
 });

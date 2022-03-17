@@ -11,6 +11,7 @@ const validateLoginInput = require('../../validation/login');
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
+// retrieve current user
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
     res.json({
       id: req.user.id,
@@ -19,6 +20,26 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
     });
   })
 
+// retrieve any individual user 
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+      .then(user => res.json(user))
+      .catch(err =>
+          res.status(404).json({ nouserfound: 'No user found with that ID' })
+      );
+});
+
+
+// retrieve all users
+router.get('/', (req, res) => {
+  User.find()
+      .sort({ date: -1 })
+      .then(users => res.json(users))
+      .catch(err => res.status(404).json({ nousersfound: 'No users found' }));
+});
+
+
+// signup a new user
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -51,6 +72,7 @@ router.post('/register', (req, res) => {
       })
   })
 
+// login a user
   router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
 

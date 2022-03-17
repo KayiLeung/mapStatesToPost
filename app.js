@@ -37,7 +37,7 @@ app.use("/api/posts", posts);
 app.use("/api/photos", photos);
 app.use("/api/comments", comments);
 
-const port = process.env.PORT || 5500; // change this back to 5000?
+const port = process.env.PORT || 6001; // change this back to 5000?
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
