@@ -48,6 +48,7 @@ router.get('/:id', (req, res) => {
       const newPost = new Post({
         caption: req.body.caption,
         user: req.user.id,
+        stateName: req.body.stateName,
         // photo: req.body.photo
       }); 
       // if (!req.body.photo) {
@@ -59,7 +60,5 @@ router.get('/:id', (req, res) => {
       // res.send('Successfully uploaded')
     }
   );
-
- 
 
 module.exports = router;
