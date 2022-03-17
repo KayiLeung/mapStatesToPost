@@ -9,6 +9,12 @@ const upload = require("../../services/photo_upload");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the posts route" }));
 
+router.get('/', (req, res) => {
+  Post.find()
+      .sort({ date: -1 })
+      .then(posts => res.json(posts))
+      .catch(err => res.status(404).json({ notweetsfound: 'No posts found' }));
+});
 // retrieves single user's posts (user's posts index)
 router.get('/user/:user_id', (req, res) => {
     Post.find({user: req.params.user_id})
@@ -37,23 +43,19 @@ router.get('/:id', (req, res) => {
       if (!isValid) {
         return res.status(400).json(errors);
       }
-  
+
       const newPost = new Post({
         caption: req.body.caption,
         user: req.user.id,
-        photo: req.file
-      });
+        // photo: req.body.photo
+      }); 
+      // if (!req.body.photo) {
+      //   return res.status(400).json({ errors: [{ photo: "Please upload a file" }] })
+      // }
 
-      const file = req.file;
-
-      if (!req.file) {
-        res.status(400).json({ errors: [{ file: "Please upload a file" }] })
-      }
-
-
-      
-      newPost.save().then(post => res.json(post));
-      res.send('Successfully uploaded')
+      newPost.save(); 
+      res.json(newPost.toObject());
+      // res.send('Successfully uploaded')
     }
   );
 

@@ -1,25 +1,18 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-// import { createPost } from '../../actions/postcard_actions';				
-import PostCreateForm from './post_create_form';				
+import { createPost } from '../../actions/post_actions';
+import PostCreateForm from './post_create_form';
 
-const mapStateToProps = (state, ownProps) => {
-  const currentUser = state.session.user;
-  const postId = ownProps.match.params.postId;
-  return({
-    newPost: {
-      title: "",
-      body: "",
-      images: []
-    }
-  });
-}
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.session.user,
+    newPost: state.posts.new
+  };
+};
 
-const mapDispatchToProps = (dispatch) => ({
-    // createPost: (post) => dispatch(createPost( post))
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    createPost: data => dispatch(createPost(data))
+  };
+};
 
-export default withRouter(connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(PostCreateForm));
+export default connect(mapStateToProps, mapDispatchToProps)(PostCreateForm);
