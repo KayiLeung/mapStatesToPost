@@ -19,17 +19,14 @@ class NavBar extends React.Component {
       if (this.props.loggedIn) {
         return (
             <div>
-                <Link to={'/tweets'}>All Tweets</Link>
-                <Link to={'/profile'}>Profile</Link>
-                <Link to={'/new_tweet'}>Write a Tweet</Link>
-                <button onClick={this.logoutUser}>Logout</button>
+
+                <Link to={'/posts/new'}>Create Post</Link>
             </div>
         );
       } else {
         return (
             <div>
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+                
             </div>
         );
       }
@@ -38,7 +35,7 @@ class NavBar extends React.Component {
   render() {
       return (
         <div>
-                        <section className="nav_bar">
+                <section className="nav_bar">
                 <div className="nav_logo">
                     <Link to="/home">
                       <h1 id="nav_text">mapStatestoPost</h1>
@@ -47,16 +44,21 @@ class NavBar extends React.Component {
                 <div className="user_msg">
                 Welcome back, User!
                 </div>
+
+                <div>
+                  { this.getLinks() }
+                </div>
+
                 <div className={`nav_btn`}>
 
                     
                     <div className="drop-down-menu2">
                       <button className='drop-down-menu-bt'><a href="https://github.com/KayiLeung/mapStatesToPost">Github</a></button>
                         <div className='dropdown-content'>
-                          <button className='db-item'>Kayi Leung</button>
-                          <button className='db-item'>Sean Mackey</button>
-                          <button className='db-item'>Yao Xu</button>
-                          <button className='db-item'>Dean Ding</button>
+                          <button className='db-item2'>Kayi Leung</button>
+                          <button className='db-item2'>Sean Mackey</button>
+                          <button className='db-item2'>Yao Xu</button>
+                          <button className='db-item2'>Dean Ding</button>
                         </div>
                     </div>
 

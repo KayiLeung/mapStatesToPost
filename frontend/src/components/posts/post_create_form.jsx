@@ -7,22 +7,20 @@ class PostCreateForm extends React.Component{
   constructor(props) {
     super(props)
 
-    this.state = this.props.newPostcard;
+    this.state = {
+      caption: "",
+      photo: ""
+  }
   
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.handlePositionInput = this.handlePositionInput.bind(this);
   }
 
-  handlePositionInput(position) {
-    this.setState({
-      lat: position.lat,
-      lng: position.lng,
-    });
-  }
 
   handleSubmit(e) {
     e.preventDefault();
+
+    this.props.createPost(this.state); 
     
   }
 
@@ -38,38 +36,42 @@ class PostCreateForm extends React.Component{
 
 
     return(
-      <div className="postcard-form-container">
+      <div className="post-create-container">
         <form onSubmit={this.handleSubmit}>
+
           <div className="back-btn">
             <Link to={`/`}>Back to Map</Link>
-            <p></p>
           </div>
+
           <h1>Create New Post</h1>
-          <label>Title
-            <input 
-              type="text"
-              onChange={this.update('title')}
-               />
+          <div>
+            <label>Caption
+            <textarea 
+              onChange={this.update('caption')}
+              value={this.state.caption}
+              rows="6"
+              cols="50" />
           </label>
+          </div>
+
           <label>Date
             <input 
               type="date"
               onChange={this.update('date')}
+              value={this.state.date}
+              
              />
           </label>
-          <label>Description/Body
-            <textarea 
-              onChange={this.update('body')}
-              
-              rows="6"
-              cols="50" />
-          </label>
+
         <label>Image</label>
-        <button>Upload</button>
-          <input 
-            onClick={this.handleSubmit}
-            type="submit" 
-            value="Create Post" />
+            <input 
+              type="file"
+              // onChange={this.update('photo')}
+              // value={this.state.photo} 
+             />
+
+          <input type="submit" value="Create Post" />
+
           <Link className="cancel-btn" to={`/`}>Cancel</Link>
         </form>
 

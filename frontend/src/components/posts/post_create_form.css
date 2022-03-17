@@ -1,7 +1,8 @@
-.postcard-form-container {
+.post-create-container {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 50px;
     gap: 20px;
 }
   
@@ -13,7 +14,7 @@ form {
       max-width: 700px;
 }
   
-.postcard-form-container h1 {
+.post-create-container h1 {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 600;
         font-size: 26px;
@@ -21,7 +22,7 @@ form {
         border-bottom: 1px solid slategray;
 }
   
-.postcard-form-container label {
+.post-create-container label {
         display:flex;
         flex-direction: column;
         margin-bottom: 30px;
@@ -29,7 +30,7 @@ form {
         position: relative;
       }
       
-.postcard-form-container input, textarea {
+.post-create-container input, textarea {
         width: 100%;
         margin: 7px 0;
         padding: 5px 10px;

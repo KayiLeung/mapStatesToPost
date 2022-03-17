@@ -9,12 +9,14 @@ import HomePageContainer from './home/home_container';
 import ModalContainer from './modal/modal_container';
 import PostCreateContainer from './posts/post_create_container';
 import PostShowContainer from './posts/post_show_container';
+import NavBarContainer from './navbar/navbar_container';
+
 
 import CommentTestContainer from './comments/comment_test_container';
 
 const App = () => (
   <div>
-    {/* <NavbarContainer /> */}
+    <NavBarContainer />
     <ModalContainer />
     <Switch>
         <AuthRoute exact path="/" component={MainPageContainer} />

@@ -8,7 +8,8 @@ const RootReducer = combineReducers({
   entities: EntitiesReducer,
   session: SessionReducer,
   errors: ErrorsReducer,
-  ui: UIReducer
+  ui: UIReducer,
+  posts: PostsReducer
 });
 
 export default RootReducer;
