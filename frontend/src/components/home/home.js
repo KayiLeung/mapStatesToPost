@@ -68,6 +68,11 @@ class HomePage extends Component {
                           {/* <Link className='db-item' to={`/profile/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }} >PROFILE</Link> */}
                           <button>Profile</button>
                           <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
+                          <div className='comments'>
+                            <Link to='/comments/'>
+                              Comments
+                            </Link>
+                          </div> 
                         </div>
                     </div>
 
