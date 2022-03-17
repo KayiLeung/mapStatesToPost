@@ -10,6 +10,13 @@ const { findOneAndUpdate } = require("../../models/Comment");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the comments route" }));
 
+// retrieves all comments - temporary
+router.get('/', (req, res) => {
+  Tweet.find()
+      .then(comments => res.json(comments))
+      .catch(err => res.status(404).json({ nocommentsfound: 'No comments found' }));
+});
+
 // retrieves all comments on an individual post
 router.get('/post/:post_id', (req, res) => {
     Comment.find({post: req.params.post_id})
