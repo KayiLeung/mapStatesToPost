@@ -1,7 +1,48 @@
 body{
     background-color: white;
   }
-  
+  .home {
+    background-color: white;
+    height: fit-content;
+    place-items: center;
+  }
+.home_body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+}
+.home_container{
+    display: flex;
+    background-color: lightblue;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    width: 90%;
+    color: white;
+    padding-left: 48px;
+    padding-right: 48px;
+    border: 2px solid red;
+
+}
+.home_map {
+  flex: 0.75;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  border: 2px solid yellow;
+}
+.home_index {
+  flex: 0.25;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px 30px 30px;
+  color: white;
+  font-family: avenir;
+  border: 2px solid blue;
+}
+
+
   path {
     pointer-events: all;
   }
