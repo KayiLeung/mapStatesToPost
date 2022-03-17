@@ -15,7 +15,7 @@ class CommentIndexItem extends React.Component {
     // }
 
     handleDeleteComment(){
-        this.props.deleteComment(this.props.comment.id);
+        this.props.deleteComment(this.props.comment._id);
     }
 
     update(field) {
@@ -29,7 +29,10 @@ class CommentIndexItem extends React.Component {
                         <div className="comment-box">
                             <div className="head">
                                 <div className="author">
-                                    {this.props.comment.author}
+                                    Author: {this.props.comment.author}
+                                </div>
+                                <div>
+                                    Post: {this.props.comment.post}
                                 </div>
                             </div>
                             <div className="comment">

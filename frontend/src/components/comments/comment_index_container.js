@@ -4,11 +4,12 @@ import { fetchComments, deleteComment } from '../../actions/comment_actions';
 // import { giveCommentId } from '../../actions/modal_info_actions';
 // import { openModal } from '../../actions/modal_actions';
 
-const mSTP = (state, ownProps) => ({
-  comments: Object.values(state.entities.comments),
-  user_id: state.session.id,
-  post_id: 40,
-});
+const mSTP = (state, ownProps) => {
+    return{
+  comments: Object.values(state.entities.comments.all),
+//   user: state.session.user,
+//   post_id: 1,
+}};
 
 const mDTP = dispatch => ({
   fetchComments: () => dispatch(fetchComments()),

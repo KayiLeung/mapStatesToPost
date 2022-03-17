@@ -14,9 +14,9 @@ export const getPostComments = postId => {
 };
 
 export const writeComment = data => {
-  return axios.post('/api/posts', data)
+  return axios.post('/api/comments', data)
 };
 
 export const deleteComment = id => {
-  return axios.delete(`/api/posts/${id}`)
+  return axios.delete(`/api/comments/${id}`)
 };

@@ -12,9 +12,10 @@ import { RECEIVE_COMMENTS, RECEIVE_POST_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMEN
             return newState;
         case RECEIVE_COMMENT:
             newState.new = action.comment.data
+            newState.all.push(newState.new);
             return newState;
         case REMOVE_COMMENT:
-            delete newState[action.commentId]; //do i need a .data?
+            newState.all = newState.all.filter(comment => comment._id !== action.commentId);
             return newState
         default:
             return state;

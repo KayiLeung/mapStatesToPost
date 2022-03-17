@@ -12,7 +12,7 @@ router.get("/test", (req, res) => res.json({ msg: "This is the comments route" }
 
 // retrieves all comments - temporary
 router.get('/', (req, res) => {
-  Tweet.find()
+  Comment.find()
       .then(comments => res.json(comments))
       .catch(err => res.status(404).json({ nocommentsfound: 'No comments found' }));
 });
