@@ -19,8 +19,14 @@ class PostCreateForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
+    const formData = new FormData();
 
-    this.props.createPost(this.state); 
+    formData.append('caption', this.state.caption);
+    
+    if (this.state.photo) {
+      formData.append('photo', this.state.photo);
+    }
+    this.props.createPost(formData); 
     
   }
 
@@ -33,7 +39,6 @@ class PostCreateForm extends React.Component{
   }
 
   render() {
-
 
     return(
       <div className="post-create-container">
@@ -63,11 +68,13 @@ class PostCreateForm extends React.Component{
              />
           </label>
 
-        <label>Image</label>
+            <label>Image</label>
             <input 
               type="file"
-              // onChange={this.update('photo')}
-              // value={this.state.photo} 
+              onChange={e => {
+                debugger
+                this.setState({ photo: e.target.files[0] })}}
+                // value={this.state.photo.name} 
              />
 
           <input type="submit" value="Create Post" />
