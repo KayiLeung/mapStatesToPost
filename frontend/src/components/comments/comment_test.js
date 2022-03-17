@@ -5,6 +5,8 @@ import CreateCommentContainer from './create_comment_form_container';
 class CommentTest extends React.Component {
     componentDidMount(){
         this.props.fetchComments();
+        this.props.fetchPosts();
+        this.props.fetchUsers();
     }
     
     render(){

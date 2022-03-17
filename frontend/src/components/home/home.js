@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './home.css';
 import USAMap from "react-usa-map";
 import PostsIndex from '../posts/posts_index'; 
-
+import NavBarContainer from '../navbar/navbar_container';
 // import { Link } from 'react-router-dom';
 
 
@@ -41,7 +41,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="home">
-        
+        <NavBarContainer />
 
            
         <div className="home_body">

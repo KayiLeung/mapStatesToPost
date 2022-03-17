@@ -11,19 +11,20 @@ import PostCreateContainer from './posts/post_create_container';
 import PostShowContainer from './posts/post_show_container';
 import NavBarContainer from './navbar/navbar_container';
 
-
+import PostTestContainer from './posts/post_test_container';
 import CommentTestContainer from './comments/comment_test_container';
 
 const App = () => (
   <div>
-    <NavBarContainer />
+    {/* <NavBarContainer /> */}
     <ModalContainer />
     <Switch>
         <AuthRoute exact path="/" component={MainPageContainer} />
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
         <ProtectedRoute exact path="/posts/postId" component={PostShowContainer} /> 
-        <ProtectedRoute exact path="/comments" component={CommentTestContainer} />
+        <ProtectedRoute exact path="/test-c" component={CommentTestContainer} />
+        <ProtectedRoute exact path="/test-p" component={PostTestContainer} />
     </Switch>
   </div>
 );

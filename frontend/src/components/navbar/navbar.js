@@ -68,6 +68,16 @@ class NavBar extends React.Component {
                           {/* <Link className='db-item' to={`/profile/${this.props.currentUser.id}`} style={{ textDecoration: 'none' }} >PROFILE</Link> */}
                           <button>Profile</button>
                           <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
+                          <button className='createcomment'>
+                            <Link to="/test-c">
+                              Comments
+                            </Link>
+                          </button>
+                          <button className='createpost'>
+                            <Link to="/test-p">
+                              Posts
+                            </Link>
+                          </button>
                         </div>
                     </div>
 
