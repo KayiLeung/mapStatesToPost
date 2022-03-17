@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 const users = require("./routes/api/users")
 const posts = require("./routes/api/posts")
 const photos = require('./routes/api/photos')
+const comments = require("./routes/api/comments")
 const passport = require("passport");
 
 debugger
@@ -33,7 +34,8 @@ mongoose
 app.get("/", (req, res) => res.send("Hello Mars"));
 app.use("/api/users", users);
 app.use("/api/posts", posts);
-app.use("/api/photos", photos)
+app.use("/api/photos", photos);
+app.use("/api/comments", comments);
 
 const port = process.env.PORT || 5500; // change this back to 5000?
 
