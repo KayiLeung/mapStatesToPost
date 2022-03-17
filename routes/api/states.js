@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
         );
 });
 
-// we create states on the backend
+// we create states on the backend, don't need to be logged in and no validation errors generated
 router.post('/', (req, res) => {
   
   const newState = new State({
