@@ -46,9 +46,11 @@ class HomePage extends Component {
               <div className="home_map">
                 <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
               </div>
-              <div className="home_index">
+            <div className= "scroller">
+              <section className="home_index">
                 <PostsIndexContainer />
-              </div>
+              </section>
+            </div>
             </div>
         </main>
 
@@ -57,7 +59,10 @@ class HomePage extends Component {
         </div>
 
         <footer className="footer">
+            <div>
                 <p id="footer_text">Copyright ©2022</p>
+
+            </div>
         </footer>
       </div>
            

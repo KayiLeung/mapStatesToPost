@@ -72,10 +72,13 @@ class NavBar extends React.Component {
                 <li class="drop-down-menu-1">
                   <a href="#" class="icon-home"><FaGithub /></a>
                   <ul className='dropdown-content'>
-                    <li><a href="#">Dean Ding</a></li>
-                    <li><a href="#">Ka Yi Leung</a></li>
-                    <li><a href="#">Sean Mackey</a></li>
-                    <li><a href="#">Yao Yu</a></li>
+
+
+                    <li><a href="https://github.com/KayiLeung/mapStatesToPost">map States To Post</a></li>
+                    <li><a href="https://github.com/dingtianding">Dean Ding</a></li>
+                    <li><a href="https://github.com/KayiLeung">Ka Yi Leung</a></li>
+                    <li><a href="https://github.com/smackey15">Sean Mackey</a></li>
+                    <li><a href="">Yao Yu</a></li>
                   </ul>
                 </li>
               </ul>

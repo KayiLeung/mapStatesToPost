@@ -13,7 +13,7 @@ body, html {
     width: 100%;
     position: absolute;
     background-image: url('https://mstp-dev.s3.us-west-2.amazonaws.com/utah-gd36c204b3_1920.jpg');
-    background-repeat: no-repeat;
+    background-repeat:round;
 }
 
 .mainpagecontent {
