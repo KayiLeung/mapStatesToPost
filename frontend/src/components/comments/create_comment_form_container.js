@@ -6,7 +6,7 @@ const mSTP = (state, ownProps) => {
     return {
         comment: { 
             body: '',
-            post_id: '62307a9e5a6fc97cbf40b7ef',
+            post: `${ownProps.postId}`,
             author: state.session.user 
         },
     }

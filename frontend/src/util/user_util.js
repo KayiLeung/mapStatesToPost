@@ -1,9 +1,9 @@
 import axios from "axios"
 
 export const fetchUsers = () => {
-    return axios.post('api/users')
+    return axios.get('api/users')
 }
 
 export const fetchUser = userId => {
-    return axios.post(`api/users/${userId}`)
+    return axios.get(`api/users/${userId}`)
 }

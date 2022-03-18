@@ -1,4 +1,5 @@
 import React from 'react';
+import './comment_form.css'
 
 class CommentForm extends React.Component {
   constructor(props) {
@@ -23,10 +24,10 @@ class CommentForm extends React.Component {
 
   render() {
     return (
-      <div className="commentform">
+      <div className="comment-form">
         <form onSubmit={this.handleSubmit}>
             <input
-              className="createcomment"
+              className="create-comment"
               value={this.state.body}
               onChange={this.update('body')}
               placeholder="Write a comment"
