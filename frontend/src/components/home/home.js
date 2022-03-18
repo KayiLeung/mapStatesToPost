@@ -3,14 +3,15 @@ import './home2.css';
 import USAMap from "react-usa-map";
 import PostsIndexContainer from '../posts/posts_index_container'; 
 import NavBarContainer from '../navbar/navbar_container';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class HomePage extends Component {  
   mapHandler = (event) => {
-    // alert(event.target.dataset.name);
-    let statesName = event.target.dataset.name
-    this.props.history.push("/posts/new");
+    // let stateName = event.target.dataset.name
+    // let stateString = JSON.stringify(stateName);
+
+    this.props.history.push("/states/NY");
     
   };
 
@@ -33,10 +34,11 @@ class HomePage extends Component {
   };
 
   render() {
+    const { posts } = this.props;
     return (
       <div className="home">
         <header className='navbar'>
-          <NavBarContainer/>
+          <NavBarContainer />
         </header>
         
 
@@ -45,18 +47,26 @@ class HomePage extends Component {
               <div className="home_map">
                 <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
               </div>
-              <div className="home_index">
-                <PostsIndexContainer />
-              </div>
+            <div className= "scroller">
+              <section className="home_index">
+                <PostsIndexContainer posts={posts}/>
+              </section>
+            </div>
             </div>
         </main>
 
+        <div className="btn">
+          <Link to="/states/CA"><button>CA</button></Link>
+        </div>
+
         <footer className="footer">
+            <div>
                 <p id="footer_text">Copyright ©2022</p>
+
+            </div>
         </footer>
       </div>
-      
-      
+           
     );
   }
 }

@@ -6,7 +6,8 @@ import { fetchComments } from '../../actions/comment_actions';
 import { fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = state => ({
-    loggedIn: state.session.isAuthenticated
+    loggedIn: state.session.isAuthenticated,
+    posts: Object.values(state.entities.posts.all)
 });
 
 const mDTP = dispatch => ({

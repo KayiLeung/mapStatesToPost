@@ -10,6 +10,7 @@ class NavBar extends React.Component {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.handleUser = this.handleUser.bind(this);
   }
 
   logoutUser(e) {
@@ -32,6 +33,18 @@ class NavBar extends React.Component {
       }
   }
 
+  handleUser() {
+    const { userId, users } = this.props;
+    let username;
+    users.forEach(user => {
+      if (userId === user._id) {
+        username = user.username;
+        return;
+      }
+    });
+    return username;
+  }
+
   render() {
       return (
         <div>
@@ -50,7 +63,7 @@ class NavBar extends React.Component {
 
             <div className={`nav_btn`}>
               <div className="user_msg">
-                Welcome back, User!
+                Welcome back, {this.handleUser()}!
               </div>
 
               <div className='create_post'>
@@ -72,10 +85,13 @@ class NavBar extends React.Component {
                 <li class="drop-down-menu-1">
                   <a href="#" class="icon-home"><FaGithub /></a>
                   <ul className='dropdown-content'>
-                    <li><a href="#">Dean Ding</a></li>
-                    <li><a href="#">Ka Yi Leung</a></li>
-                    <li><a href="#">Sean Mackey</a></li>
-                    <li><a href="#">Yao Yu</a></li>
+
+
+                    <li><a href="https://github.com/KayiLeung/mapStatesToPost">map States To Post</a></li>
+                    <li><a href="https://github.com/dingtianding">Dean Ding</a></li>
+                    <li><a href="https://github.com/KayiLeung">Ka Yi Leung</a></li>
+                    <li><a href="https://github.com/smackey15">Sean Mackey</a></li>
+                    <li><a href="">Yao Yu</a></li>
                   </ul>
                 </li>
               </ul>

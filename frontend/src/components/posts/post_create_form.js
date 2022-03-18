@@ -24,8 +24,19 @@ class PostCreateForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
+    const formData = new FormData();
 
-    this.props.createPost(this.state); 
+    formData.append('caption', this.state.caption);
+    formData.append('stateName', this.state.stateName);
+
+
+    if (this.state.photo){
+      formData.append('photo', this.state.photo);
+    }
+
+    this.props.createPost(formData)
+
+    this.props.history.push(`/`)
     
   }
 
@@ -58,20 +69,25 @@ class PostCreateForm extends React.Component{
               cols="50" />
           </label>
           </div>
-
-          <label>Date
+          <label>State</label>
+            <input 
+              type="text"
+              onChange={this.update('stateName')}
+              value={this.state.stateName}
+             />
+          <label>Date</label>
             <input 
               type="date"
               onChange={this.update('date')}
               value={this.state.date}
               
              />
-          </label>
+          
 
         <label>Image</label>
             <input 
               type="file"
-              // onChange={this.update('photo')}
+              onChange={e => this.setState({ photo: e.target.files[0] })}
               // value={this.state.photo} 
              />
 
