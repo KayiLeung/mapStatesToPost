@@ -13,7 +13,6 @@ import StateShowContainer from './states/state_show_container';
 
 
 
-
 const App = () => (
   <div>
     <ModalContainer />
