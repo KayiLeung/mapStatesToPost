@@ -7,8 +7,10 @@ html, body {
 
 
 main{
+    display: flex;
     background-color: #80c8bc;
     padding: 50px;
+    justify-content: space-between;
 }
 
 footer > p{
@@ -17,4 +19,8 @@ footer > p{
     margin: auto;
     height: 150px;
     background-color: #efd199;
+}
+
+.home_container{
+    display: flex;
 }
