@@ -9,7 +9,7 @@ import HomePageContainer from './home/home_container';
 import ModalContainer from './modal/modal_container';
 import PostCreateContainer from './posts/post_create_container';
 import StateShowContainer from './states/state_show_container';
-import StateShowContainer2 from './states/state_show_container';
+import StateShow2Container from './states/state_show_container2';
 
 
 const App = () => (
@@ -20,7 +20,7 @@ const App = () => (
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
         <ProtectedRoute exact path="/states/NY" component={StateShowContainer} />
-        <ProtectedRoute exact path="/states/AK" component={StateShowContainer2} />
+        <ProtectedRoute exact path="/states/AK" component={StateShow2Container} />
 
     </Switch>
   </div>

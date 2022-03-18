@@ -4,14 +4,14 @@ import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
 import './state_show.css';
 import '../posts/posts_index.css'
+import PostsIndexContainer from '../posts/posts_index_container';
 
 
-class PostShow extends React.Component{
+class StateShow extends React.Component{
   constructor(props){
     super(props); 
 
-    this.state = {
-    }
+    this.handlePosts = this.handlePosts.bind(this);
 
   }
 
@@ -22,11 +22,13 @@ class PostShow extends React.Component{
   }
   
   handlePosts() {
-
+    const { posts } = this.props;
+    const nyPosts = posts.filter(post => post.stateName === 'New York')
+    return nyPosts;
   }
   
   render() {
-
+    const { posts } = this.props;
     return (
       
       <div className="state-show-wrapper">
@@ -39,100 +41,15 @@ class PostShow extends React.Component{
             <h1>Fun Facts</h1>
             <p>App Academy, a top coding bootcamp, have a campus in New York City.</p>
             </div>
-            <div className="state_posts">
-            <ul className="post-container">
-            <div className="post-items">
-        <div className="post-box">
-          <div className="state-name"> 
-            <h3>New York</h3>
           </div>
-
-          <div className="post-pic">
-            <img src={`https://mstp-dev.s3.us-west-2.amazonaws.com/1647601757094_niagara.jpg`}/>
+          <div className='state_posts'>
+            <PostsIndexContainer posts={this.handlePosts()}/>
           </div>
-          <br />
-          
-          <div className="post-body">
-            <div className="body-top">
-              <div className="username">
-                DemoUser
-              </div>
-
-            </div>
-
-            <div className="body-mid">
-              <p className="caption">
-                Breathtaking!
-              </p>
-
-            </div>
-
-            <div className="body-bot">
-              <div className="date">
-                March 18, 2022
-              </div>
-
-            </div>
-
-          </div>
-          <br/>
-          
-          <div className='comment-box'>
-            <CommentIndexContainer postId={"62346861542bf6b6911df870"}/>
-            <CreateCommentContainer postId={"62346861542bf6b6911df870"}/>
-          </div>
-
-        </div>
-      </div>
-            <div className="post-items">
-              <div className="post-box">
-                <div className="state-name"> 
-                  <h3>New York</h3>
-                </div>
-
-                <div className="post-pic">
-                  <img src={`https://mstp-dev.s3.amazonaws.com/1647597847656_Central-Park-Manhattan-New-York-City-apartment.jpeg`}/>
-                </div>
-                <br />
-                
-                <div className="post-body">
-                  <div className="body-top">
-                    <div className="username">
-                      deanding
-                    </div>
-
-                  </div>
-
-                  <div className="body-mid">
-                    <p className="caption">
-                    This is view of Central Park from my future penthouse in NYC.
-                    </p>
-
-                  </div>
-
-                    <div className="body-bot">
-                      <div className="date">
-                        March 18, 2022
-                      </div>
-                    </div>
-
-                </div>
-                <br/>
-                
-                    <div className='comment-box'>
-                      <CommentIndexContainer postId={"6234591c17d01385c9f33310"}/>
-                      <CreateCommentContainer postId={"6234591c17d01385c9f33310"}/>
-                    </div>
-              </div>
-              </div> 
-              </ul>
-            </div>
-            </div>
       </div>
     )
   }
 }
 
 
-export default PostShow; 
+export default StateShow; 
 
