@@ -1,4 +1,6 @@
 import React from 'react';
+import { TiDelete } from 'react-icons/ti';
+
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
@@ -7,7 +9,7 @@ class CommentIndexItem extends React.Component {
         this.handleAuthor = this.handleAuthor.bind(this);
     }
 
-    handleDeleteComment(){
+    handleDeleteComment() {
         this.props.deleteComment(this.props.comment._id);
     }
 
@@ -15,7 +17,7 @@ class CommentIndexItem extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
-    handleAuthor(){
+    handleAuthor() {
         const { comment, users } = this.props;
         let username;
         users.forEach(user => {
@@ -27,22 +29,22 @@ class CommentIndexItem extends React.Component {
         return username;
     }
 
-    render(){
-            return(
-                <div className="comment-items">
-                    <div className="comment-body">
-                            <div className="author">
-                                {this.handleAuthor()}
-                            </div>
-                            
-                            <div className="comment">
-                                {this.props.comment.body}
-                            </div>
-
+    render() {
+        return (
+            <div className="comment-items">
+                <div className="comment-body">
+                    <div className="author">
+                        {this.handleAuthor()}
                     </div>
 
-                    <div className="delete-button" onClick={this.handleDeleteComment}>Delete</div>
+                    <div className="comment">
+                        {this.props.comment.body}
+                    </div>
+
                 </div>
+
+                <div className="delete-button" onClick={this.handleDeleteComment}><TiDelete /></div>
+            </div>
         )
     }
 }
