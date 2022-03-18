@@ -27,33 +27,13 @@ main{
 footer > div > p{
     display: block;
     background-color: #efd199;
-    height: 100px;
-    color:#6287a2;
-    margin: auto;
-    font-size: 18px;
 }
 
-.home_container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
+/* button {
+    display: 
+    /* background: transparent; */
+    /* border: none !important; */
+    /* font-size: 0px; */
+/* } */
 
-.scroller {
-    height: 600px;
-    overflow-y: scroll;
-    /* scroll-snap-type: y mandatory; */
-    
-}
 
-.scroller section {
-    scroll-snap-align: start;
-}
-
-.header > h1 {
-    display: flex;
-    align-content: stretch;
-    justify-content: center;
-        
-}

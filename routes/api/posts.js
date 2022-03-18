@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
   router.post('/upload', passport.authenticate('jwt', { session: false }), upload.single('photo'),
     async (req, res) => {
       const { errors, isValid } = validatePostInput(req.body);
-      
+
       const user = await User.findById(req.user.id)
 
       if (!isValid) {

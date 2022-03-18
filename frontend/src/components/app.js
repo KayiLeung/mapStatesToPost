@@ -9,8 +9,7 @@ import HomePageContainer from './home/home_container';
 import ModalContainer from './modal/modal_container';
 import PostCreateContainer from './posts/post_create_container';
 import StateShowContainer from './states/state_show_container';
-
-
+import StateShowContainer2 from './states/state_show_container';
 
 
 const App = () => (
@@ -20,7 +19,8 @@ const App = () => (
         <AuthRoute exact path="/" component={MainPageContainer} />
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
-        <ProtectedRoute exact path="/states/stateId" component={StateShowContainer} />
+        <ProtectedRoute exact path="/states/NY" component={StateShowContainer} />
+        <ProtectedRoute exact path="/states/AK" component={StateShowContainer2} />
 
     </Switch>
   </div>

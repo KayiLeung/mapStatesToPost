@@ -3,14 +3,15 @@ import './home2.css';
 import USAMap from "react-usa-map";
 import PostsIndexContainer from '../posts/posts_index_container'; 
 import NavBarContainer from '../navbar/navbar_container';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class HomePage extends Component {  
   mapHandler = (event) => {
-    // alert(event.target.dataset.name);
-    let statesName = event.target.dataset.name
-    this.props.history.push("/states/stateId");
+    // let stateName = event.target.dataset.name
+    // let stateString = JSON.stringify(stateName);
+
+    this.props.history.push("/states/NY");
     
   };
 
@@ -53,6 +54,10 @@ class HomePage extends Component {
             </div>
         </main>
 
+        <div className="btn">
+          <Link to="/states/AK"><button>AK</button></Link>
+        </div>
+
         <footer className="footer">
             <div>
                 <p id="footer_text">Copyright ©2022</p>
@@ -60,8 +65,7 @@ class HomePage extends Component {
             </div>
         </footer>
       </div>
-      
-      
+           
     );
   }
 }
