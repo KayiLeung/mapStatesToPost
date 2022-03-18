@@ -10,6 +10,8 @@ import ModalContainer from './modal/modal_container';
 import PostCreateContainer from './posts/post_create_container';
 import StateShowContainer from './states/state_show_container';
 import StateShow2Container from './states/state_show_container2';
+import StateShow3Container from './states/state_show_container3';
+
 
 
 
@@ -21,8 +23,9 @@ const App = () => (
         <AuthRoute exact path="/" component={MainPageContainer} />
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
-        <ProtectedRoute exact path="/states/NY" component={StateShowContainer} />
+        <ProtectedRoute exact path="/states/NY" component={StateShowContainer} /> 
         <ProtectedRoute exact path="/states/AK" component={StateShow2Container} />
+        <ProtectedRoute exact path="/states/CA" component={StateShow3Container} />
 
     </Switch>
   </div>
