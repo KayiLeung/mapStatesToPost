@@ -51,7 +51,6 @@ class PostShow extends React.Component{
           <aside>
           </aside>
         </header>
-        { errors }
         <main>
           <ul role="list">
                 Pictures.map

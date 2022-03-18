@@ -10,7 +10,7 @@ class HomePage extends Component {
   mapHandler = (event) => {
     // alert(event.target.dataset.name);
     let statesName = event.target.dataset.name
-    this.props.history.push("/posts/new");
+    this.props.history.push("/states/stateId");
     
   };
 
