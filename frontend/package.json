@@ -45,6 +45,7 @@
 
   "proxy": "http://localhost:6001",
 
+
   "devDependencies": {
     "sass": "^1.49.9"
   }
