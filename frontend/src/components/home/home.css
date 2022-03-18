@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: white;
   }
   .home {
@@ -190,7 +190,7 @@ body{
       position: absolute;
       right: 5rem;
       width: 7rem;
-      /* top: 13.1rem */
+  
       
   }
   
@@ -201,7 +201,7 @@ body{
     position: absolute;
     right: 13rem;
     width: 7rem;
-    /* top: 13.1rem */
+
     
   }
   
@@ -236,4 +236,4 @@ body{
   } 
   
   
-  
+   */

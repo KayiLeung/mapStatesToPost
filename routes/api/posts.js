@@ -49,8 +49,10 @@ router.get('/:id', (req, res) => {
       const newPost = new Post({
         caption: req.body.caption,
         user: req.user.id,
-        photo: req.file
-        stateName: req.body.stateName,
+        photo: req.file,
+
+        stateName: req.body.stateName
+
         // photo: req.body.photo
 
       }); 

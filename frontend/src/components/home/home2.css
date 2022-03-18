@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+main{
+    background-color: #80c8bc;
+    padding: 50px;
+}
+
+footer > p{
+    
+    display: block;
+    margin: auto;
+    height: 150px;
+    background-color: #efd199;
+}
