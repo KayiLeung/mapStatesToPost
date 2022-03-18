@@ -56,7 +56,7 @@ class HomePage extends Component {
         </main>
 
         <div className="btn">
-          <Link to="/states/AK"><button>AK</button></Link>
+          <Link to="/states/CA"><button>CA</button></Link>
         </div>
 
         <footer className="footer">
