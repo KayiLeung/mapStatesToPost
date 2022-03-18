@@ -5,8 +5,8 @@ import "./posts_index.css"
 class PostsIndex extends React.Component {
   componentDidMount(){
     this.props.fetchPosts();
-    this.props.fetchUsers();
     this.props.fetchComments();
+    this.props.fetchUsers();
   }
   
   render() {

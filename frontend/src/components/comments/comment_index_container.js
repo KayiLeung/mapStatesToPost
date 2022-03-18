@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
-import { fetchComments, deleteComment } from '../../actions/comment_actions';
+import { deleteComment } from '../../actions/comment_actions';
 
 const mSTP = (state, ownProps) => ({
   users: Object.values(state.entities.users),

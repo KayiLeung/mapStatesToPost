@@ -33,7 +33,7 @@ class PostIndexItem extends React.Component {
   }
 
   render(){
-    const { post, comments } = this.props;
+    const { post } = this.props;
 
     return(
       <div className="post-items">

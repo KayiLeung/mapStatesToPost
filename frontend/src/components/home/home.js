@@ -6,7 +6,7 @@ import NavBarContainer from '../navbar/navbar_container';
 // import { Link } from 'react-router-dom';
 
 
-class HomePage extends Component {
+class HomePage extends Component {  
   mapHandler = (event) => {
     // alert(event.target.dataset.name);
     let statesName = event.target.dataset.name

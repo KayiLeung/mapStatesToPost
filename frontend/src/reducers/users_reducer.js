@@ -5,7 +5,7 @@ const UsersReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_USERS:
-            return action.users.data; // need data?
+            return action.users.data;
         case RECEIVE_USER:
             newState = action.user.data;
             return newState

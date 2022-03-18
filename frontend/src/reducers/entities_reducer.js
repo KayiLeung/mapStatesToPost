@@ -10,5 +10,3 @@ const EntitiesReducer = combineReducers({
 });
 
 export default EntitiesReducer;
-
-// not sure if we need an entities reducer but it is one way to stay more organized i guess
