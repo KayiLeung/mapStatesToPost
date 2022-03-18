@@ -12,7 +12,6 @@ import StateShowContainer from './states/state_show_container';
 
 
 
-import PostCreateContainer from './posts/post_create_container';
 
 const App = () => (
   <div>
