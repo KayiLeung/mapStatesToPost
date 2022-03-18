@@ -8,7 +8,7 @@ import { RECEIVE_COMMENTS, RECEIVE_POST_COMMENTS, RECEIVE_COMMENT, REMOVE_COMMEN
             newState.all = action.comments.data;
             return newState;
         case RECEIVE_POST_COMMENTS:
-            newState.user = action.comments.data;
+            newState.post = action.comments.data;
             return newState;
         case RECEIVE_COMMENT:
             newState.new = action.comment.data

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './home2.css';
 import USAMap from "react-usa-map";
-import PostsIndex from '../posts/posts_index'; 
-import NavbarContainer from '../navbar/navbar_container';
+import PostsIndexContainer from '../posts/posts_index_container'; 
+import NavBarContainer from '../navbar/navbar_container';
 // import { Link } from 'react-router-dom';
 
 
-class HomePage extends Component {
+class HomePage extends Component {  
   mapHandler = (event) => {
     // alert(event.target.dataset.name);
     let statesName = event.target.dataset.name
@@ -36,7 +36,7 @@ class HomePage extends Component {
     return (
       <div className="home">
         <header className='navbar'>
-          <NavbarContainer/>
+          <NavBarContainer/>
         </header>
         
 
@@ -46,7 +46,7 @@ class HomePage extends Component {
                 <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
               </div>
               <div className="home_index">
-                {/* <PostsIndex posts={this.props.post} /> */}
+                <PostsIndexContainer />
               </div>
             </div>
         </main>
