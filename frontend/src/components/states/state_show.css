@@ -1,0 +1,338 @@
+.state-show-wrapper{
+    padding-left: 100px;
+}
+
+.state_container{
+    display: flex;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    width: 90%;
+    height: 1000px;
+    padding-left: 48px;
+    padding-right: 48px;
+    border: 2px solid black;
+
+}
+.state_info {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+.state_posts {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px 30px 30px;
+  font-family: avenir;
+  border: 1px solid blue;
+}
+
+
+
+
+/* .postcard-show-wrapper {
+    padding: 0 40px;
+  
+    > * {
+      margin: 40px 0;
+    }
+  
+    header {
+      display: grid; 
+      grid-template-columns: 3fr 2fr;
+      grid-template-areas: "section aside";
+      gap: 15px;
+    }
+  
+    section {
+      grid-area: section;
+    }
+  
+    aside {
+      grid-area: aside; 
+    }
+  
+    .map-wrapper {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+    }
+  
+  
+  
+    h1 {
+      margin-top: 20px;
+      font-size: 48px;
+      font-family: $display-font;
+    }
+  
+    p, a {
+      font-family: $text-font;
+    }
+  
+    a {
+      font-style: italic;
+      position: absolute;
+      transition: font-size 200ms;
+      color: $blue;
+  
+      &:hover {
+        // transform: scale(1.03);
+        font-size: 17px;
+      }
+      &:visited {
+        color: $blue;
+      }
+  
+      &:active, &:focus {
+        color: $red; 
+      }
+    }
+  
+    .edit-postcard {
+      transform: translateX(180px);
+    }
+  
+    .delete-postcard {
+      transform: translateX(310px);
+      cursor: pointer;
+    }
+  
+    main {
+      border: 1px solid black;
+      padding: 15px 5px;
+      min-height: 400px;
+  
+      ul {
+        display: grid; 
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px; 
+        min-height: 400px;
+  
+        li {
+          @include flex(center); 
+          
+  
+          .image-item {
+            height: 100%;
+            width: 100%;
+            max-width: 300px;
+            background-color: darken($cream, 5%);
+            border-radius: 5px;
+            @include flex(center, center);
+  
+            .image-wrapper {
+              height: 100%;
+              width: 100%;
+              max-width: 300px;
+              background-color: darken($cream, 5%);
+              border-radius: 5px;
+              @include flex(center, center);
+  
+              .close-btn {
+                display: none;
+              }
+  
+              &.absolute {
+                @include flex(center);
+                position: fixed;
+                bottom: 50%;
+                left: 50%;
+                height: auto;
+                width: auto;
+                transform: translate(-50%, 50%);
+                z-index: 4;
+                transition: transform 100ms ease-in-out;
+                
+              }
+              &.relative {
+                @include flex(center);
+                position: relative;
+                width: auto;
+                height: auto;
+  
+                img {
+                  position: relative;
+                  max-width: 90vw;
+                  max-height: 90vh;
+                }
+  
+                .close-btn {
+                  @include flex(center);
+                  background-color: rgba(0, 0, 0, 0.726);
+                  border-radius: 2px;
+                  cursor: pointer;
+                  position: absolute;
+                  top: 0;
+                  color: white;
+                  font-size: 18px;
+                  line-height: 1;
+                  right: 50%;
+                  transform: translateX(50%);
+                  z-index: 5;
+                  padding: 5px 3px 1px 3px;
+                  font-weight: 300;
+                }
+                
+              }
+  
+            }
+  
+          }
+          
+          img {
+            border-radius: 8px;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 300ms, width 300ms, height 300ms;
+          }
+  
+        }
+      }
+  
+    }
+  }
+  
+  .postcard-image-item-wrapper.img-preview-wrapper {
+    height: 70%;
+    width: 100%;
+    @include flex(center);
+    
+    div {
+      border: 2px dashed black;
+    }
+  }
+  
+  .img-preview-wrapper {
+    height: 200px;
+    width: auto;
+  }
+  
+  .img-preview {
+    opacity: 0.5; 
+  }
+  
+  .upload-image-form {
+    width: 100%;
+    height: 100%;
+    @include flex(space-around, center, column); 
+    
+    
+    label {
+      @include flex(center, center, column); 
+      max-width: 300px;
+      width: 100%;
+      height: 100%;
+      border: 2px dashed black;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: border 100ms, color 100ms;
+      
+      &:hover {
+        color: $red;
+        border: 2px dashed $red;
+      }
+      
+      &:active {
+        color: darken($red, 15%);
+        border: 2px dashed darken($red, 15%);
+      }
+    }
+  
+    input {
+      opacity: 0;
+      position: absolute; 
+      width: 0.1px; 
+      height: 0.1px; 
+      overflow: hidden; 
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 8px 18px;
+      color: white; 
+    }
+  
+    button.active {
+      @include button($red, white); 
+    }
+  
+    button.disabled {
+      cursor: not-allowed;
+      background-color: lighten($red, 10%);
+      box-shadow: inset 0 0 2px rgba(0,0,0,0.4);
+    }
+  }
+  
+  .postcard-image-item-wrapper {
+    cursor: pointer;
+  
+    div {
+      position: relative;
+    }
+    
+    figure {
+      background-color: rgba(0,0,0,0.3);
+      color: white;
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      z-index: 3;
+  
+      border-radius: 50%;
+      $radius: 25px;
+      width: $radius; 
+      height: $radius;
+  
+      @include flex(center, center); 
+      cursor: pointer;
+      transition: transform 150ms;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+  
+      &.hidden {
+        display: none;
+      }
+  
+    }
+  
+    
+  }
+  .pic-nav-buttons {
+    font-size: 38px; 
+    
+    &.left, &.right {
+      position: fixed;
+      z-index: 20;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      
+      bottom: 50%;
+      transition: transform 100ms;
+      &:hover {
+        transform: scale(1.1);
+      }
+      
+      figure {
+        width: 60px;
+        height: 60px;
+        color: white;
+        @include flex(center, center, column);  
+        cursor: pointer;   
+  
+      }
+    }
+  
+    .left {
+      left: 10px;
+    }
+    
+    .right {
+      right: 10px;
+    }
+  
+  } */
