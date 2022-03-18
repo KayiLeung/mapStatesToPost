@@ -1,19 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Noto+Sans&family=Raleway:wght@100&family=Roboto:ital,wght@1,300&display=swap');
-/* font-family: 'Leckerli One', cursive; greeting header
-font-family: 'Noto Sans', sans-serif; textarea
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Leckerli+One&family=Noto+Sans&family=Raleway:wght@100&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&display=swap');
+/* font-family: 'Fredoka', sans-serif;
+font-family: 'Leckerli One', cursive;
+font-family: 'Noto Sans', sans-serif;
 font-family: 'Raleway', sans-serif;
-font-family: 'Roboto', sans-serif;  error message*/ 
+font-family: 'Roboto', sans-serif;
+font-family: 'Shadows Into Light', cursive; */
+
+
+
+
 .state-name{
   font-size: 20px;
   font-family: 'Leckerli One', cursive;
-      display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    
+}
+.state-name > h3 {
+  text-decoration-line: underline;
 }
 
 .date{
   font-size: 15px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Fredoka', sans-serif;
 }
 
 ul.post-container {
@@ -30,6 +40,7 @@ ul.post-container {
   margin: 10px;
   padding: 10px;
   width: 400px;
+  box-shadow: 0 8px 20px -2px rgb(68, 77, 80);
 }
 
 
@@ -39,7 +50,7 @@ ul.post-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: gray 10px;
+
 }
 
 /* .post-body {
@@ -63,10 +74,14 @@ ul.post-container {
 .username{
   padding-right: 15px;
   padding-left: 5px;
+  color:  rgb(73, 63, 63);
+  font-size: 18px;
+  
 }
 
 .caption{
       background: rgb(98, 164, 221);
        border-radius: 15px;
     padding: 10px;
+    box-shadow: 5px 5px 10px 0px rgba(2, 24, 34, 0.2);
 }
