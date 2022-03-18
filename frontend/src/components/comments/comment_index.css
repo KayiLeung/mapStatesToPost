@@ -1,0 +1,22 @@
+ul.comment-container {
+    padding: 0;
+}
+
+.comment-items {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.comment-body {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    margin-right: 10px;
+    min-width: 100px;
+}
+
+.comment-body .author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}

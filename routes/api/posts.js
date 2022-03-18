@@ -9,12 +9,14 @@ const upload = require("../../services/photo_upload");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the posts route" }));
 
+// retrieves all posts
 router.get('/', (req, res) => {
   Post.find()
       .sort({ date: -1 })
       .then(posts => res.json(posts))
-      .catch(err => res.status(404).json({ notweetsfound: 'No posts found' }));
+      .catch(err => res.status(404).json({ nopostsfound: 'No posts found' }));
 });
+
 // retrieves single user's posts (user's posts index)
 router.get('/user/:user_id', (req, res) => {
     Post.find({user: req.params.user_id})
@@ -48,7 +50,11 @@ router.get('/:id', (req, res) => {
       const newPost = new Post({
         caption: req.body.caption,
         user: req.user.id,
-        photo: req.file
+        photo: req.file,
+        stateName: req.body.stateName
+
+        // photo: req.body.photo
+
       }); 
       if (!req.file) {
         return res.status(401).json({ errors: [{ photo: "Please upload a file" }] })
@@ -60,6 +66,35 @@ router.get('/:id', (req, res) => {
     }
   );
 
- 
+    // user can edit their existing post
+    // not working yet
+    // router.patch("/update/:id", async (req, res) => {
+    //   const post = await Post.findById(req.params.id)
+    //   if (!post) return res.status(404).json({ nopostfound: 'No post found' })
+  
+    //   try {
+    //   const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
+    //     caption: req.body.caption,
+    //     stateName: req.body.stateName,
+    //     photo: req.file
+    //   })
+  
+    //   res.send(updatedPost)
+    // } catch (error) {
+    //   res.status(422).json({ unprocessable: "Unable to update"})
+    // } 
+      
+    // })
+  
+   // user deletes post
+  router.delete('/:id', (req, res) => {
+    Post.findById(req.params.id)
+        .then(post => post.remove())
+        .then(res.json("Post deleted"))
+        .catch(err =>
+            res.status(404).json({ nopostfound: 'No post found' })
+        );
+  });
+  
 
 module.exports = router;

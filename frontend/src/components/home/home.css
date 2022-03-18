@@ -1,4 +1,4 @@
-body{
+/* body{
     background-color: white;
   }
   .home {
@@ -32,12 +32,11 @@ body{
   background-color: #000000;
   border: 2px solid yellow;
 }
-.home_index {
+.home_posts {
   flex: 0.25;
   display: flex;
   flex-direction: column;
   padding: 0px 30px 30px 30px;
-  color: white;
   font-family: avenir;
   border: 2px solid blue;
 }
@@ -190,7 +189,7 @@ body{
       position: absolute;
       right: 5rem;
       width: 7rem;
-      /* top: 13.1rem */
+  
       
   }
   
@@ -201,7 +200,7 @@ body{
     position: absolute;
     right: 13rem;
     width: 7rem;
-    /* top: 13.1rem */
+
     
   }
   
@@ -236,4 +235,4 @@ body{
   } 
   
   
-  
+   */
