@@ -6,7 +6,7 @@ import './state_show.css';
 import '../posts/posts_index.css'
 
 
-class PostShow extends React.Component{
+class StateShow extends React.Component{
   constructor(props){
     super(props); 
 
@@ -128,5 +128,5 @@ class PostShow extends React.Component{
 }
 
 
-export default PostShow; 
+export default StateShow; 
 
