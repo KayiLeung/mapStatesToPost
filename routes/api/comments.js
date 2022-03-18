@@ -56,13 +56,21 @@ router.get('/:id', (req, res) => {
   );
 
   // user can edit their existing comment
-  // router.patch("/:id", (req, res) => {
-  //   const newComment = Comment.findById(req.params.id)
+  router.patch("/update/:id", async (req, res) => {
+    const comment = await Comment.findById(req.params.id)
+    if (!comment) return res.status(404).json({ nocommentfound: 'No comment found' })
 
-  //   newComment.body = req.body.body
+    try {
+    const updatedComment = await Comment.findByIdAndUpdate(req.params.id, {
+      body: req.body.body
+    })
+
+    res.send(updatedComment)
+  } catch (error) {
+    res.status(422).json({ unprocessable: "Unable to update"})
+  } 
     
-  //   newComment.save().then(comment => res.json(comment));
-  // })
+  })
 
  // user deletes comment
 router.delete('/:id', (req, res) => {
