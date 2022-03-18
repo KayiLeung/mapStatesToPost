@@ -20,7 +20,11 @@ class PostShow extends React.Component{
     this.props.fetchComments();
     this.props.fetchUsers();
   }
+  
+  handlePosts() {
 
+  }
+  
   render() {
 
     return (
