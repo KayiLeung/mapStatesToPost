@@ -3,14 +3,15 @@ import './home2.css';
 import USAMap from "react-usa-map";
 import PostsIndexContainer from '../posts/posts_index_container'; 
 import NavBarContainer from '../navbar/navbar_container';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class HomePage extends Component {  
   mapHandler = (event) => {
-    // alert(event.target.dataset.name);
-    let statesName = event.target.dataset.name
-    this.props.history.push("/states/stateId");
+    // let stateName = event.target.dataset.name
+    // let stateString = JSON.stringify(stateName);
+
+    this.props.history.push("/states/NY");
     
   };
 
@@ -33,10 +34,11 @@ class HomePage extends Component {
   };
 
   render() {
+    const { posts } = this.props;
     return (
       <div className="home">
         <header className='navbar'>
-          <NavBarContainer/>
+          <NavBarContainer />
         </header>
         
 
@@ -47,11 +49,15 @@ class HomePage extends Component {
               </div>
             <div className= "scroller">
               <section className="home_index">
-                <PostsIndexContainer />
+                <PostsIndexContainer posts={posts}/>
               </section>
             </div>
             </div>
         </main>
+
+        <div className="btn">
+          <Link to="/states/AK"><button>AK</button></Link>
+        </div>
 
         <footer className="footer">
             <div>
@@ -60,8 +66,7 @@ class HomePage extends Component {
             </div>
         </footer>
       </div>
-      
-      
+           
     );
   }
 }

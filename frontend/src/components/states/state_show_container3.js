@@ -4,7 +4,7 @@ import { fetchPosts } from '../../actions/post_actions';
 import { fetchComments } from '../../actions/comment_actions';
 import { fetchUsers } from '../../actions/user_actions';
 
-import StateShow from './state_show';
+import StateShow3 from './state_show3';
 
 const mapStateToProps = (state, ownProps) => ({
   users: Object.values(state.entities.users),
@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch) => {
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(StateShow));
+)(StateShow3));
