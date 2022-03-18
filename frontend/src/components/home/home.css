@@ -32,12 +32,11 @@
   background-color: #000000;
   border: 2px solid yellow;
 }
-.home_index {
+.home_posts {
   flex: 0.25;
   display: flex;
   flex-direction: column;
   padding: 0px 30px 30px 30px;
-  color: white;
   font-family: avenir;
   border: 2px solid blue;
 }

@@ -1,22 +1,20 @@
 import React from 'react';
 import CommentIndexItem from './comment_index_item';
+import './comment_index.css'
 
 class CommentIndex extends React.Component {
-  componentDidMount() {
-    this.props.fetchComments();
-  }
-
+  
   render() {
-    const { comments, deleteComment } = this.props;
+    const { comments, deleteComment, postId, users } = this.props;
+    const postComments = comments.filter(comment => comment.post === postId);
 
     return (
-        <ul className="commentcontainer"> 
+        <ul className="comment-container"> 
           {
-            comments.map(comment => (
+            postComments.map(comment => (
               <CommentIndexItem
                 comment={comment}
-                // post_id={post_id}
-                // user={user}
+                users={users}
                 deleteComment={deleteComment}
                 key={comment._id}
               />

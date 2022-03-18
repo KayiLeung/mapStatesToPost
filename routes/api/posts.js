@@ -9,6 +9,7 @@ const upload = require("../../services/photo_upload");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the posts route" }));
 
+// retrieves all posts
 router.get('/', (req, res) => {
   Post.find()
       .sort({ date: -1 })
@@ -50,7 +51,6 @@ router.get('/:id', (req, res) => {
         caption: req.body.caption,
         user: req.user.id,
         photo: req.file,
-
         stateName: req.body.stateName
 
         // photo: req.body.photo
@@ -65,5 +65,36 @@ router.get('/:id', (req, res) => {
       // res.send('Successfully uploaded')
     }
   );
+
+    // user can edit their existing post
+    // not working yet
+    // router.patch("/update/:id", async (req, res) => {
+    //   const post = await Post.findById(req.params.id)
+    //   if (!post) return res.status(404).json({ nopostfound: 'No post found' })
+  
+    //   try {
+    //   const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
+    //     caption: req.body.caption,
+    //     stateName: req.body.stateName,
+    //     photo: req.file
+    //   })
+  
+    //   res.send(updatedPost)
+    // } catch (error) {
+    //   res.status(422).json({ unprocessable: "Unable to update"})
+    // } 
+      
+    // })
+  
+   // user deletes post
+  router.delete('/:id', (req, res) => {
+    Post.findById(req.params.id)
+        .then(post => post.remove())
+        .then(res.json("Post deleted"))
+        .catch(err =>
+            res.status(404).json({ nopostfound: 'No post found' })
+        );
+  });
+  
 
 module.exports = router;
