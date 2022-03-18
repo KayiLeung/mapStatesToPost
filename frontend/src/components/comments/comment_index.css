@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Noto+Sans&family=Raleway:wght@100&family=Roboto:ital,wght@1,300&display=swap');
-/* font-family: 'Leckerli One', cursive; greeting header
-font-family: 'Noto Sans', sans-serif; textarea
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&family=Noto+Sans&family=Raleway:wght@100&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&display=swap');
+/* font-family: 'Leckerli One', cursive;
+font-family: 'Noto Sans', sans-serif;
 font-family: 'Raleway', sans-serif;
-font-family: 'Roboto', sans-serif;  error message*/ 
+font-family: 'Roboto', sans-serif;
+font-family: 'Shadows Into Light', cursive; */
 
 
 ul.comment-container {
@@ -31,15 +32,14 @@ ul.comment-container {
 }
 
 .comment-items{
-    display: flex;
-    justify-content: flex-end;
-        align-items: center;
-
+        display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .delete-button{
-    font-family: 'Noto Sans', sans-serif;
-    color: gray;
+    color: rgb(230, 222, 222);
     padding-left: 5px;
 }
 
@@ -49,11 +49,15 @@ ul.comment-container {
 
 .author {
     padding-left: 15px;
+    font-size: 18px;
+    color:  rgb(73, 63, 63);
 }
 
 .comment{
         background: antiquewhite;
     border-radius: 15px;
     padding: 10px;
+    box-shadow: 5px 5px 10px 0px rgba(2, 24, 34, 0.2);
+    /* color: rgb(73, 63, 63); */
 
 }

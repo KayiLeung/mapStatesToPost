@@ -16,11 +16,15 @@ font-family: 'Roboto', sans-serif;  error message*/
     font-family: 'Leckerli One', cursive;
     font-size: 50px;
     text-decoration: none;
+    width: 50%;
+     text-decoration: none;
+    color: white;
+        margin-left: 200px;
 }
 
 .nav_logo a{
     text-decoration: none;
-    color: white
+    color: white;
 }
 
 
@@ -28,6 +32,7 @@ font-family: 'Roboto', sans-serif;  error message*/
     margin: auto;
     display: flex;
     justify-content: space-between;
+    
 }
 
  .nav_btn button{
@@ -125,6 +130,7 @@ font-family: 'Roboto', sans-serif;  error message*/
 .dropdown-content > li > a {
     font-size: 12px;
     display: inline-block;
+    
 }
 
 .dropdown-content > button{
@@ -135,4 +141,9 @@ font-family: 'Roboto', sans-serif;  error message*/
 .create_post > a{
     
     font-family: 'Leckerli One', cursive;
+}
+
+.dropdown-content > hr {
+  background-color: black;
+  text-transform: none;
 }
