@@ -27,11 +27,11 @@ class StateShow2 extends React.Component{
           <div className="state_container">
             <div className="state_info">
             <Link to={`/`}>Back to Map</Link>
-            <h1>Alaska</h1>
-            <h1>Description</h1>
-            <p>Alaska is a state located in the Western United States on the northwest extremity of North America. A semi-exclave of the U.S., it borders the Canadian province of British Columbia and the territory of ...</p>
-            <h1>Fun Facts</h1>
-            <p>It is cold.</p>
+            <h1 className="state_header">Alaska</h1>
+            <h1 className="state_header">Description</h1>
+            <p className="state_body">Alaska is a state located in the Western United States on the northwest extremity of North America. A semi-exclave of the U.S., it borders the Canadian province of British Columbia and the territory of ...</p>
+            <h1 className="state_header">Fun Facts</h1>
+            <p className="state_body">It is cold.</p>
             </div>
             <div className="state_posts">
             <div className="post-items">
