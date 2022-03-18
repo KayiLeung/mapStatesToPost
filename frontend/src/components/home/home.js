@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './home.css';
 import USAMap from "react-usa-map";
-import PostsIndex from '../posts/posts_index'; 
+import PostsIndexContainer from '../posts/posts_index_container'; 
 import NavBarContainer from '../navbar/navbar_container';
 // import { Link } from 'react-router-dom';
 
@@ -49,8 +49,8 @@ class HomePage extends Component {
             <div className="home_map">
               <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
             </div>
-            <div className="home_index">
-              {/* <PostsIndex posts={this.props.post} /> */}
+            <div className="home_posts">
+              <PostsIndexContainer />
             </div>
           </div>
         </div>

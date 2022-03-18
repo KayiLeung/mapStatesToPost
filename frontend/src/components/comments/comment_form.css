@@ -1,0 +1,16 @@
+.comment-form {
+    padding: 5px;
+}
+
+.comment-form form input {
+    border-radius: 10px;
+    border: none;
+    background: rgb(207, 207, 207);
+    padding: 5px;
+    width: 95%;
+    color:rgb(133, 133, 133)
+}
+
+.comment-form form input:focus {
+    color: black;
+}

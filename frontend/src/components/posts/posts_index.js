@@ -1,19 +1,25 @@
 import React from 'react'; 
-import PostIndexItem from './post_index_item'; 
+import PostIndexItem from './post_index_item';
+import "./posts_index.css" 
 
 class PostsIndex extends React.Component {
+  componentDidMount(){
+    this.props.fetchPosts();
+    this.props.fetchUsers();
+    this.props.fetchComments();
+  }
+  
   render() {
-    const { posts } = this.props; 
+    const { posts, comments, users } = this.props; 
   
     return (
-      <ul className="postcontainer"> 
+      <ul className="post-container"> 
         {
           posts.map(post => (
             <PostIndexItem
               post={post}
-              // post_id={post_id}
-              // user={user}
-              // deletePost={deletePost}
+              comments={comments}
+              users={users}
               key={post._id}
             />
           ))
@@ -22,6 +28,5 @@ class PostsIndex extends React.Component {
     );
   }
 }
-
 
 export default PostsIndex; 

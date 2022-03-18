@@ -9,7 +9,8 @@ class PostCreateForm extends React.Component{
 
     this.state = {
       caption: "",
-      photo: ""
+      photo: "",
+      stateName: ""
   }
   
     this.handleSubmit = this.handleSubmit.bind(this);
