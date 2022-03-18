@@ -3,20 +3,28 @@ import { Link } from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
 import './state_show.css';
-import '../posts/posts_index.css'
+import '../posts/posts_index.css';
+import PostsIndexContainer from '../posts/posts_index_container';
 
 
 class StateShow3 extends React.Component{
   constructor(props){
     super(props); 
 
-    this.state = {
-    }
+    this.handlePosts = this.handlePosts.bind(this);
 
   }
 
   componentDidMount() {
-    // this.props.fetchPost(this.props.stateId)
+    this.props.fetchPosts();
+    this.props.fetchComments();
+    this.props.fetchUsers();
+  }
+
+  handlePosts() {
+    const { posts } = this.props;
+    const caPosts = posts.filter(post => post.stateName === 'California')
+    return caPosts;
   }
 
   render() {
@@ -34,9 +42,9 @@ class StateShow3 extends React.Component{
             <p className="state_body">Gas price is very expensive here.</p>
             </div>
             <div className="state_posts">
-            
+              <PostsIndexContainer posts={this.handlePosts()}/>
             </div>
-            </div>
+          </div>
       </div>
     )
   }

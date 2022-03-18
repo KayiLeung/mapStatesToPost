@@ -28,7 +28,6 @@ class StateShow extends React.Component{
   }
   
   render() {
-    const { posts } = this.props;
     return (
       
       <div className="state-show-wrapper">
