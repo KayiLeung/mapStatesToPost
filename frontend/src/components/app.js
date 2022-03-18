@@ -16,7 +16,7 @@ import CommentTestContainer from './comments/comment_test_container';
 
 const App = () => (
   <div>
-    <NavBarContainer />
+    {/* <NavBarContainer /> */}
     <ModalContainer />
     <Switch>
         <AuthRoute exact path="/" component={MainPageContainer} />

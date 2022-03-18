@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './home.css';
+import './home2.css';
 import USAMap from "react-usa-map";
 import PostsIndex from '../posts/posts_index'; 
-
+import NavbarContainer from '../navbar/navbar_container';
 // import { Link } from 'react-router-dom';
 
 
@@ -15,12 +15,6 @@ class HomePage extends Component {
   };
 
   statesFilling = () => {
-    // currentUser.states.map |state|{
-    // "state": {
-    //   fill: "green",
-    // }}
-
-    // stateObject[state.name] = {fill: “green”}
     
     return {
       "NJ": {
@@ -41,28 +35,25 @@ class HomePage extends Component {
   render() {
     return (
       <div className="home">
+        <header className='navbar'>
+          <NavbarContainer/>
+        </header>
         
 
-           
-        <div className="home_body">
-          <div className="home_container">
-            <div className="home_map">
-              <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
+        <main className="main">
+            <div className="home_container">
+              <div className="home_map">
+                <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
+              </div>
+              <div className="home_index">
+                {/* <PostsIndex posts={this.props.post} /> */}
+              </div>
             </div>
-            <div className="home_index">
-              {/* <PostsIndex posts={this.props.post} /> */}
-            </div>
-          </div>
-        </div>
+        </main>
 
-        <section className="footer">
-            <div className="footer_copyright">
-                  <p id="footer_text">Copyright ©2022</p>
-            </div>
-        </section>
-
-       
-        
+        <footer className="footer">
+                <p id="footer_text">Copyright ©2022</p>
+        </footer>
       </div>
       
       

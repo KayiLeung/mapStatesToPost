@@ -50,7 +50,9 @@ router.get('/:id', (req, res) => {
         caption: req.body.caption,
         user: req.user.id,
         photo: req.file,
-        stateName: req.body.stateName,
+
+        stateName: req.body.stateName
+
         // photo: req.body.photo
 
       }); 

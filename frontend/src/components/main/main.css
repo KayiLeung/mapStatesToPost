@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+/* font-family: 'Exo 2', sans-serif;
+font-family: 'Flamenco', cursive; */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -5,10 +9,10 @@ body, html {
 
 .mainpage {
     height: 100%;
+    max-width: 100%;
     width: 100%;
     position: absolute;
-    background-image: url('./mainbg.jpg');
-    background-size: 1760px 900px;
+    background-image: url('https://mstp-dev.s3.us-west-2.amazonaws.com/utah-gd36c204b3_1920.jpg');
     background-repeat: no-repeat;
 }
 
@@ -32,8 +36,9 @@ body, html {
 .header {
     display: flex;
     justify-content: center;
-    font-family: 'Homemade Apple', cursive;
-    font-size: 25px;
+    font-family: 'Leckerli One', cursive;
+    font-size: 40px;
+    color: white;
 }
 
 .buttons {
