@@ -20,3 +20,7 @@ export const writeComment = data => {
 export const deleteComment = id => {
   return axios.delete(`/api/comments/${id}`)
 };
+
+export const updateComment = data => {
+  return axios.patch(`api/comments/update/${data._id}`, data)
+};
