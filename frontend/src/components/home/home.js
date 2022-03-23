@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './home2.css';
-import USAMap from "react-usa-map";
+import USAMap, { defaultProps} from "react-usa-map";
 import PostsIndexContainer from '../posts/posts_index_container'; 
 import NavBarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
+
 
 
 class HomePage extends Component {  
@@ -11,30 +12,48 @@ class HomePage extends Component {
     // let stateName = event.target.dataset.name
     // let stateString = JSON.stringify(stateName);
 
-    this.props.history.push("/states/NY");
-    
+    const stateName = event.target.dataset.name
+    const stateStyle = event.target.style
+
+    if (stateStyle.fill !== 'pink'){
+
+      stateStyle.fill = 'pink'
+
+      // states.push(`${stateName}`)
+ 
+      } else {
+      stateStyle.fill = '#D3D3D3'
+      }
+      
+      // this.props.history.push(`/states/${stateName}`);
+    // return (<Link to={`/states/${stateName}`}/>)
+
+
+    // console.log(`/states/${stateName}`)
   };
 
   statesFilling = () => {
-    
-    return {
-      "NJ": {
-        fill: "green",
-      },
-      "NY": {
-        fill: "green"
-      },
-      "CA": {
-        fill: "green"
-      },
-      "AK": {
-        fill: "green"
-      }
-    };
-  };
+    // console.log(this.props.posts)
+    const states = ['CA','NY', 'NJ']
+
+
+    return (
+      states.map((state) => ({
+        [state]:  {
+          fill: "#CC0000"
+        }
+      
+      }))
+    )
+  }
+
 
   render() {
     const { posts } = this.props;
+    if (!posts) {
+      return null;
+    }
+    
     return (
       <div className="home">
         <header className='navbar'>
@@ -55,9 +74,9 @@ class HomePage extends Component {
             </div>
         </main>
 
-        <div className="btn">
+        {/* <div className="btn">
           <Link to="/states/CA"><button>CA</button></Link>
-        </div>
+        </div> */}
 
         <footer className="footer">
             <div>

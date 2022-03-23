@@ -20,6 +20,8 @@ class PostIndexItem extends React.Component {
     return `${month} ${day}, ${year}`
   }
 
+  
+
   handleUser() {
     const { post, users } = this.props;
     let username;
