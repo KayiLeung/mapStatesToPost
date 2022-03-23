@@ -3,20 +3,28 @@ import { Link } from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
 import './state_show.css';
-import '../posts/posts_index.css'
+import '../posts/posts_index.css';
+import PostsIndexContainer from '../posts/posts_index_container';
 
 
 class StateShow2 extends React.Component{
   constructor(props){
     super(props); 
 
-    this.state = {
-    }
+    this.handlePosts = this.handlePosts.bind(this);
 
   }
 
   componentDidMount() {
-    // this.props.fetchPost(this.props.stateId)
+    this.props.fetchPosts();
+    this.props.fetchComments();
+    this.props.fetchUsers();
+  }
+
+  handlePosts() {
+    const { posts } = this.props;
+    const alPosts = posts.filter(post => post.stateName === 'Alaska')
+    return alPosts;
   }
 
   render() {
@@ -33,51 +41,8 @@ class StateShow2 extends React.Component{
             <h1 className="state_header">Fun Facts</h1>
             <p className="state_body">It is cold.</p>
             </div>
-            <div className="state_posts">
-            <div className="post-items">
-<div className="post-box">
-  <div className="state-name"> 
-    <h3>Alaska</h3>
-  </div>
-
-  <div className="post-pic">
-    <img src={`https://mstp-dev.s3.amazonaws.com/1647597847656_Central-Park-Manhattan-New-York-City-apartment.jpeg`}/>
-  </div>
-  <br />
-  
-  <div className="post-body">
-    <div className="body-top">
-      <div className="username">
-        deanding
-      </div>
-
-    </div>
-
-    <div className="body-mid">
-      <p className="caption">
-      This is view of Central Park from my future penthouse in NYC.
-      </p>
-
-    </div>
-
-    <div className="body-bot">
-      <div className="date">
-        March 18, 2022
-      </div>
-
-    </div>
-
-  </div>
-  <br/>
-  
-  <div className='comment-box'>
-    <CommentIndexContainer postId={"6234591c17d01385c9f33310"}/>
-    <CreateCommentContainer postId={"6234591c17d01385c9f33310"}/>
-  </div>
-
-</div>
-</div>
-
+            <div className='state_posts'>
+              <PostsIndexContainer posts={this.handlePosts()}/>
             </div>
         </div>
       </div>

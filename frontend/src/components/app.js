@@ -14,8 +14,6 @@ import StateShow3Container from './states/state_show_container3';
 
 
 
-
-
 const App = () => (
   <div>
     <ModalContainer />

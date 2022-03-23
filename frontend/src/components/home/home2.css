@@ -44,7 +44,6 @@ footer > div > p{
     height: 600px;
     overflow-y: scroll;
     /* scroll-snap-type: y mandatory; */
-    
 }
 
 .scroller section {
@@ -54,8 +53,7 @@ footer > div > p{
 .header > h1 {
     display: flex;
     align-content: stretch;
-    justify-content: center;
-        
+    justify-content: center;    
 }
 
 .btn{

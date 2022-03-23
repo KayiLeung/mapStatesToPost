@@ -4,8 +4,9 @@ import { fetchComments } from '../../actions/comment_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchUsers } from '../../actions/user_actions';
 
-const mSTP = state => ({
-    posts: Object.values(state.entities.posts.all),
+const mSTP = (state, ownProps) => ({
+    // posts: Object.values(state.entities.posts.all),
+    posts: ownProps.posts,
     comments: Object.values(state.entities.comments.all),
     users: Object.values(state.entities.users)
 });

@@ -53,4 +53,10 @@ export const deleteComment = commentId => dispatch => (
     CommentUtil.deleteComment(commentId)
         .then(() => dispatch(removeComment(commentId)))
         .catch(err => console.log(err))
-)
+);
+
+export const updateComment = data => dispatch => (
+  CommentUtil.updateComment(data)
+    .then(comment => dispatch(receiveComment(comment)))
+    .catch(err => console.log(err))
+);

@@ -1,4 +1,4 @@
-import { RECEIVE_POSTS, RECEIVE_USER_POSTS, RECEIVE_NEW_POST } from '../actions/post_actions';
+import { RECEIVE_POSTS, RECEIVE_USER_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
   
   const PostsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
@@ -10,8 +10,7 @@ import { RECEIVE_POSTS, RECEIVE_USER_POSTS, RECEIVE_NEW_POST } from '../actions/
       case RECEIVE_USER_POSTS:
         newState.user = action.posts.data;
         return newState;
-      case RECEIVE_NEW_POST:
-
+      case RECEIVE_POST:
         newState.new = action.post.data
         return newState;
       default:

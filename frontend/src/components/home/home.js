@@ -34,10 +34,11 @@ class HomePage extends Component {
   };
 
   render() {
+    const { posts } = this.props;
     return (
       <div className="home">
         <header className='navbar'>
-          <NavBarContainer/>
+          <NavBarContainer />
         </header>
         
 
@@ -48,14 +49,14 @@ class HomePage extends Component {
               </div>
             <div className= "scroller">
               <section className="home_index">
-                <PostsIndexContainer />
+                <PostsIndexContainer posts={posts}/>
               </section>
             </div>
             </div>
         </main>
 
         <div className="btn">
-          <Link to="/states/AK"><button>AK</button></Link>
+          <Link to="/states/CA"><button>CA</button></Link>
         </div>
 
         <footer className="footer">
