@@ -21,6 +21,7 @@ class HomePage extends Component {
     
     let states = [];
     posts.map(post => {
+      console.log(post)
       if (post.user === currentUser.id) {
       states.push(post.stateName)
       }
