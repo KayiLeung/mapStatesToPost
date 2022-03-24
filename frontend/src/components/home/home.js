@@ -1,50 +1,41 @@
 import React, { Component } from 'react';
 import './home2.css';
-import USAMap, { defaultProps} from "react-usa-map";
+import USAMap from "react-usa-map";
 import PostsIndexContainer from '../posts/posts_index_container'; 
 import NavBarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
 
 
-
 class HomePage extends Component {  
   mapHandler = (event) => {
-    // let stateName = event.target.dataset.name
-    // let stateString = JSON.stringify(stateName);
-
     const stateName = event.target.dataset.name
+    console.log('state:',stateName)
     const stateStyle = event.target.style
 
-    if (stateStyle.fill !== 'pink'){
+    this.props.history.push(`/states/${stateName}`);
 
-      stateStyle.fill = 'pink'
-
-      // states.push(`${stateName}`)
- 
-      } else {
-      stateStyle.fill = '#D3D3D3'
-      }
-      
-      // this.props.history.push(`/states/${stateName}`);
-    // return (<Link to={`/states/${stateName}`}/>)
-
-
-    // console.log(`/states/${stateName}`)
   };
 
   statesFilling = () => {
-    // console.log(this.props.posts)
-    const states = ['CA','NY', 'NJ']
+    const { posts, currentUser} = this.props;
+    
+    let states = [];
+    posts.map(post => {
+      if (post.user === currentUser.id) {
+      states.push(post.stateName)
+      }
+      console.log(states)
+    })
+
+    const res = states.reduce((acc, state) => {
+       acc[state] = {
+        fill: "#c8808c"
+      };
+      return acc;
+    }, {})
+    return res
 
 
-    return (
-      states.map((state) => ({
-        [state]:  {
-          fill: "#CC0000"
-        }
-      
-      }))
-    )
   }
 
 
