@@ -12,6 +12,8 @@ import StateShowContainer from './states/state_show_container';
 import StateShow2Container from './states/state_show_container2';
 import StateShow3Container from './states/state_show_container3';
 
+import TestContainer from './test/test_container';
+
 
 
 const App = () => (
@@ -24,7 +26,7 @@ const App = () => (
         <ProtectedRoute exact path="/states/NY" component={StateShowContainer} /> 
         <ProtectedRoute exact path="/states/AK" component={StateShow2Container} />
         <ProtectedRoute exact path="/states/CA" component={StateShow3Container} />
-
+        <ProtectedRoute exact path="/test" component={TestContainer} />
     </Switch>
   </div>
 );

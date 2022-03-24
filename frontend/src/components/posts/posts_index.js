@@ -10,8 +10,8 @@ class PostsIndex extends React.Component {
   }
   
   render() {
-    const { posts, comments, users } = this.props; 
-  
+    const { posts, comments, users } = this.props;
+    if (!posts) return null;
     return (
       <ul className="post-container"> 
         {

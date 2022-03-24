@@ -1,6 +1,7 @@
 import React from 'react';
 import SignupFormContainer from '../session/signup_form_container';
 import LoginFormContainer from '../session/login_form_container';
+import EditCommentFormContainer from '../comments/edit_comment_form_container';
 import "./modal.css"
 
 class Modal extends React.Component {
@@ -28,6 +29,9 @@ class Modal extends React.Component {
                 break;
             case 'login':
                 form = <LoginFormContainer />;
+                break;
+            case 'editcomment':
+                form = <EditCommentFormContainer />;
                 break;
             default:
                 return null;
