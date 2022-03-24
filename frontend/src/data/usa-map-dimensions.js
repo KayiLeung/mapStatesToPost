@@ -170,7 +170,7 @@ function data() {
       "funFactsUrl": "https://www.chowdaheadz.com/blogs/news/x-fun-facts-you-never-knew-about-maine"
     },
     "MI": {
-      "description": 'Michigan is a state in the Great Lakes region of the upper Midwestern United States. Its name derives from a gallicized variant of the original Ojibwe word ᒥᓯᑲᒥ, meaning 'large water' or 'large lake'.',
+      "description": 'Michigan is a state in the Great Lakes region of the upper Midwestern United States. Its name derives from a gallicized variant of the original Ojibwe word ᒥᓯᑲᒥ, meaning "large water" or "large lake".',
       "abbreviation": "MI",
       'travelUrl': 'https://www.michigan.org/',
       "name": "Michigan",
