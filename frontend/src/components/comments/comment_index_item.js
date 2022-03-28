@@ -4,6 +4,7 @@ import { TiDelete } from 'react-icons/ti';
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
+        // console.log(props)
         super(props);
         this.handleDeleteComment = this.handleDeleteComment.bind(this);
         this.handleAuthor = this.handleAuthor.bind(this);

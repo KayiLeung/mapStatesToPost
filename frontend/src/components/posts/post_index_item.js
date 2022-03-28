@@ -1,6 +1,8 @@
 import React from 'react';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
+// import usa-map-dimension.js from ''
+
 
 class PostIndexItem extends React.Component {
   constructor(props) {

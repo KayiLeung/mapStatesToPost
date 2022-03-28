@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 class HomePage extends Component {  
   mapHandler = (event) => {
     const stateName = event.target.dataset.name
-    console.log('state:',stateName)
+    // console.log('state:',stateName)
     const stateStyle = event.target.style
 
     this.props.history.push(`/states/${stateName}`);
@@ -21,11 +21,11 @@ class HomePage extends Component {
     
     let states = [];
     posts.map(post => {
-      console.log(post)
+
       if (post.user === currentUser.id) {
       states.push(post.stateName)
       }
-      console.log(states)
+      // console.log(states)
     })
 
     const res = states.reduce((acc, state) => {

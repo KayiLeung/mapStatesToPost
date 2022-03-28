@@ -20,6 +20,7 @@ class StateShow extends React.Component{
     this.props.fetchPosts();
     this.props.fetchComments();
     this.props.fetchUsers();
+    this.props.fetchState(this.props.match.params.stateId)
   }
   
   // handlePosts() {
