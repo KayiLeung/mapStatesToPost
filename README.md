@@ -29,7 +29,7 @@ With mapStatesToPost users can:
 
 - Signup / Signin to an account
 - View a personalized map where each state they have visited is highlighted
-- Click on any state to: mark that they have been there, create a post, and see all user's photos associated with that state
+- Click on any state to: mark that they have been there, create a post, and see all other user's photos associated with that state
 - Create, read, edit, and delete a post with photo upload for a state they have visited (CRUD)
 - Create, read, edit, and delete comments on other user's posts (CRUD)
 
