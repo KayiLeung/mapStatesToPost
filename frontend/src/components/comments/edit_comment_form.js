@@ -8,7 +8,7 @@ class EditCommentForm extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchComment(this.props.commentId)
+        this.props.fetchComment(this.props.commentId);
     }
 
     handleSubmit(e) {
@@ -23,8 +23,8 @@ class EditCommentForm extends React.Component {
     render() {
         if (!this.props) return null;
         const { comment, formType, closeModal } = this.props;
-        console.log(comment)
-        if (!comment) return null;
+        if (!this.state) return null;
+        // this.state = comment
         return (
             <div>
                 <div className='form-header'>

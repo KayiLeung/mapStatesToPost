@@ -10,10 +10,6 @@ class CommentIndexItem extends React.Component {
         this.openModal = this.openModal.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.props.fetchComment(this.props.comment._id)
-    // }
-
     handleDeleteComment() {
         if (this.props.userId === this.props.comment.author) {
             this.props.deleteComment(this.props.comment._id);
