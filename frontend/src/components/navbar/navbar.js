@@ -99,7 +99,7 @@ class NavBar extends React.Component {
                     <li><a href="https://github.com/dingtianding" target="_blank">Dean Ding</a></li>
                     <li><a href="https://github.com/KayiLeung" target="_blank">Ka Yi Leung</a></li>
                     <li><a href="https://github.com/smackey15" target="_blank">Sean Mackey</a></li>
-                    <li><a href="https://github.com/yuhmanashi" target="_blank">Yao Yu</a></li>
+                    <li><a href="https://github.com/yuhmanashi" target="_blank">Yao Xu</a></li>
                   </ul>
                 </li>
               </ul>
@@ -111,7 +111,7 @@ class NavBar extends React.Component {
                     <li><a href="https://www.linkedin.com/in/deanding/" target="_blank">Dean Ding</a></li>
                     <li><a href="https://www.linkedin.com/in/ka-yi-leung-9b0687a3/" target="_blank">Ka Yi Leung</a></li>
                     <li><a href="https://www.linkedin.com/in/sean-mackey123/" target="_blank">Sean Mackey</a></li>
-                    <li><a href="https://www.linkedin.com/in/yaoxu03/" target="_blank">Yao Yu</a></li>
+                    <li><a href="https://www.linkedin.com/in/yaoxu03/" target="_blank">Yao Xu</a></li>
                   </ul>
                 </li>
               </ul>
