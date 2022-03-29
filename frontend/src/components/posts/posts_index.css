@@ -15,7 +15,6 @@ font-family: 'Shadows Into Light', cursive; */
   display: flex;
   align-items: center;
   justify-content: space-between;
-    
 }
 .state-name > h3 {
   text-decoration-line: underline;
@@ -31,7 +30,14 @@ ul.post-container {
   flex-wrap: wrap;
   justify-content: flex-end;
   padding-top: 10px;
-
+  .post-items {
+    /* border: 1.5px solid black; */
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    width: 400px;
+    box-shadow: 0 8px 20px -2px rgb(68, 77, 80);
+  }
 }
 
 .post-items {

@@ -1,5 +1,7 @@
 import React from 'react';
 import { TiDelete } from 'react-icons/ti';
+import { Link } from 'react-router-dom'; 
+
 
 
 class CommentIndexItem extends React.Component {
@@ -41,11 +43,14 @@ class CommentIndexItem extends React.Component {
     }
 
     render() {
+        const { comment, users } = this.props;
         return (
             <div className="comment-items">
                 <div className="comment-body">
                     <div className="author">
+                    <Link to={`/users/${comment.author}`}>
                         {this.handleAuthor()}
+                    </Link>
                     </div>
 
                     <div className="comment">

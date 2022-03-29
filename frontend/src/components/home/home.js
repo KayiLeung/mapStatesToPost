@@ -61,8 +61,10 @@ class HomePage extends Component {
 
         <footer className="footer">
             <div>
-                <p id="footer_text">Copyright ©2022</p>
-
+                <p id="footer_text">Copyright ©2022
+                <br></br>
+                Favicon courtesy of <a href="https://www.vecteezy.com/" target="_blank" className="footer-link">Vecteezy</a>
+                </p>
             </div>
         </footer>
       </div>

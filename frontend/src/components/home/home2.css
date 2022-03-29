@@ -33,6 +33,11 @@ footer > div > p{
     font-size: 18px;
 }
 
+.footer-link {
+    text-decoration: none;
+    color:#6287a2;
+}
+
 .home_container{
     display: flex;
     flex-direction: row;

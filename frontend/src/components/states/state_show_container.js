@@ -6,7 +6,7 @@ import { fetchUsers } from '../../actions/user_actions';
 
 import StateShow from './state_show';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   users: Object.values(state.entities.users),
   comments: Object.values(state.entities.comments.all),
   posts: Object.values(state.entities.posts.all)
