@@ -7,6 +7,7 @@ const posts = require("../../validation/posts");
 const validatePostInput = require("../../validation/posts")
 const upload = require("../../services/photo_upload");
 
+
 router.get("/test", (req, res) => res.json({ msg: "This is the posts route" }));
 
 // retrieves all posts

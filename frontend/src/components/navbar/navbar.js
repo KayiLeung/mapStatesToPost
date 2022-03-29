@@ -82,8 +82,8 @@ class NavBar extends React.Component {
                     </div>
                 </div> */}
               <ul>
-                <li class="drop-down-menu-1">
-                  <a href="#" class="icon-home"><FaGithub /></a>
+                <li className="drop-down-menu-1">
+                  <a href="#" className="icon-home"><FaGithub /></a>
                   <ul className='dropdown-content'>
 
 
@@ -104,8 +104,8 @@ class NavBar extends React.Component {
                     </div>
                 </div> */}
               <ul>
-                <li class="drop-down-menu-2">
-                  <a href="#" class="icon-home"><FaRegUserCircle /></a>
+                <li className="drop-down-menu-2">
+                  <a href="#" className="icon-home"><FaRegUserCircle /></a>
                   <ul className='dropdown-content'>
                     <button>Profile</button>
                     <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>

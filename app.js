@@ -11,7 +11,7 @@ const users = require("./routes/api/users")
 const posts = require("./routes/api/posts")
 const photos = require('./routes/api/photos')
 const comments = require("./routes/api/comments")
-const states = require("./routes/api/states")
+const USAStates = require("./routes/api/USAStates")
 const passport = require("passport");
 
 debugger
@@ -37,7 +37,7 @@ app.use("/api/users", users);
 app.use("/api/posts", posts);
 app.use("/api/photos", photos);
 app.use("/api/comments", comments);
-app.use("/api/states", states);
+app.use("/api/USAStates", USAStates);
 
 const port = process.env.PORT || 5500; // change this back to 5000?
 

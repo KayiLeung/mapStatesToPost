@@ -4,15 +4,14 @@ import { logout } from '../../actions/session_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchComments } from '../../actions/comment_actions';
 import { fetchUsers } from '../../actions/user_actions';
-import { fetchStates, fetchState} from '../../actions/states_actions';
+import { fetchStates, fetchState} from '../../actions/usaStates_actions';
 
 const mapStateToProps = state => {
-
     return{
     loggedIn: state.session.isAuthenticated,
     posts: Object.values(state.entities.posts.all),
     currentUser: state.session.user,
-    states: Object.values(state.entities.states)
+    USAStates: Object.values(state.entities.USAStates)
 }};
 
 const mDTP = dispatch => {

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchComments } from '../../actions/comment_actions';
 import { fetchUsers } from '../../actions/user_actions';
-import { fetchStates, fetchState} from '../../actions/states_actions'
+import { fetchStates, fetchState} from '../../actions/usaStates_actions'
 
 import StateShow from './state_show';
 

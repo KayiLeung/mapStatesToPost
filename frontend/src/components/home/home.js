@@ -9,11 +9,11 @@ import { Link } from 'react-router-dom';
 class HomePage extends Component {  
   mapHandler = (event) => {
     const stateName = event.target.dataset.name
-    // console.log('state:',stateName)
     const stateStyle = event.target.style
-
-    this.props.history.push(`/states/${stateName}`);
-
+    console.log(stateName)
+    // this.props.history.push(`/USAStates/${stateName}`);
+    
+    // console.log(`this is USAStates: ${this.props.USAStates}`)
   };
 
   statesFilling = () => {
@@ -25,7 +25,6 @@ class HomePage extends Component {
       if (post.user === currentUser.id) {
       states.push(post.stateName)
       }
-      // console.log(states)
     })
 
     const res = states.reduce((acc, state) => {
@@ -39,13 +38,21 @@ class HomePage extends Component {
 
   }
 
+  componentDidMount() {
+    this.props.fetchStates()
+  }
+
 
   render() {
-    const { posts } = this.props;
-    if (!posts) {
+    const { posts, USAStates } = this.props;
+
+    if (!posts || !USAStates) {
       return null;
     }
-    
+    this.props.USAStates.forEach(USAState => {
+      console.log(USAState.name)
+      console.log(USAState[0])
+    })
     return (
       <div className="home">
         <header className='navbar'>
