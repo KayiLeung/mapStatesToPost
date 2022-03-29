@@ -9,6 +9,12 @@ class PostsIndex extends React.Component {
     this.props.fetchUsers();
   }
   
+  // componentDidUpdate(prevProps, prevState){
+  //   if (prevProps.posts != this.props.posts){
+  //     this.
+  //   }
+  // }
+
   render() {
     const { posts, comments, users } = this.props;
     if (!posts) return null;

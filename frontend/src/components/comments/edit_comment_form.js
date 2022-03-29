@@ -11,6 +11,12 @@ class EditCommentForm extends React.Component {
         this.props.fetchComment(this.props.commentId);
     }
 
+    componentDidUpdate(prevProps, prevState){
+        if (prevProps.comment !== this.props.comment){
+            this.setState(this.props.comment)
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state).then(this.props.closeModal());
@@ -25,7 +31,6 @@ class EditCommentForm extends React.Component {
         const { comment } = this.props;
         if (!this.state) return null;
         // this.state = comment
-        console.log(this.state);
         return (
             <div>
                 <div className='form-header'>

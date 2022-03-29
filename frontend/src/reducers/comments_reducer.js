@@ -18,11 +18,11 @@ import { RECEIVE_COMMENTS, RECEIVE_POST_COMMENTS, RECEIVE_COMMENT, RECEIVE_NEW_C
             newState.all.push(newState.new);
             return newState;
         case UPDATE_COMMENT:
-            newState.new = action.comment.data
-            const newComment = newState.all.filter(comment => comment._id === newState.new._id)
-                //     comment.body = newState.new.body
-                // }
-            debugger
+            newState.new = action.comment.data // action.comment.data is not updating?
+            // newState.all.forEach(comment => {
+            //     if (comment._id === newState.new._id)
+            //         comment.body = newState.new.body
+            //     })
             return newState;
         case REMOVE_COMMENT:
             newState.all = newState.all.filter(comment => comment._id !== action.commentId);
