@@ -11,8 +11,9 @@ const mapStateToProps = (state, ownProps) => {
     loggedIn: state.session.isAuthenticated,
     posts: Object.values(state.entities.posts.all),
     currentUser: state.session.user,
+    // USAStates: state.entities.USAStates
     USAStates: state.entities.USAStates.all
-    // USAStates: Object.values(state.entities.USAStates)
+    // USAStates: Object.values(state.entities.USAStates.all)
 }};
 
 const mDTP = dispatch => {

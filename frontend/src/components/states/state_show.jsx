@@ -12,6 +12,9 @@ import '../../data/usa-map-dimensions'
 class StateShow extends React.Component{
   constructor(props){
     super(props); 
+    console.log(this.props)
+    debugger
+    // console.log(props.match.params.id)
 
     this.handlePosts = this.handlePosts.bind(this);
 
@@ -21,18 +24,20 @@ class StateShow extends React.Component{
     this.props.fetchPosts();
     this.props.fetchComments();
     this.props.fetchUsers();
-    this.props.fetchState(this.props.match.params.stateId)
+    const localState = this.props.fetchState(this.props.stateId)
+    console.log(`this is localstate from componetDidMount ${localState}`)
   }
   
   handlePosts() {
-    const { posts } = this.props;
-    const statePosts = posts.filter(post => post.stateName === 'New York')
-    return statePosts;
+    const { posts, localState } = this.props;
+    console.log(localState.name)
+    // const statePosts = posts.filter(post => post.stateName === localState.name)
+    // return statePosts;
   }
   
   render() {
-    const { localState} = this.props
-    console.log(localState)
+    const { posts } = this.props;
+
     return (
       
       // <div className="state-show-wrapper">

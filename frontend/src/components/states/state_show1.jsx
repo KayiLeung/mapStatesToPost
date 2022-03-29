@@ -12,7 +12,7 @@ class StateShow extends React.Component{
     super(props); 
 
     this.handlePosts = this.handlePosts.bind(this);
-
+    
   }
 
   componentDidMount() {
@@ -28,6 +28,10 @@ class StateShow extends React.Component{
   }
   
   render() {
+ 
+
+    // for (let i = 0; i < this.props.USAStates.length)
+
     return (
       
       <div className="state-show-wrapper">
