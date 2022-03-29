@@ -3,6 +3,8 @@ import * as CommentUtil from '../util/comments_api_util';
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_POST_COMMENTS = "RECEIVE_USER_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const RECEIVE_NEW_COMMENT = "RECEIVE_NEW_COMMENT";
+export const UPDATE_COMMENT = "UPDATE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 export const receiveComments = comments => ({
@@ -16,14 +18,24 @@ export const receivePostComments = comments => ({
 });
 
 export const receiveComment = comment => ({
-    type: RECEIVE_COMMENT,
+  type: RECEIVE_COMMENT,
+  comment
+});
+
+export const receiveNewComment = comment => ({
+    type: RECEIVE_NEW_COMMENT,
     comment
-})
+});
+
+export const updateComment = comment => ({
+  type: UPDATE_COMMENT,
+  comment
+});
 
 export const removeComment = commentId => ({
     type: REMOVE_COMMENT,
     commentId
-})
+});
 
 export const fetchComment = id => dispatch => (
     CommentUtil.getComment(id)
@@ -45,7 +57,7 @@ export const fetchPostComments = postId => dispatch => (
 
 export const createComment = data => dispatch => (
   CommentUtil.writeComment(data)
-    .then(comment => dispatch(receiveComment(comment)))
+    .then(comment => dispatch(receiveNewComment(comment)))
     .catch(err => console.log(err))
 );
 
@@ -55,8 +67,8 @@ export const deleteComment = commentId => dispatch => (
         .catch(err => console.log(err))
 );
 
-export const updateComment = data => dispatch => (
-  CommentUtil.updateComment(data)
-    .then(comment => dispatch(receiveComment(comment)))
+export const editComment = comment => dispatch => (
+  CommentUtil.updateComment(comment)
+    .then(comment => dispatch(updateComment(comment)))
     .catch(err => console.log(err))
 );
