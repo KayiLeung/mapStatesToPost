@@ -22,10 +22,10 @@ const App = () => (
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
 
-        <ProtectedRoute exact path="/states/StateId" component={StateShowContainer} /> 
-        <ProtectedRoute exact path="/states/NY" component={StateShow1Container} /> 
+        <ProtectedRoute exact path="/USAStates/:id" component={StateShowContainer} />
+        {/* <ProtectedRoute exact path="/states/NY" component={StateShow1Container} /> 
         <ProtectedRoute exact path="/states/AK" component={StateShow2Container} />
-        <ProtectedRoute exact path="/states/CA" component={StateShow3Container} />
+        <ProtectedRoute exact path="/states/CA" component={StateShow3Container} /> */}
 
     </Switch>
   </div>

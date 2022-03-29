@@ -1,17 +1,18 @@
 import { RECEIVE_STATES, RECEIVE_STATE} from "../actions/usaStates_actions";
 
-const StatesReducer = ( state = {all:{}}, action) => {
+const StatesReducer = ( state = {all:[]}, action) => {
     Object.freeze(state);
     const nextState = Object.assign({}, state)
-
+    debugger
     switch (action.type) {
         case RECEIVE_STATES:
-            // return action.USAStates.data;
             nextState.all = action.USAStates.data;
             debugger
             return nextState;
         case RECEIVE_STATE:
-            nextState[action.USAState.id] = action.USAState.data
+            debugger
+            nextState[action.USAState._id] = action.USAState.data
+            debugger
             return nextState;
         default: 
             return state;

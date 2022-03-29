@@ -11,7 +11,13 @@ class HomePage extends Component {
     const stateName = event.target.dataset.name
     const stateStyle = event.target.style
     console.log(stateName)
-    // this.props.history.push(`/USAStates/${stateName}`);
+    this.props.USAStates.forEach(USAState => {
+
+      if (stateName === USAState.name) {
+        this.props.history.push(`/USAStates/${USAState._id}`);
+      }
+      console.log(USAState._id)
+    })
     
     // console.log(`this is USAStates: ${this.props.USAStates}`)
   };
@@ -49,10 +55,12 @@ class HomePage extends Component {
     if (!posts || !USAStates) {
       return null;
     }
-    this.props.USAStates.forEach(USAState => {
-      console.log(USAState.name)
-      console.log(USAState[0])
-    })
+    // this.props.USAStates.forEach(USAState => {
+    //   console.log(USAState)
+      
+    //   console.log(USAState.name)
+    // })
+    // console.log(`this is USAStates: ${USAStates}`)
     return (
       <div className="home">
         <header className='navbar'>

@@ -6,10 +6,11 @@ import './state_show.css';
 import '../posts/posts_index.css'
 import PostsIndexContainer from '../posts/posts_index_container';
 
+import '../../data/usa-map-dimensions'
+
 
 class StateShow extends React.Component{
   constructor(props){
-    debugger
     super(props); 
 
     this.handlePosts = this.handlePosts.bind(this);
@@ -23,14 +24,15 @@ class StateShow extends React.Component{
     this.props.fetchState(this.props.match.params.stateId)
   }
   
-  // handlePosts() {
-  //   const { posts } = this.props;
-  //   const nyPosts = posts.filter(post => post.stateName === 'New York')
-  //   return nyPosts;
-  // }
+  handlePosts() {
+    const { posts } = this.props;
+    const statePosts = posts.filter(post => post.stateName === 'New York')
+    return statePosts;
+  }
   
   render() {
-    debugger
+    const { localState} = this.props
+    console.log(localState)
     return (
       
       // <div className="state-show-wrapper">

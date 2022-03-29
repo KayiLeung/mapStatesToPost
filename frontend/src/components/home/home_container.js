@@ -6,16 +6,16 @@ import { fetchComments } from '../../actions/comment_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import { fetchStates, fetchState} from '../../actions/usaStates_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return{
     loggedIn: state.session.isAuthenticated,
     posts: Object.values(state.entities.posts.all),
     currentUser: state.session.user,
-    USAStates: Object.values(state.entities.USAStates)
+    USAStates: state.entities.USAStates.all
+    // USAStates: Object.values(state.entities.USAStates)
 }};
 
 const mDTP = dispatch => {
-    debugger
     return {
     fetchPosts: () => dispatch(fetchPosts()),
     fetchComments: () => dispatch(fetchComments()),
@@ -26,4 +26,4 @@ const mDTP = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mDTP)(HomePage);
+export default connect(mapStateToProps, mDTP)(HomePage); 

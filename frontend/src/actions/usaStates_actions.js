@@ -21,6 +21,7 @@ export const fetchStates = () => dispatch => {
     )
 }
 export const fetchState = USAState => dispatch => {
+    debugger
     return (
         getState(USAState)
             .then(USAState => dispatch(receiveState(USAState)))
