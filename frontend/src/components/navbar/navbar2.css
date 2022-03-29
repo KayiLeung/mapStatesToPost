@@ -141,9 +141,15 @@ font-family: 'Roboto', sans-serif;  error message*/
 .create_post > a{
     
     font-family: 'Leckerli One', cursive;
+    text-decoration: underline;
 }
 
 .dropdown-content > hr {
   background-color: black;
   text-transform: none;
+}
+
+.user_msg{
+  font-family: 'Leckerli One', cursive;
+
 }

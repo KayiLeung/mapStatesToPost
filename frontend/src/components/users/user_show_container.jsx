@@ -3,12 +3,15 @@ import { fetchUserPosts } from '../../actions/post_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchComments } from '../../actions/comment_actions';
 import { fetchUsers } from '../../actions/user_actions';				
+import { fetchUser } from '../../actions/user_actions';	
+			
+
 import UserShow from './user_show';				
 
 
 const mapStateToProps = (state, ownProps) => ({
-  // user: state.entities.user, 
-  // userId: ownProps.match.params.userId,  
+  user: state.entities.user, 
+  userId: ownProps.match.params.userId,  
   // posts: state.entities.posts, 
     
   users: Object.values(state.entities.users),
@@ -22,6 +25,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchPosts: () => dispatch(fetchPosts()),
   fetchComments: () => dispatch(fetchComments()),
   fetchUsers: () => dispatch(fetchUsers()),
+  fetchUser: (userId) => dispatch(fetchUser(userId)),
+
 });
 
 export default connect(

@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
+import { withRouter } from 'react-router-dom';
 
 import PostsIndexContainer from '../posts/posts_index_container';
 import NavBarContainer from '../navbar/navbar_container';
@@ -17,17 +18,28 @@ class UserShow extends React.Component {
     this.props.fetchUserPosts();
     this.props.fetchComments();
     this.props.fetchUsers();
+    this.props.fetchUser(this.props.userId)
   }
 
   handlePosts() {
     const { posts } = this.props;
-    const userPosts = posts.filter(post => post.user === '6233393a2cd57d9429a9a15c')
+    const userPosts = posts.filter(post => post.user === this.props.userId)
     return userPosts;
   }
 
-  render() {
-    const { posts, user, currentUser } = this.props; 
+  handleUser() {
+    const { userId, users } = this.props;
+    let username;
+    users.forEach(user => {
+      if (userId === user._id) {
+        username = user.username;
+        return;
+      }
+    });
+    return username;
+  }
 
+  render() {
     return (
       <div className="user_show_container">
         <header className='navbar'>
@@ -35,7 +47,7 @@ class UserShow extends React.Component {
         </header>
  
           <div className="user_details">
-            <h1>User Journal Page</h1>
+            <h1 className="user_name">{this.handleUser()}'s Page</h1>
         
 
             <div className='user_posts'>
@@ -50,4 +62,4 @@ class UserShow extends React.Component {
 
 }; 
 
-export default UserShow; 
+export default withRouter(UserShow); 

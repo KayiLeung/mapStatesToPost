@@ -46,6 +46,8 @@ class NavBar extends React.Component {
   }
 
   render() {
+    const { currentUser } = this.props;
+
       return (
         <div>
           <section className="nav_bar">
@@ -107,7 +109,7 @@ class NavBar extends React.Component {
                 <li class="drop-down-menu-2">
                   <a href="#" class="icon-home"><FaRegUserCircle /></a>
                   <ul className='dropdown-content'>
-                    <button>Profile</button>
+                  <Link to={`/users/${this.props.userId}`}><button>Profile</button></Link>
                     <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
                   </ul>
                 </li>

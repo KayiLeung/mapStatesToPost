@@ -1,4 +1,15 @@
+.user_name{
+    display: grid;
+    justify-content: center;
+    font-size: 48px;
+    font-family: 'Leckerli One', cursive;
+}
+
 .user_posts{
     display: flex;
-    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background-color: #80c8bc
 }

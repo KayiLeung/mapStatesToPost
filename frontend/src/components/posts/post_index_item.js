@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; 
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
 
@@ -53,7 +54,9 @@ class PostIndexItem extends React.Component {
           <div className="post-body">
             <div className="body-top">
               <div className="username">
+              <Link to={`/users/${post.user}`}>
                 {this.handleUser()}
+              </Link>
               </div>
 
             </div>
