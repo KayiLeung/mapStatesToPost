@@ -21,10 +21,11 @@ class EditCommentForm extends React.Component {
     }
       
     render() {
-        if (!this.props) return null;
-        const { comment, formType, closeModal } = this.props;
+        // if (!this.props.comment) return null;
+        const { comment } = this.props;
         if (!this.state) return null;
         // this.state = comment
+        console.log(this.state);
         return (
             <div>
                 <div className='form-header'>

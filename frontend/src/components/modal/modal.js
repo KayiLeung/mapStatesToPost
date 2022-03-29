@@ -10,6 +10,13 @@ class Modal extends React.Component {
         this.close = this.close.bind(this);
     }
     
+    componentDidMount(){
+        if (this.props.commentId){
+            console.log(this.props.commentId)
+            this.props.receiveComment(this.props.commentId)
+        }
+    }
+
     close(){
         this.props.removeErrors();
         this.props.closeModal()
