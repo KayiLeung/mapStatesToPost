@@ -1,8 +1,9 @@
-import { getPosts, getUserPosts, writePost } from '../util/post_api_util';
+import * as PostUtil from '../util/post_api_util';
 
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_USER_POSTS = "RECEIVE_USER_POSTS";
-export const RECEIVE_NEW_POST = "RECEIVE_NEW_POST";
+export const RECEIVE_POST = "RECEIVE_POST";
+export const REMOVE_POST = "REMOVE_POST";
 
 export const receivePosts = posts => ({
   type: RECEIVE_POSTS,
@@ -14,19 +15,24 @@ export const receiveUserPosts = posts => ({
   posts
 });
 
-export const receiveNewPost = post => ({
-  type: RECEIVE_NEW_POST,
+export const receivePost = post => ({
+  type: RECEIVE_POST,
   post
 })
 
+export const removePost = postId => ({
+  type: REMOVE_POST,
+  postId
+})
+
 export const fetchPosts = () => dispatch => (
-  getPosts()
+  PostUtil.getPosts()
     .then(posts => dispatch(receivePosts(posts)))
     .catch(err => console.log(err))
 );
 
 export const fetchUserPosts = id => dispatch => (
-  getUserPosts(id)
+  PostUtil.getUserPosts(id)
     .then(posts => dispatch(receiveUserPosts(posts)))
     .catch(err => console.log(err))
 );
@@ -34,10 +40,22 @@ export const fetchUserPosts = id => dispatch => (
 export const createPost = data => dispatch => {
   
   return (
-  writePost(data)
+  PostUtil.writePost(data)
     .then(post => {
-      return dispatch(receiveNewPost(post)
+      return dispatch(receivePost(post)
       )})
     .catch(err => console.log(err))
   )
 };
+
+export const updatePost = data => dispatch => (
+  PostUtil.updatePost(data)
+    .then(data => dispatch(receivePost(data)))
+    .catch(err => console.log(err))
+);
+
+export const deletePost = postId => dispatch => (
+  PostUtil.deletePost(postId)
+      .then(() => dispatch(removePost(postId)))
+      .catch(err => console.log(err))
+);
