@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 // import './navbar.css'
 import './navbar2.css'
-import { FaGithub, FaRegUserCircle } from 'react-icons/fa'
+import { FaGithub, FaRegUserCircle, FaLinkedin } from 'react-icons/fa'
 
 
 class NavBar extends React.Component {
@@ -81,29 +81,7 @@ class NavBar extends React.Component {
                       <button className='db-item2'>Dean Ding</button>
                     </div>
                 </div> */}
-              <ul>
-                <li class="drop-down-menu-1">
-                  <a href="#" class="icon-home"><FaGithub /></a>
-                  <ul className='dropdown-content'>
-
-
-                    <li><a href="https://github.com/KayiLeung/mapStatesToPost">map States To Post</a></li>
-                    <li><a href="https://github.com/dingtianding">Dean Ding</a></li>
-                    <li><a href="https://github.com/KayiLeung">Ka Yi Leung</a></li>
-                    <li><a href="https://github.com/smackey15">Sean Mackey</a></li>
-                    <li><a href="">Yao Yu</a></li>
-                  </ul>
-                </li>
-              </ul>
-
-                {/* <div className="drop-down-menu-2">
-                  <button className='drop-down-menu-bt'>Dropdown</button>
-                    <div className='dropdown-content'>
-                      <button>Profile</button>
-                      <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
-                    </div>
-                </div> */}
-              <ul>
+                <ul>
                 <li class="drop-down-menu-2">
                   <a href="#" class="icon-home"><FaRegUserCircle /></a>
                   <ul className='dropdown-content'>
@@ -112,6 +90,47 @@ class NavBar extends React.Component {
                   </ul>
                 </li>
               </ul>
+
+                <ul>
+                <li class="drop-down-menu-1">
+                  <a href="#" class="icon-home"><FaGithub /></a>
+                  <ul className='dropdown-content'>
+                    <li><a href="https://github.com/KayiLeung/mapStatesToPost" target="_blank">map States To Post</a></li>
+                    <li><a href="https://github.com/dingtianding" target="_blank">Dean Ding</a></li>
+                    <li><a href="https://github.com/KayiLeung" target="_blank">Ka Yi Leung</a></li>
+                    <li><a href="https://github.com/smackey15" target="_blank">Sean Mackey</a></li>
+                    <li><a href="https://github.com/yuhmanashi" target="_blank">Yao Yu</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <ul>
+                <li class="drop-down-menu-1">
+                  <a href="#" class="icon-home"><FaLinkedin /></a>
+                  <ul className='dropdown-content'>
+                    <li><a href="https://www.linkedin.com/in/deanding/" target="_blank">Dean Ding</a></li>
+                    <li><a href="https://www.linkedin.com/in/ka-yi-leung-9b0687a3/" target="_blank">Ka Yi Leung</a></li>
+                    <li><a href="https://www.linkedin.com/in/sean-mackey123/" target="_blank">Sean Mackey</a></li>
+                    <li><a href="https://www.linkedin.com/in/yaoxu03/" target="_blank">Yao Yu</a></li>
+                  </ul>
+                </li>
+              </ul>
+                {/* <div className="drop-down-menu-2">
+                  <button className='drop-down-menu-bt'>Dropdown</button>
+                    <div className='dropdown-content'>
+                      <button>Profile</button>
+                      <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
+                    </div>
+                </div> */}
+              {/* <ul>
+                <li class="drop-down-menu-2">
+                  <a href="#" class="icon-home"><FaRegUserCircle /></a>
+                  <ul className='dropdown-content'>
+                    <button>Profile</button>
+                    <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
+                  </ul>
+                </li>
+              </ul> */}
 
             </div>
           </section>
