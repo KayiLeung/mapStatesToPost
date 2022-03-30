@@ -41,13 +41,22 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
+    // let userlogin = {
+    //   email: this.state.email,
+    //   password: this.state.password
+    // };
+
+    // this.props.signup(user, this.props.history); 
+    this.props.signup(user).then(this.handleCloseModal);
+  }
+
+  componentWillUnmount() {
     let userlogin = {
       email: this.state.email,
       password: this.state.password
     };
 
-    // this.props.signup(user, this.props.history); 
-    this.props.signup(user).then(this.handleCloseModal);
+    this.props.login(userlogin)
   }
 
   handleCloseModal(){
