@@ -66,12 +66,12 @@ class EditCommentForm extends React.Component {
                   value={this.state.stateName}
                  />
             
-            {/* <label>Image</label>
+            <label>Image</label>
                 <input 
                   type="file"
                   onChange={e => this.setState({ photo: e.target.files[0] })}
-                  value={this.state.photo.originalname} 
-                 /> */}
+                  // value={this.state.photo} 
+                 />
     
               <input type="submit" value="Edit Post" />
     
