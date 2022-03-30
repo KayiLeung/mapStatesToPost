@@ -6,11 +6,12 @@ import './state_show.css';
 import '../posts/posts_index.css'
 import PostsIndexContainer from '../posts/posts_index_container';
 
+import data from '../../data/usa-map-dimensions'
+
 
 class StateShow extends React.Component{
   constructor(props){
     super(props); 
-
     this.handlePosts = this.handlePosts.bind(this);
 
   }
@@ -21,30 +22,56 @@ class StateShow extends React.Component{
     this.props.fetchUsers();
   }
   
-  handlePosts() {
-    const { posts } = this.props;
-    const nyPosts = posts.filter(post => post.stateName === 'New York')
-    return nyPosts;
+  handlePosts(res) {
+    const {  posts } = this.props;
+    const statePosts = posts.filter(post => post.stateName === res)
+    return statePosts
+
   }
+
+
   
   render() {
+    
+
+    const { USAStates, stateId } = this.props;
+    let res = ''
+    USAStates.forEach(USAState => {
+      if (USAState._id === stateId)
+        res = USAState.name
+    })
+
+    console.log(res)
+
+    let statesData = data();
+
     return (
       
       <div className="state-show-wrapper">
           <div className="state_container">
             <div className="state_info">
             <Link to={`/`}>Back to Map</Link>
-            <h1 className="state_header">New York</h1>
-            <h1 className="state_header">Description</h1>
-            <p className="state_body">New York is a state in the northeastern U.S., known for New York City and towering Niagara Falls. NYC’s island of Manhattan is home to the Empire State Building, Times Square and Central Park. The Brooklyn Bridge connects Manhattan with the borough of Brooklyn. The iconic Statue of Liberty stands in New York Harbor. To the east, Long Island has beaches, the Montauk Lighthouse, the ritzy Hamptons and Fire Island. </p>
-            <h1 className="state_header">Fun Facts</h1>
-            <p className="state_body">App Academy, a top coding bootcamp, have a campus in New York City.</p>
+            <h1>{statesData[res].name}</h1>
+
+              {statesData[res].description}
+           
+            <div>
+                <h2>Fun Facts of {statesData[res].name}</h2>
+                {statesData[res].funFacts}
+                <br />
+              <a href={statesData[res].funFactsUrl} target="_blank">more fun facts! </a>
+              <a href={statesData[res].travelUrl} target="_blank">Travel Info</a>
+              
+            </div>
+
             </div>
           </div>
           <div className='state_posts'>
-            <PostsIndexContainer posts={this.handlePosts()}/>
+          <PostsIndexContainer posts={this.handlePosts(res)}/>
           </div>
+          
       </div>
+      // <h1>This is a states show page</h1>
     )
   }
 }

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const StateSchema = new Schema({
+const USAStateSchema = new Schema({
   posts: {
     type: Array,
     required: false
@@ -17,4 +17,4 @@ const StateSchema = new Schema({
 
 });
 
-module.exports = State = mongoose.model('state', StateSchema);
+module.exports = USAState = mongoose.model('USAState', USAStateSchema);

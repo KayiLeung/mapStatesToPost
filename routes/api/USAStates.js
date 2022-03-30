@@ -2,22 +2,23 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
-const State = require("../../models/State");
+
+const USAState = require("../../models/USAState");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the states route" }));
 
 // retrieves all states
 router.get('/', (req, res) => {
-  State.find()
+  USAState.find()
       .sort({ date: -1 })
-      .then(states => res.json(states))
+      .then(USAStates => res.json(USAStates))
       .catch(err => res.status(404).json({ nostatesfound: 'No states found' }));
 });
 
 // retrieves individual state
 router.get('/:id', (req, res) => {
-    State.findById(req.params.id)
-        .then(state => res.json(state))
+  USAState.findById(req.params.id)
+      .then(USAState => res.json(USAState))
         .catch(err =>
             res.status(404).json({ nostatefound: 'No state found with that ID' })
         );
@@ -26,12 +27,12 @@ router.get('/:id', (req, res) => {
 // we create states on the backend, don't need to be logged in and no validation errors generated
 router.post('/', (req, res) => {
   
-  const newState = new State({
+  const newUSAState = new USAState({
     posts: req.body.posts,
     name: req.body.name,
   });
   
-  newState.save().then(state => res.json(state));
+  newUSAState.save().then(USAState => res.json(USAState));
 }
 );
 

@@ -8,33 +8,59 @@ import { Link } from 'react-router-dom';
 
 class HomePage extends Component {  
   mapHandler = (event) => {
-    // let stateName = event.target.dataset.name
-    // let stateString = JSON.stringify(stateName);
+    const stateName = event.target.dataset.name
+    const stateStyle = event.target.style
+    // console.log(stateName)
+    this.props.USAStates.forEach(USAState => {
 
-    this.props.history.push("/states/NY");
+      if (stateName === USAState.name) {
+        this.props.history.push(`/USAStates/${USAState._id}`);
+      }
+      // console.log(USAState._id)
+    })
     
+    // console.log(`this is USAStates: ${this.props.USAStates}`)
   };
 
   statesFilling = () => {
+    const { posts, currentUser} = this.props;
     
-    return {
-      "NJ": {
-        fill: "green",
-      },
-      "NY": {
-        fill: "green"
-      },
-      "CA": {
-        fill: "green"
-      },
-      "AK": {
-        fill: "green"
+    let states = [];
+    posts.map(post => {
+
+      if (post.user === currentUser.id) {
+      states.push(post.stateName)
       }
-    };
-  };
+    })
+
+    const res = states.reduce((acc, state) => {
+       acc[state] = {
+        fill: "#c8808c"
+      };
+      return acc;
+    }, {})
+    return res
+
+
+  }
+
+  componentDidMount() {
+    this.props.fetchStates()
+  }
+
 
   render() {
-    const { posts } = this.props;
+    const { posts, USAStates } = this.props;
+
+    if (!posts || !USAStates) {
+      return null;
+    }
+    // this.props.USAStates.forEach(USAState => {
+    //   console.log(USAState)
+      
+    //   console.log(USAState.name)
+    // })
+    // console.log(`this is USAStates: ${USAStates}`)
     return (
       <div className="home">
         <header className='navbar'>
@@ -55,9 +81,9 @@ class HomePage extends Component {
             </div>
         </main>
 
-        <div className="btn">
+        {/* <div className="btn">
           <Link to="/states/CA"><button>CA</button></Link>
-        </div>
+        </div> */}
 
         <footer className="footer">
             <div>
