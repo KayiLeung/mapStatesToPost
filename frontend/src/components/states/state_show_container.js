@@ -8,7 +8,7 @@ import { fetchState,fetchStates} from '../../actions/usaStates_actions'
 import StateShow from './state_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
   return ({
     users: Object.values(state.entities.users),
     comments: Object.values(state.entities.comments.all),
@@ -21,13 +21,12 @@ const mapStateToProps = (state, ownProps) => {
 
 
 const mapDispatchToProps = (dispatch) => {  
-  debugger
   return ({
     fetchPosts: () => dispatch(fetchPosts()),
     fetchComments: () => dispatch(fetchComments()),
     fetchUsers: () => dispatch(fetchUsers()),
     fetchStates: () => dispatch(fetchStates()),
-    fetchState: id => dispatch(fetchState(id))
+    // fetchState: id => dispatch(fetchState(id))
 
   })
 };

@@ -1,4 +1,4 @@
-function data() {
+export function data() {
   return {
     "AK": {
       "description": 'Alaska is a state located in the Western United States on the northwest extremity of North America. A semi-exclave of the U.S., it borders the Canadian province of British Columbia and the territory of ...',

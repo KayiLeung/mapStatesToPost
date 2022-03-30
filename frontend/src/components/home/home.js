@@ -10,13 +10,13 @@ class HomePage extends Component {
   mapHandler = (event) => {
     const stateName = event.target.dataset.name
     const stateStyle = event.target.style
-    console.log(stateName)
+    // console.log(stateName)
     this.props.USAStates.forEach(USAState => {
 
       if (stateName === USAState.name) {
         this.props.history.push(`/USAStates/${USAState._id}`);
       }
-      console.log(USAState._id)
+      // console.log(USAState._id)
     })
     
     // console.log(`this is USAStates: ${this.props.USAStates}`)

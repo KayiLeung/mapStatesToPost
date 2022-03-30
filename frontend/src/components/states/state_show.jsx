@@ -6,16 +6,12 @@ import './state_show.css';
 import '../posts/posts_index.css'
 import PostsIndexContainer from '../posts/posts_index_container';
 
-import '../../data/usa-map-dimensions'
+import data from '../../data/usa-map-dimensions'
 
 
 class StateShow extends React.Component{
   constructor(props){
     super(props); 
-    console.log(this.props)
-    debugger
-    // console.log(props.match.params.id)
-
     this.handlePosts = this.handlePosts.bind(this);
 
   }
@@ -24,34 +20,58 @@ class StateShow extends React.Component{
     this.props.fetchPosts();
     this.props.fetchComments();
     this.props.fetchUsers();
-    const localState = this.props.fetchState(this.props.stateId)
-    console.log(`this is localstate from componetDidMount ${localState}`)
   }
   
-  handlePosts() {
-    const { posts, localState } = this.props;
-    console.log(localState.name)
-    // const statePosts = posts.filter(post => post.stateName === localState.name)
-    // return statePosts;
+  handlePosts(res) {
+    const {  posts } = this.props;
+    const statePosts = posts.filter(post => post.stateName === res)
+    return statePosts
+
   }
+
+
   
   render() {
-    const { posts } = this.props;
+    
+
+    const { USAStates, stateId } = this.props;
+    let res = ''
+    USAStates.forEach(USAState => {
+      if (USAState._id === stateId)
+        res = USAState.name
+    })
+
+    console.log(res)
+
+    let statesData = data();
 
     return (
       
-      // <div className="state-show-wrapper">
-      //     <div className="state_container">
-      //       <div className="state_info">
-      //       <Link to={`/`}>Back to Map</Link>
+      <div className="state-show-wrapper">
+          <div className="state_container">
+            <div className="state_info">
+            <Link to={`/`}>Back to Map</Link>
+            <h1>{statesData[res].name}</h1>
+
+              {statesData[res].description}
            
-      //       </div>
-      //     </div>
-      //     <div className='state_posts'>
-      //       <PostsIndexContainer posts={this.handlePosts()}/>
-      //     </div>
-      // </div>
-      <h1>This is a states show page</h1>
+            <div>
+                <h2>Fun Facts of {statesData[res].name}</h2>
+                {statesData[res].funFacts}
+                <br />
+              <a href={statesData[res].funFactsUrl} target="_blank">more fun facts! </a>
+              <a href={statesData[res].travelUrl} target="_blank">Travel Info</a>
+              
+            </div>
+
+            </div>
+          </div>
+          <div className='state_posts'>
+          <PostsIndexContainer posts={this.handlePosts(res)}/>
+          </div>
+          
+      </div>
+      // <h1>This is a states show page</h1>
     )
   }
 }
