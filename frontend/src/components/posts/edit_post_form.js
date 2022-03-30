@@ -25,7 +25,6 @@ class EditCommentForm extends React.Component {
     // handleSubmit(e) {
     //   e.preventDefault();
     //   const formData = new FormData();
-    //   console.log(this.state)
 
     //   formData.append('caption', this.state.caption);
     //   formData.append('stateName', this.state.stateName);
@@ -35,7 +34,6 @@ class EditCommentForm extends React.Component {
     //     formData.append('photo', this.state.photo);
     //   }
       
-    //   console.log(formData)
     //   this.props.action(formData).then(this.props.closeModal());
     // }
 
@@ -72,7 +70,7 @@ class EditCommentForm extends React.Component {
                 <input 
                   type="file"
                   onChange={e => this.setState({ photo: e.target.files[0] })}
-                  value={this.state.photo} 
+                  value={this.state.photo.originalname} 
                  /> */}
     
               <input type="submit" value="Edit Post" />
