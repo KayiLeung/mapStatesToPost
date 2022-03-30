@@ -59,9 +59,6 @@ class PostCreateForm extends React.Component{
               type="text"
               onChange={this.update('stateName')}
               value={this.state.stateName}
-<<<<<<< HEAD
-             />
-=======
              /> */}
             <select
               value={this.state.stateName} 
@@ -126,7 +123,6 @@ class PostCreateForm extends React.Component{
              /> */}
           
 
->>>>>>> 0500a238a5d298c49b6fad123f07aabab1880283
         <label>Image</label>
             <input 
               type="file"
