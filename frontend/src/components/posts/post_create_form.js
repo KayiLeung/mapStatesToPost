@@ -45,11 +45,6 @@ class PostCreateForm extends React.Component{
     return(
       <div className="post-create-container">
         <form onSubmit={this.handleSubmit}>
-
-          <div className="back-btn">
-            <Link to={`/`}>Back to Map</Link>
-          </div>
-
           <h1>Create New Post</h1>
           <div>
             <label>Caption
@@ -75,7 +70,7 @@ class PostCreateForm extends React.Component{
 
           <input type="submit" value="Create Post" />
 
-          <Link className="cancel-btn" to={`/`}>Cancel</Link>
+          <button onClick={this.props.closeModal}>Cancel</button>
         </form>
 
       </div>
