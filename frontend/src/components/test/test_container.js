@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import Test from "./test"
-import { fetchPosts } from '../../actions/post_actions';
+import { closeModal, openModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
     posts: Object.values(state.entities.posts.all)
 })
 
 const mDTP = dispatch => ({
-    fetchPosts: () => dispatch(fetchPosts())
+    closeModal: () => dispatch(closeModal()),
+    openModal: form => dispatch(openModal(form))
 })
 
-export default connect(mSTP, null)(Test);
+export default connect(mSTP, mDTP)(Test);

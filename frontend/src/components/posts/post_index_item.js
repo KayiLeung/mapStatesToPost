@@ -6,8 +6,10 @@ import CreateCommentContainer from '../comments/create_comment_form_container';
 class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleDate = this.handleDate.bind(this)
-    this.handleUser = this.handleUser.bind(this)
+    this.handleDate = this.handleDate.bind(this);
+    this.handleUser = this.handleUser.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleDate() {
@@ -31,6 +33,20 @@ class PostIndexItem extends React.Component {
       }
     });
     return username;
+  }
+
+  handleDelete(){
+    if (this.props.userId === this.props.post.user) {
+      this.props.deletePost(this.props.post._id);
+    }
+  }
+
+  openModal(){
+    if (this.props.userId === this.props.post.user) {
+        this.props.givePostId(this.props.post._id);
+        this.props.openModal('editpost');
+        console.log('opened modal')
+    }
   }
 
   render() {
@@ -79,6 +95,15 @@ class PostIndexItem extends React.Component {
           <div className='comment-box'>
             <CommentIndexContainer postId={post._id} />
             <CreateCommentContainer postId={post._id} />
+          </div>
+
+          <div className='edit-delete-buttons'>
+            <button id='edit' onClick={this.openModal}>
+              Edit
+            </button>
+            <button id='delete' onClick={this.handleDelete}>
+              Delete
+            </button>
           </div>
 
         </div>

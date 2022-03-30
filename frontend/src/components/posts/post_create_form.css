@@ -9,7 +9,8 @@
 form {
       padding: 20px;
       flex-direction: column; 
-      justify-self: center;
+      justify-content: center;
+      background-color: white;
       min-width: 350px;
       max-width: 700px;
 }

@@ -1,4 +1,4 @@
-import { RECEIVE_POSTS, RECEIVE_USER_POSTS, RECEIVE_POST, REMOVE_POST } from '../actions/post_actions';
+import { RECEIVE_POSTS, RECEIVE_USER_POSTS, RECEIVE_POST, REMOVE_POST, UPDATE_POST, RECEIVE_NEW_POST } from '../actions/post_actions';
   
   const PostsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
@@ -11,8 +11,14 @@ import { RECEIVE_POSTS, RECEIVE_USER_POSTS, RECEIVE_POST, REMOVE_POST } from '..
         newState.user = action.posts.data;
         return newState;
       case RECEIVE_POST:
-        newState.new = action.post.data
+        newState.new = action.post.data;
+        return newState
+      case RECEIVE_NEW_POST:
+        newState.new = action.post.data //updated post is in next state...
         newState.all.push(newState.new);
+        return newState;
+      case UPDATE_POST:
+        newState.new = action.post.data
         return newState;
       case REMOVE_POST:
         newState.all = newState.all.filter(post => post._id !== action.postId);

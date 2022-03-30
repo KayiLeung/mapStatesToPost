@@ -4,10 +4,6 @@ import './post_create_form.css';
 
 
 class PostCreateForm extends React.Component{
-  componentDidMount(){
-    this.props.fetchPosts();
-  }
-  
   constructor(props) {
     super(props)
 
@@ -34,10 +30,7 @@ class PostCreateForm extends React.Component{
       formData.append('photo', this.state.photo);
     }
 
-    this.props.createPost(formData)
-
-    this.props.history.push(`/`)
-    
+    this.props.createPost(formData).then(this.props.closeModal());
   }
 
   update(field) {
@@ -49,8 +42,6 @@ class PostCreateForm extends React.Component{
   }
 
   render() {
-
-
     return(
       <div className="post-create-container">
         <form onSubmit={this.handleSubmit}>
@@ -75,15 +66,6 @@ class PostCreateForm extends React.Component{
               onChange={this.update('stateName')}
               value={this.state.stateName}
              />
-          <label>Date</label>
-            <input 
-              type="date"
-              onChange={this.update('date')}
-              value={this.state.date}
-              
-             />
-          
-
         <label>Image</label>
             <input 
               type="file"
