@@ -69,13 +69,15 @@ class PostCreateForm extends React.Component{
               cols="50" />
           </label>
           </div>
-          {/* <label>State</label>
-            <input 
+        <label>State
+            {/* <input 
               type="text"
               onChange={this.update('stateName')}
               value={this.state.stateName}
              /> */}
-          <select>
+            <select
+              value={this.state.stateName} 
+              onChange={this.update('stateName')}>
             <option value="AK">Alaska</option>
             <option value="HI">Hawaii</option>
             <option value="AL">Alabama</option>
@@ -126,13 +128,14 @@ class PostCreateForm extends React.Component{
             <option value="WV">West Virginia</option>
             <option value="WY">Wyoming</option>
           </select>
-          <label>Date</label>
+        </label>
+          {/* <label>Date</label>
             <input 
               type="date"
               onChange={this.update('date')}
               value={this.state.date}
               
-             />
+             /> */}
           
 
         <label>Image</label>
