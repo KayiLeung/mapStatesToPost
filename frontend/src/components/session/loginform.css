@@ -61,7 +61,7 @@ font-family: 'Roboto', sans-serif;  error message*/
 }
 
 
-.login-formbox .login-form .loginbutton {
+.login-formbox .login-form .loginbutton, .demouser {
     border-radius: 15px;
     background:rgb(57, 163, 57);
     text-align: center;
@@ -74,7 +74,7 @@ font-family: 'Roboto', sans-serif;  error message*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-formbox .login-form .loginbutton:hover{
+.login-formbox .login-form .loginbutton:hover, .demouser:hover{
     background-color: rgb(127, 207, 127);
 }
 

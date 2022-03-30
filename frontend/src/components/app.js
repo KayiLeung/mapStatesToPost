@@ -20,7 +20,7 @@ const App = () => (
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
         <ProtectedRoute exact path="/test" component={TestContainer} />
         <ProtectedRoute exact path="/users/:userId" component={UserShowContainer}/>
-        <ProtectedRoute exact path="/states/:stateName" component={StateShowContainer} /> 
+        <ProtectedRoute exact path="/USAStates/:id" component={StateShowContainer} />
 
     </Switch>
   </div>
