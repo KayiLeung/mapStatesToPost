@@ -13,7 +13,7 @@ const StatesReducer = ( state = {all:[]}, action) => {
             return nextState;
         case RECEIVE_STATE:
             debugger
-            let result =[]
+            let result =[] 
             for (let i = 0; i < nextState.all.length; i++) {
                 if (nextState.all[i]._id === action.USAState.data._id) {
                     debugger

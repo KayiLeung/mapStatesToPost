@@ -56,14 +56,15 @@ class PostIndexItem extends React.Component {
 
   render() {
     let statesData = data();
-    // console.log(statesData['AK'].name)
     const { post } = this.props;
+    console.log(post.stateName)
+    const abberviation = post.stateName
 
     return (
       <div className="post-items">
         <div className="post-box">
           <div className="state-name">
-            <h3>{post.stateName} </h3>
+            <h3>{statesData[abberviation].name}</h3>
             <div className="date">
               {this.handleDate()}
             </div>

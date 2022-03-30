@@ -23,7 +23,7 @@ const mDTP = dispatch => {
     fetchUsers: () => dispatch(fetchUsers()),
     logout: () => dispatch(logout()),
     fetchStates: () => dispatch(fetchStates()),
-    // fetchState: stateId => dispatch(fetchState(stateId))
+    fetchState: stateId => dispatch(fetchState(stateId))
     }
 };
 
