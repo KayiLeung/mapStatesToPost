@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
-// import usa-map-dimension.js from ''
+
+import data from '../../data/usa-map-dimensions'
 
 
 class PostIndexItem extends React.Component {
@@ -38,13 +39,15 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
+    let statesData = data();
+    // console.log(statesData['AK'].name)
     const { post } = this.props;
 
     return (
       <div className="post-items">
         <div className="post-box">
           <div className="state-name">
-            <h3>{post.stateName}</h3>
+            <h3>{post.stateName} </h3>
             <div className="date">
               {this.handleDate()}
             </div>
