@@ -54,8 +54,6 @@ router.get('/:id', (req, res) => {
         photo: req.file,
         stateName: req.body.stateName
 
-        // photo: req.body.photo
-
       }); 
       if (!req.file) {
         return res.status(401).json({ errors: [{ photo: "Please upload a file" }] })
@@ -68,24 +66,23 @@ router.get('/:id', (req, res) => {
   );
 
     // user can edit their existing post
-    // not working yet
-    // router.patch("/update/:id", async (req, res) => {
-    //   const post = await Post.findById(req.params.id)
-    //   if (!post) return res.status(404).json({ nopostfound: 'No post found' })
+    router.patch("/update/:id", upload.single('photo'), async (req, res) => {
+      const post = await Post.findById(req.params.id)
+      if (!post) return res.status(404).json({ nopostfound: 'No post found' })
   
-    //   try {
-    //   const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
-    //     caption: req.body.caption,
-    //     stateName: req.body.stateName,
-    //     photo: req.file
-    //   })
+      try {
+      const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
+        caption: req.body.caption,
+        stateName: req.body.stateName,
+        photo: req.file
+      })
   
-    //   res.send(updatedPost)
-    // } catch (error) {
-    //   res.status(422).json({ unprocessable: "Unable to update"})
-    // } 
+      res.send(updatedPost)
+    } catch (error) {
+      res.status(422).json({ unprocessable: "Unable to update"})
+    } 
       
-    // })
+    })
   
    // user deletes post
   router.delete('/:id', (req, res) => {
@@ -97,5 +94,4 @@ router.get('/:id', (req, res) => {
         );
   });
   
-
 module.exports = router;
