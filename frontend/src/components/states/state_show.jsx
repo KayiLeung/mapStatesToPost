@@ -20,6 +20,7 @@ class StateShow extends React.Component{
     this.props.fetchPosts();
     this.props.fetchComments();
     this.props.fetchUsers();
+    // this.props.fetchState(this.props.stateId)
   }
   
   handlePosts(res) {
@@ -35,7 +36,13 @@ class StateShow extends React.Component{
     
 
     const { USAStates, stateId } = this.props;
-    let res = ''
+    // console.log(`this is show page: ${USAState}`)
+
+    // if (!USAState) {
+    //   return null
+    // }
+    let res = ""
+
     USAStates.forEach(USAState => {
       if (USAState._id === stateId)
         res = USAState.name
@@ -44,7 +51,7 @@ class StateShow extends React.Component{
     console.log(res)
 
     let statesData = data();
-
+    debugger
     return (
       
       <div className="state-show-wrapper">
@@ -71,7 +78,6 @@ class StateShow extends React.Component{
           </div>
           
       </div>
-      // <h1>This is a states show page</h1>
     )
   }
 }
