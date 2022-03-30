@@ -10,7 +10,7 @@ class Test extends React.Component {
 
     handlePosts(){
         const { posts } = this.props;
-        const newPosts = posts.filter(post => post.stateName === 'New York')
+        const newPosts = posts.filter(post => post.stateName === 'NY')
         return newPosts
     }
 

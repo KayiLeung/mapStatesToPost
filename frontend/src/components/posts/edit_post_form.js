@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class EditCommentForm extends React.Component {
     constructor(props) {
@@ -22,7 +21,25 @@ class EditCommentForm extends React.Component {
         e.preventDefault();
         this.props.action(this.state).then(this.props.closeModal());
     }
-    
+
+    // handleSubmit(e) {
+    //   e.preventDefault();
+    //   const formData = new FormData();
+    //   console.log(this.state)
+
+    //   formData.append('caption', this.state.caption);
+    //   formData.append('stateName', this.state.stateName);
+  
+  
+    //   if (this.state.photo){
+    //     formData.append('photo', this.state.photo);
+    //   }
+      
+    //   console.log(formData)
+    //   this.props.action(formData).then(this.props.closeModal());
+    // }
+
+
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
@@ -32,10 +49,6 @@ class EditCommentForm extends React.Component {
         return(
           <div className="post-create-container">
             <form onSubmit={this.handleSubmit}>
-    
-              <div className="back-btn">
-                <Link to={`/`}>Back to Map</Link>
-              </div>
     
               <h1>Edit Post</h1>
               <div>
@@ -64,7 +77,7 @@ class EditCommentForm extends React.Component {
     
               <input type="submit" value="Edit Post" />
     
-              <Link className="cancel-btn" to={`/`}>Cancel</Link>
+              <button onClick={this.props.closeModal}>Cancel</button>
             </form>
     
           </div>
