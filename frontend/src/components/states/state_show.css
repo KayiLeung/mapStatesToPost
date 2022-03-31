@@ -13,23 +13,22 @@ font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Shadows Into Light', cursive; */
 
-.state-show-wrapper{
-    padding-left: 100px;
+
+
+.scrolling-wrapper {
+  position: inherit;
+    height: 850px;
+    overflow-y: auto;
+
+
 }
 
-/* .state_container{
-    display: flex;
-    padding-top: 150px;
-    padding-bottom: 100px;
-    width: 90%;
-    height: 1000px;
-    padding-left: 48px;
-    padding-right: 48px;
-    border: 2px solid black;
-
-} */
+.scrolling-wrapper div {
+    scroll-snap-align: start;
+}
 
 .state_container {
+    position: relative;
     display: flex;
     padding-top: 150px;
     padding-bottom: 100px;
@@ -37,11 +36,10 @@ font-family: 'Shadows Into Light', cursive; */
     height: 1000px;
     padding-left: 48px;
     padding-right: 48px;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    align-content: center;
     flex-direction: row;
+    justify-content: center;
 }
+
 
 
 
@@ -52,9 +50,10 @@ font-family: 'Shadows Into Light', cursive; */
   display: flex;
   flex-direction: column;
   background-color: #6287a2;
+  height: 800px;
   /* background-color: #efd199; */
 
-  padding: 10px;
+  padding: 25px;
   border: 2px aliceblue solid;
 
 }
