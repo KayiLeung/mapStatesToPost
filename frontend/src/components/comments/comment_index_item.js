@@ -59,9 +59,9 @@ class CommentIndexItem extends React.Component {
                     </div>
 
                 </div>
-                <div className="dropdown">
-                    <div className="delete-button" onClick={this.handleDeleteComment}><TiDelete /></div>
-                    <button className="edit-button" onClick={this.openModal}><TiEdit/></button>
+                <div className="comment-button">
+                    <div className="comment-delete" onClick={this.handleDeleteComment}><TiDelete /></div>
+                    <div className="comment-edit" onClick={this.openModal}><TiEdit /></div>
                 </div>
             </div>
         )
