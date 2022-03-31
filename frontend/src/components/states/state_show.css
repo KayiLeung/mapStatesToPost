@@ -17,7 +17,7 @@ font-family: 'Shadows Into Light', cursive; */
 
 .scrolling-wrapper {
   position: inherit;
-    height: 850px;
+    height: 100%;
     overflow-y: auto;
 
 
@@ -32,8 +32,7 @@ font-family: 'Shadows Into Light', cursive; */
     display: flex;
     padding-top: 150px;
     padding-bottom: 100px;
-    width: 90%;
-    height: 1000px;
+    width: 100%;
     padding-left: 48px;
     padding-right: 48px;
     flex-direction: row;
@@ -50,9 +49,7 @@ font-family: 'Shadows Into Light', cursive; */
   display: flex;
   flex-direction: column;
   background-color: #6287a2;
-  height: 800px;
-  /* background-color: #efd199; */
-
+  height: 100%;
   padding: 25px;
   border: 2px aliceblue solid;
 
@@ -90,7 +87,7 @@ font-family: 'Shadows Into Light', cursive; */
 
 .scrolling-wrapper {
 
-        overflow: auto;
+        overflow-y: auto;
         white-space: nowrap;
 
 }

@@ -162,6 +162,7 @@ font-family: 'Roboto', sans-serif;  error message*/
 
 .create_post{
   font-family: 'Leckerli One', cursive;
+  cursor: pointer;
 }
 
 
@@ -175,7 +176,7 @@ font-family: 'Roboto', sans-serif;  error message*/
 }
 
 .create_post:hover{
-  color: aliceblue;
+  color: pink;
 }
 
 .user_msg > p {

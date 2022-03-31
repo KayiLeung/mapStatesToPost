@@ -97,4 +97,5 @@ ul.post-container {
   border: none;
   background: none;
   padding: 10px;
+  cursor: pointer;
 }

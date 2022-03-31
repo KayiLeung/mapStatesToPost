@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
-import { MdEdit, MdDelete, MdOutlineModeEditOutline } from 'react-icons/md'
+import { MdEdit, MdDelete } from 'react-icons/md'
 
 import data from '../../data/usa-map-dimensions'
 
