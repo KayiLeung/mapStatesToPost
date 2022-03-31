@@ -1,5 +1,5 @@
 import React from 'react';
-import { TiDelete } from 'react-icons/ti';
+import { TiDelete, TiEdit } from 'react-icons/ti';
 import { Link } from 'react-router-dom'; 
 
 
@@ -61,7 +61,7 @@ class CommentIndexItem extends React.Component {
                 </div>
                 <div className="dropdown">
                     <div className="delete-button" onClick={this.handleDeleteComment}><TiDelete /></div>
-                    <button className="edit-button" onClick={this.openModal}>Edit</button>
+                    <button className="edit-button" onClick={this.openModal}><TiEdit/></button>
                 </div>
             </div>
         )

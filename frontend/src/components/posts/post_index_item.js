@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentContainer from '../comments/create_comment_form_container';
+import { MdEdit, MdDelete, MdOutlineModeEditOutline } from 'react-icons/md'
 
 import data from '../../data/usa-map-dimensions'
 
@@ -92,11 +93,6 @@ class PostIndexItem extends React.Component {
 
             </div>
 
-            <div className="body-bot">
-
-
-            </div>
-
           </div>
           <br />
 
@@ -106,11 +102,11 @@ class PostIndexItem extends React.Component {
           </div>
 
           <div className='edit-delete-buttons'>
-            <button id='edit' onClick={this.openModal}>
-              Edit
+            <button id='post-edit' onClick={this.openModal}>
+              <MdEdit/>
             </button>
-            <button id='delete' onClick={this.handleDelete}>
-              Delete
+            <button id='post-delete' onClick={this.handleDelete}>
+              <MdDelete/>
             </button>
           </div>
 
