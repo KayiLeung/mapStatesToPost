@@ -15,7 +15,7 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.handleModal = this.handleModal.bind(this);
-    this.renderSignup = this.renderSignup.bind(this);
+    // this.renderSignup = this.renderSignup.bind(this);
     this.demoUser = this.demoUser.bind(this);
   }
 
@@ -66,20 +66,20 @@ class LoginForm extends React.Component {
     this.props.openModal('signup')
   }
 
-  renderSignup(){
-    if (this.props.signedIn) {
-      return(
-        <div className='success'>
-          <p>You're registered now!</p>
-          <p>Please log in!</p>
-        </div>
-      )
-    } else {
-      return(
-        <div className='register' onClick={this.handleModal}>or click here to register!</div>
-      )
-    }
-  }
+  // renderSignup(){
+  //   if (this.props.signedIn) {
+  //     return(
+  //       <div className='success'>
+  //         <p>You're registered now!</p>
+  //         <p>Please log in!</p>
+  //       </div>
+  //     )
+  //   } else {
+  //     return(
+  //       <div className='register' onClick={this.handleModal}>or click here to register!</div>
+  //     )
+  //   }
+  // }
 
   demoUser(e){
     e.preventDefault();
@@ -97,7 +97,7 @@ class LoginForm extends React.Component {
       <div className="login-formbox">
         <div className="login-header">
           <h2>Log In</h2>
-          {this.renderSignup()}
+          <div className='register' onClick={this.handleModal}>or click here to register!</div>
           <hr className="hr-top" />
         </div>
         

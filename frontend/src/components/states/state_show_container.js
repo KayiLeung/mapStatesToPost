@@ -14,8 +14,9 @@ const mapStateToProps = (state, ownProps) => {
     comments: Object.values(state.entities.comments.all),
     posts: Object.values(state.entities.posts.all),
     stateId: ownProps.match.params.id,
-    USAStates: state.entities.USAStates.all
+    USAStates: state.entities.USAStates.all,
     // localState: state.entities.USAStates.all.filter
+    // USAState: state.entities.USAStates
   })
 }
 

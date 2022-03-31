@@ -5,30 +5,30 @@ const StatesReducer = ( state = {all:[]}, action) => {
     Object.freeze(state);
     // const nextState = Object.assign({}, state)
     const nextState = merge({}, state)
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_STATES:
             nextState.all = action.USAStates.data;
-            debugger
+            // debugger
             return nextState;
         case RECEIVE_STATE:
-            debugger
-            let result =[]
+            // debugger
+            let result =[] 
             for (let i = 0; i < nextState.all.length; i++) {
                 if (nextState.all[i]._id === action.USAState.data._id) {
-                    debugger
+                    // debugger
                     // return nextState.all.splice(i, 1)
                     // result = nextState.all.splice(i, 1);
                     result.push(nextState.all[i])
                 }
                 // return nextState.all
             }
-            debugger
+            // debugger
             return result;
             
             // nextState[action.USAState.id] = action.USAState.data
             // nextState.all[action.USAState.data._id] = action.USAState.data
-            debugger
+            // debugger
         default: 
             return state;
     }

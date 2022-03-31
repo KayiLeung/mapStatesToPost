@@ -70,18 +70,22 @@ router.get('/:id', (req, res) => {
       const post = await Post.findById(req.params.id)
       if (!post) return res.status(404).json({ nopostfound: 'No post found' })
   
-      try {
-      const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
-        caption: req.body.caption,
-        stateName: req.body.stateName,
-        photo: req.file
-      })
+    //   try {
+    //   const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
+    //     caption: req.body.caption,
+    //     stateName: req.body.stateName,
+    //     photo: req.file
+    //   })
   
-      res.send(updatedPost)
-    } catch (error) {
-      res.status(422).json({ unprocessable: "Unable to update"})
-    } 
-      
+    //   res.send(updatedPost)
+    // } catch (error) {
+    //   res.status(422).json({ unprocessable: "Unable to update"})
+    // } 
+      post.caption = req.body.caption;
+      post.stateName = req.body.stateName;
+      post.save()
+        .then(post => res.json(post))
+        .catch(err => res.status(422).json(err))
     })
   
    // user deletes post
