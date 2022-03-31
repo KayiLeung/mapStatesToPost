@@ -5,13 +5,8 @@ import { Switch } from 'react-router-dom';
 import MainPageContainer from './main/main_container';
 import HomePageContainer from './home/home_container';
 import ModalContainer from './modal/modal_container';
-import PostCreateContainer from './posts/post_create_container';
 import UserShowContainer from './users/user_show_container'; 
 import StateShowContainer from './states/state_show_container';
-
-import TestContainer from './test/test_container';
-
-
 
 const App = () => (
   <div>
@@ -19,11 +14,8 @@ const App = () => (
     <Switch>
         <AuthRoute exact path="/" component={MainPageContainer} />
         <ProtectedRoute exact path="/home" component={HomePageContainer} />
-        <ProtectedRoute exact path="/posts/new" component={PostCreateContainer} />
-        <ProtectedRoute exact path="/test" component={TestContainer} />
         <ProtectedRoute exact path="/users/:userId" component={UserShowContainer}/>
         <ProtectedRoute exact path="/USAStates/:id" component={StateShowContainer} />
-
     </Switch>
   </div>
 );

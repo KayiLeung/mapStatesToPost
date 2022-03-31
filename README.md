@@ -4,7 +4,7 @@ mapStatesToPost is an original web app where users can upload a photo and captio
 
 Inspired by the fact that people like to share about all the countries they have visited, we wondered how many U.S. states people have visited.  mapStatesToPost gives users the opportunity to share a visual scrapbook of all of those destinations. 
 
-Try it live [here!](https://shielded-brook-28362.herokuapp.com/#/)  
+Try it live [here!](https://mapstatestopost.herokuapp.com/#/)  
 (click `Demo User` for quick access)
 
 ![splash](./frontend/public/mstpthumb.png)
@@ -28,8 +28,9 @@ Try it live [here!](https://shielded-brook-28362.herokuapp.com/#/)
 With mapStatesToPost users can:
 
 - Signup / Signin to an account
-- View a personalized map where each state they have visited is highlighted
-- Click on any state to: mark that they have been there, create a post, and see all other user's photos associated with that state
+- View a personalized map where each state they have visited and uploaded a post/photo for is highlighted
+- Click on any state to: view fun facts about that state, create a post, and see all other user's posts associated with that state
+- View a personalized user's page with all of their posts for all states they have visited
 - Create, read, edit, and delete a post with photo upload for a state they have visited (CRUD)
 - Create, read, edit, and delete comments on other user's posts (CRUD)
 

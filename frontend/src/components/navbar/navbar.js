@@ -9,7 +9,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
+    this.openModal = this.openModal.bind(this);
     this.handleUser = this.handleUser.bind(this);
   }
 
@@ -19,18 +19,8 @@ class NavBar extends React.Component {
   }
 
   // Selectively render links dependent on whether the user is logged in
-  getLinks() {
-      if (this.props.loggedIn) {
-        return (
-                <Link to={'/posts/new'}>Create Post</Link>
-        );
-      } else {
-        return (
-            <div>
-                
-            </div>
-        );
-      }
+  openModal(){
+    this.props.openModal('createpost');
   }
 
   handleUser() {
@@ -68,8 +58,8 @@ class NavBar extends React.Component {
                 Welcome back, {this.handleUser()}!
               </div>
 
-              <div className='create_post'>
-                {this.getLinks()}
+              <div className='create_post' onClick={this.openModal}>
+                Create Post
               </div>
                 {/* <div className="drop-down-menu-1">
                   <button className='drop-down-menu-bt'>
