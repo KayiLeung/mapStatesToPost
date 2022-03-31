@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import './navbar.css'
+
 import './navbar2.css'
 import { FaGithub, FaRegUserCircle, FaLinkedin } from 'react-icons/fa'
 
@@ -55,29 +55,14 @@ class NavBar extends React.Component {
 
             <div className={`nav_btn`}>
               <div className="user_msg">
-                Welcome back, {this.handleUser()}!
+                <p>Welcome back, {this.handleUser()}! </p>
+              <div className='create_post' onClick={this.openModal}>Create Post</div>
               </div>
-
-              <div className='create_post' onClick={this.openModal}>
-                Create Post
-              </div>
-                {/* <div className="drop-down-menu-1">
-                  <button className='drop-down-menu-bt'>
-                    Github
-                    <a href="https://github.com/KayiLeung/mapStatesToPost">Github</a>
-                  </button>
-                    <div className='dropdown-content'>
-                      <button className='db-item2'>Kayi Leung</button>
-                      <button className='db-item2'>Sean Mackey</button>
-                      <button className='db-item2'>Yao Xu</button>
-                      <button className='db-item2'>Dean Ding</button>
-                    </div>
-                </div> */}
                 <ul>
-                <li class="drop-down-menu-2">
+                <li class="drop-down-menu-1">
                   <a href="#" class="icon-home"><FaRegUserCircle /></a>
-                  <ul className='dropdown-content'>
-                  <Link to={`/users/${this.props.userId}`}><button>Profile</button></Link>
+                  <ul className='user-dropdown'>
+                  <Link to={`/users/${this.props.userId}`}>Profile</Link>
                     <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
                   </ul>
                 </li>
@@ -107,22 +92,6 @@ class NavBar extends React.Component {
                   </ul>
                 </li>
               </ul>
-                {/* <div className="drop-down-menu-2">
-                  <button className='drop-down-menu-bt'>Dropdown</button>
-                    <div className='dropdown-content'>
-                      <button>Profile</button>
-                      <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
-                    </div>
-                </div> */}
-              {/* <ul>
-                <li class="drop-down-menu-2">
-                  <a href="#" class="icon-home"><FaRegUserCircle /></a>
-                  <ul className='dropdown-content'>
-                  <Link to={`/users/${this.props.userId}`}><button>Profile</button></Link>
-                    <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
-                  </ul>
-                </li>
-              </ul> */}
 
             </div>
           </section>

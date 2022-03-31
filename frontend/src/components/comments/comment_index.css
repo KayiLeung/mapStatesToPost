@@ -50,14 +50,8 @@ ul.comment-container {
     flex-direction: row-reverse;
 }
 
-.delete-button{
-    color: rgb(230, 222, 222);
-    padding-left: 5px;
-}
 
-.delete-button:hover{
-    color: red;
-}
+
 
 .author {
     padding-left: 15px;
@@ -70,6 +64,28 @@ ul.comment-container {
     border-radius: 15px;
     padding: 10px;
     box-shadow: 5px 5px 10px 0px rgba(2, 24, 34, 0.2);
-    /* color: rgb(73, 63, 63); */
 
+}
+
+.comment-button{
+    display: flex;
+    margin-right: 5px;
+}
+
+.comment-delete{
+    color: rgb(230, 222, 222);
+    padding-left: 5px;
+}
+
+.comment-delete:hover{
+    color: red;
+}
+
+.comment-edit{
+    color: rgb(230, 222, 222);
+    padding-left: 5px;
+}
+
+.comment-edit:hover{
+    color: rgb(117, 62, 62);
 }
