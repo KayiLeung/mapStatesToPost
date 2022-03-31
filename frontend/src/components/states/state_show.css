@@ -15,17 +15,6 @@ font-family: 'Shadows Into Light', cursive; */
 
 
 
-.scrolling-wrapper {
-  position: inherit;
-    height: 100%;
-    overflow-y: auto;
-
-
-}
-
-.scrolling-wrapper div {
-    scroll-snap-align: start;
-}
 
 .state_container {
     position: relative;
@@ -73,23 +62,16 @@ font-family: 'Shadows Into Light', cursive; */
 }
 
 
-.state_posts {
-  flex: 0.6;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 30px 30px 30px;
-  font-family: avenir;
-  border: 1px solid blue;
-}
-
-
-
 
 .scrolling-wrapper {
+  position: relative;
+  height: 800px;
+  overflow-y: auto;
 
-        overflow-y: auto;
-        white-space: nowrap;
 
 }
 
+.scrolling-wrapper div {
+    scroll-snap-align: start;
+}
 

@@ -77,9 +77,9 @@ class StateShow extends React.Component{
 
               </div>
               <div className='scrolling-wrapper'>
-                <div className='local_states_posts'>
+                {/* <div className='local_states_posts'> */}
                   <PostsIndexContainer posts={this.handlePosts(res)}/>
-                </div>
+                {/* </div> */}
               </div>  
           
           </div>
