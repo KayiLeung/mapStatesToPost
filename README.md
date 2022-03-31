@@ -36,14 +36,33 @@ With mapStatesToPost users can:
 
 ## Coding Challenges
 
-- PROBLEM: The MAP!  
+- PROBLEM: The MAP!
 
 ![splash](./frontend/public/mstpgif.gif)
 
 SOLUTION:  SOLUTION HERE
 
 ```javascript
-        Code snippet having to do with the map?
+        
+statesFilling = () => {
+    const { posts, currentUser} = this.props;
+    
+    let states = [];
+    posts.map(post => {
+
+      if (post.user === currentUser.id) {
+      states.push(post.stateName)
+      }
+    })
+
+    const res = states.reduce((acc, state) => {
+       acc[state] = {
+        fill: "#c8808c"
+      };
+      return acc;
+    }, {})
+    return res
+  }
 ```
 
 - PROBLEM: Using AWS and the MongoDB server to upload photos

@@ -37,8 +37,6 @@ class HomePage extends Component {
       return acc;
     }, {})
     return res
-
-
   }
 
   componentDidMount() {
