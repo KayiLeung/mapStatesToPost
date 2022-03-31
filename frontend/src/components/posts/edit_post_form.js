@@ -1,4 +1,5 @@
 import React from 'react';
+import './post_create_form.css';
 
 class EditCommentForm extends React.Component {
     constructor(props) {
@@ -49,18 +50,18 @@ class EditCommentForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
     
               <h1>Edit Post</h1>
-              <div>
-                <label>Caption
+                <label>Caption</label>
                 <textarea 
+                className="captionbody"
                   onChange={this.update('caption')}
                   value={this.state.caption}
                   rows="6"
                   cols="50" />
-              </label>
-              </div>
               
+              <br />
               <label>State</label>
               <select
+              className="state"
                 value={this.state.stateName || ''}
                 onChange={this.update('stateName')}>
                 <option value=" ">Select a State</option>
@@ -121,10 +122,10 @@ class EditCommentForm extends React.Component {
                   onChange={e => this.setState({ photo: e.target.files[0] })}
                   // value={this.state.photo} 
                  /> */}
-    
-              <input type="submit" value="Edit Post" />
-    
-              <button onClick={this.props.closeModal}>Cancel</button>
+              <br />
+              <input className="createpostbtn" type="submit" value="Edit Post" />
+              <br />
+              <button className="cancelbtn" onClick={this.props.closeModal}>Cancel</button>
             </form>
     
           </div>

@@ -24,3 +24,21 @@ font-family: 'Shadows Into Light', cursive; */
 .create-comment{
     font-family: 'Noto Sans', sans-serif;
 }
+
+.edit-comment-form {
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.edit-comment-form .form-header {
+    font-family: 'Leckerli One', cursive;
+    font-size: 20px;
+}
+
+.edit-comment-form input {
+    border: none;
+    background: rgb(207, 207, 207);
+    border-radius: 15px;
+    padding: 10px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './comment_form.css';
 
 class EditCommentForm extends React.Component {
     constructor(props) {
@@ -32,7 +33,7 @@ class EditCommentForm extends React.Component {
         if (!this.state) return null;
         // this.state = comment
         return (
-            <div>
+            <div className="edit-comment-form">
                 <div className='form-header'>
                     <h3>Edit Comment</h3>
                 </div>
