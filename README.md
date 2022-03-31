@@ -70,7 +70,7 @@ statesFilling = () => {
 - PROBLEM: When using AWS and the MongoDB server to upload photos, we were able to successfully set up the AWS S3 hosting, but there was issues with our backend database not recognizing the photo object that we are trying to create.
 
 
-SOLUTION: We learned that in order to sent the file to the server to be saved, we had to instantiate a new `FormData` object. We then use the `append` method to add key/values to send to the server. One of the key/value pairs will be the binary file we grab from `this.state.file`, and the uploaded photo exist at the `files[0]` of the `<input>`tag. We also had to be mindful to have your keys match whatever your our backend controller is expecting in the params. In our case this is post['photo'].
+SOLUTION: We learned that in order to sent the file to the server to be saved, we had to instantiate a new `FormData` object. We then use the `append` method to add key/values to send to the server. One of the key/value pairs will be the binary file we grab from `this.state.file`, and the uploaded photo exist at the `files[0]` of the `<input>`tag. We also had to be mindful to have your keys match whatever your our backend controller is expecting in the params. In our case this is `post['photo']`.
 
 ```javascript
 handleSubmit(e) {
