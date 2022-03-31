@@ -9,6 +9,7 @@ font-family: 'Roboto', sans-serif;  error message*/
     display: flex;
     justify-content: space-between;
     background-color:#6287a2;
+     width: 100%;
 
 }
 
@@ -17,9 +18,9 @@ font-family: 'Roboto', sans-serif;  error message*/
     font-size: 50px;
     text-decoration: none;
     width: 50%;
-     text-decoration: none;
+    text-decoration: none;
     color: white;
-        margin-left: 200px;
+    margin-left: 200px;
 }
 
 .nav_logo a{
@@ -27,12 +28,17 @@ font-family: 'Roboto', sans-serif;  error message*/
     color: white;
 }
 
+.nav_btn {
+  display: flex;
+}
+
 
 .nav_btn{
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: baseline;
+    width: 50%;
     
 }
 
@@ -84,10 +90,10 @@ font-family: 'Roboto', sans-serif;  error message*/
 
   
 
-  .nav_btn > ul{
+  /* .nav_btn > ul{
     width: 40px;
     margin:0 auto;
-  }
+  } */
 
   .nav_btn > ul > li{ 
     list-style: none;
@@ -166,6 +172,10 @@ font-family: 'Roboto', sans-serif;  error message*/
   font-family: 'Leckerli One', cursive;
   font-size: 20px;
 
+}
+
+.create_post:hover{
+  color: aliceblue;
 }
 
 .user_msg > p {

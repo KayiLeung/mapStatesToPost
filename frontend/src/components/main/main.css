@@ -2,11 +2,12 @@
 /* font-family: 'Exo 2', sans-serif;
 font-family: 'Flamenco', cursive; */
 
-body, html {
-    margin: 0;
+html, body {
+    height: 100%;
+    width: 100%;
     padding: 0;
+    margin: 0;
 }
-
 .mainpage {
     height: 100%;
     max-width: 100%;
@@ -14,6 +15,7 @@ body, html {
     position: absolute;
     background-image: url('https://mstp-dev.s3.us-west-2.amazonaws.com/utah-gd36c204b3_1920.jpg');
     background-repeat:round;
+    background-size: cover;
 }
 
 .mainpagecontent {
