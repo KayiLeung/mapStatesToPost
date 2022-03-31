@@ -38,7 +38,7 @@ With mapStatesToPost users can:
 
 - PROBLEM: The MAP!  
 
-### HAVE A PHOTO OF THE MAP HERE
+![splash](./frontend/public/mstpgif.gif)
 
 SOLUTION:  SOLUTION HERE
 
