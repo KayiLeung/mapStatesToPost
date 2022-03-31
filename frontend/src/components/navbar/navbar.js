@@ -59,8 +59,8 @@ class NavBar extends React.Component {
               <div className='create_post' onClick={this.openModal}>Create Post</div>
               </div>
                 <ul>
-                <li class="drop-down-menu-1">
-                  <a href="#" class="icon-home"><FaRegUserCircle /></a>
+                <li className="drop-down-menu-1">
+                  <a href="#" className="icon-home"><FaRegUserCircle /></a>
                   <ul className='user-dropdown'>
                   <Link to={`/users/${this.props.userId}`}>Profile</Link>
                     <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
@@ -69,8 +69,8 @@ class NavBar extends React.Component {
               </ul>
 
                 <ul>
-                <li class="drop-down-menu-1">
-                  <a href="#" class="icon-home"><FaGithub /></a>
+                <li className="drop-down-menu-1">
+                  <a href="#" className="icon-home"><FaGithub /></a>
                   <ul className='dropdown-content'>
                     <li><a href="https://github.com/KayiLeung/mapStatesToPost" target="_blank">map States To Post</a></li>
                     <li><a href="https://github.com/dingtianding" target="_blank">Dean Ding</a></li>
@@ -82,8 +82,8 @@ class NavBar extends React.Component {
               </ul>
 
               <ul>
-                <li class="drop-down-menu-1">
-                  <a href="#" class="icon-home"><FaLinkedin /></a>
+                <li className="drop-down-menu-1">
+                  <a href="#" className="icon-home"><FaLinkedin /></a>
                   <ul className='dropdown-content'>
                     <li><a href="https://www.linkedin.com/in/deanding/" target="_blank">Dean Ding</a></li>
                     <li><a href="https://www.linkedin.com/in/ka-yi-leung-9b0687a3/" target="_blank">Ka Yi Leung</a></li>

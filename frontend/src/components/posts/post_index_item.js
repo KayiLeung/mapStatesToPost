@@ -58,7 +58,6 @@ class PostIndexItem extends React.Component {
   render() {
     let statesData = data();
     const { post } = this.props;
-    console.log(post.stateName)
     const abberviation = post.stateName
 
     return (

@@ -14,7 +14,7 @@ const comments = require("./routes/api/comments")
 const USAStates = require("./routes/api/USAStates")
 const passport = require("passport");
 
-debugger
+
 
 app.use(passport.initialize());
 require('./config/passport')(passport);

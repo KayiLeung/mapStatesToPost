@@ -6,8 +6,6 @@ export const getAllStates = () => {
 }
 
 export const getState = id => {
-    // debugger
-    console.log(id)
     return axios.get(`api/USAStates/${id}`)
 
 }

@@ -38,19 +38,13 @@ class StateShow extends React.Component{
     
 
     const { USAStates, stateId } = this.props;
-    // console.log(`this is show page: ${USAState}`)
 
-    // if (!USAState) {
-    //   return null
-    // }
     let res = ""
 
     USAStates.forEach(USAState => {
       if (USAState._id === stateId)
         res = USAState.name
     })
-
-    console.log(res)
 
     let statesData = data();
     return (
