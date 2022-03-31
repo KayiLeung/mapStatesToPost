@@ -4,7 +4,8 @@ mapStatesToPost is an original web app where users can upload a post (photo and 
 
 Inspired by the fact that people like to share about all the countries they have visited, we wondered how many U.S. states people have visited.  mapStatesToPost gives users the opportunity to share a visual scrapbook of all of those destinations. 
 
-Try it live [here!](https://mapstatestopost.herokuapp.com/#/)  
+<!-- Try it live [here!](https://mapstatestopost.herokuapp.com/#/){:target="\_blank"}   -->
+Try it live <a href="https://mapstatestopost.herokuapp.com/#/" target="_blank">here</a>
 (click `Demo User` for quick access)
 
 ![splash](./frontend/public/mstpthumb.png)
@@ -36,14 +37,34 @@ With mapStatesToPost users can:
 
 ## Coding Challenges
 
-- PROBLEM: The MAP!  
+- PROBLEM: The MAP!
 
 ![splash](./frontend/public/mstpgif.gif)
+
 
 SOLUTION:  SOLUTION HERE
 
 ```javascript
-        Code snippet having to do with the map?
+        
+statesFilling = () => {
+    const { posts, currentUser} = this.props;
+    
+    let states = [];
+    posts.map(post => {
+
+      if (post.user === currentUser.id) {
+      states.push(post.stateName)
+      }
+    })
+
+    const res = states.reduce((acc, state) => {
+       acc[state] = {
+        fill: "#c8808c"
+      };
+      return acc;
+    }, {})
+    return res
+  }
 ```
 
 - PROBLEM: When using AWS and the MongoDB server to upload photos, we were able to successfully set up the AWS S3 hosting, but there was issues with our backend database not recognizing the photo object that we are trying to create.
