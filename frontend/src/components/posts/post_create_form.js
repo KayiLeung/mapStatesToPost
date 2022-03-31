@@ -44,23 +44,23 @@ class PostCreateForm extends React.Component{
     return(
       <div className="post-create-container">
         <form onSubmit={this.handleSubmit}>
-          <h1>Create New Post</h1>
-          <div>
-            <label>Caption
+          <h1>Create a New Post</h1>
+            <label>Caption</label>
             <textarea 
+              className="captionbody"
               onChange={this.update('caption')}
               value={this.state.caption}
               rows="6"
               cols="50" />
-          </label>
-          </div>
-        <label>State
+            <br/>
+            <label>State</label>
             {/* <input 
               type="text"
               onChange={this.update('stateName')}
               value={this.state.stateName}
              /> */}
             <select
+              className="state"
               value={this.state.stateName || ''}
               onChange={this.update('stateName')}>
               <option value=" ">Select a State</option>
@@ -114,7 +114,6 @@ class PostCreateForm extends React.Component{
               <option value="WV">West Virginia</option>
               <option value="WY">Wyoming</option>
           </select>
-        </label>
           {/* <label>Date</label>
             <input 
               type="date"
@@ -123,17 +122,20 @@ class PostCreateForm extends React.Component{
               
              /> */}
           
-
+             <br />
         <label>Image</label>
             <input 
+            className="image"
               type="file"
               onChange={e => this.setState({ photo: e.target.files[0] })}
               // value={this.state.photo} 
              />
 
-          <input type="submit" value="Create Post" />
+          <br />
+          <input className="createpostbtn" type="submit" value="Create Post" />
 
-          <button onClick={this.props.closeModal}>Cancel</button>
+             <br />
+          <button className="cancelbtn" onClick={this.props.closeModal}>Cancel</button>
         </form>
 
       </div>
