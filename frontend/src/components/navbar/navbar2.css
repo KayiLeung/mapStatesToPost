@@ -20,7 +20,7 @@ font-family: 'Roboto', sans-serif;  error message*/
     width: 50%;
     text-decoration: none;
     color: white;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 .nav_logo a{
@@ -38,7 +38,7 @@ font-family: 'Roboto', sans-serif;  error message*/
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
-    width: 50%;
+    width: 40%;
     
 }
 
