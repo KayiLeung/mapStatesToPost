@@ -38,7 +38,7 @@ With mapStatesToPost users can:
 
 - PROBLEM: The MAP!
 
-![splash](./frontend/public/mstpgif.gif)
+![splash](./frontend/public/mstpgif.gif){:target="\_blank"}
 
 SOLUTION:  SOLUTION HERE
 
