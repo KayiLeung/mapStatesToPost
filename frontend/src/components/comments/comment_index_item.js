@@ -38,7 +38,6 @@ class CommentIndexItem extends React.Component {
         if (this.props.userId === this.props.comment.author) {
             this.props.giveCommentId(this.props.comment._id);
             this.props.openModal('editcomment');
-            console.log('opened modal')
         }
     }
 

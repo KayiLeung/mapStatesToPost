@@ -51,7 +51,6 @@ class PostIndexItem extends React.Component {
     if (this.props.userId === this.props.post.user) {
         this.props.givePostId(this.props.post._id);
         this.props.openModal('editpost');
-        console.log('opened modal')
     }
   }
 
