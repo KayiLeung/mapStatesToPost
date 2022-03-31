@@ -1,6 +1,8 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom'; 
 import { withRouter } from 'react-router-dom';
+import USAMap from "react-usa-map";
+
 
 import PostsIndexContainer from '../posts/posts_index_container';
 import NavBarContainer from '../navbar/navbar_container';
@@ -39,6 +41,9 @@ class UserShow extends React.Component {
     return username;
   }
 
+
+
+
   render() {
     return (
       <div className="user_show_container">
@@ -53,6 +58,8 @@ class UserShow extends React.Component {
             <div className='user_posts'>
                 <PostsIndexContainer posts={this.handlePosts()}/>
             </div>
+
+            
         </div>
         
       </div>

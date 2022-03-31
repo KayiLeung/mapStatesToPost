@@ -12,8 +12,6 @@ import UserShow from './user_show';
 const mapStateToProps = (state, ownProps) => ({
   user: state.entities.user, 
   userId: ownProps.match.params.userId,  
-  // posts: state.entities.posts, 
-    
   users: Object.values(state.entities.users),
   comments: Object.values(state.entities.comments.all),
   posts: Object.values(state.entities.posts.all)
