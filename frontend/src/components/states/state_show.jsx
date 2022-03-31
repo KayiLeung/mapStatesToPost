@@ -6,6 +6,9 @@ import './state_show.css';
 import '../posts/posts_index.css'
 import PostsIndexContainer from '../posts/posts_index_container';
 
+import { MdTravelExplore } from 'react-icons/md'
+import { RiChatSmileFill, RiRoadMapFill} from 'react-icons/ri'
+
 import data from '../../data/usa-map-dimensions'
 
 
@@ -20,7 +23,6 @@ class StateShow extends React.Component{
     this.props.fetchPosts();
     this.props.fetchComments();
     this.props.fetchUsers();
-    // this.props.fetchState(this.props.stateId)
   }
   
   handlePosts(res) {
@@ -51,32 +53,36 @@ class StateShow extends React.Component{
     console.log(res)
 
     let statesData = data();
-    debugger
     return (
       
       <div className="state-show-wrapper">
           <div className="state_container">
-            <div className="state_info">
-            <Link to={`/`}>Back to Map</Link>
-            <h1>{statesData[res].name}</h1>
+              <div className="state_info">
+            <Link to={`/`}><RiRoadMapFill /> Back to Map </Link>
 
-              {statesData[res].description}
-           
-            <div>
-                <h2>Fun Facts of {statesData[res].name}</h2>
-                {statesData[res].funFacts}
-                <br />
-              <a href={statesData[res].funFactsUrl} target="_blank">more fun facts! </a>
-              <a href={statesData[res].travelUrl} target="_blank">Travel Info</a>
-              
-            </div>
+                <div>
+                  <h1>{statesData[res].name}</h1>
 
-            </div>
-          </div>
-          <div className='state_posts'>
-          <PostsIndexContainer posts={this.handlePosts(res)}/>
-          </div>
+                  <p>{statesData[res].description}</p>
+                </div>
+                
+                <div>
+                    <h2>Fun Fact of {statesData[res].name}</h2>
+                  <p>{statesData[res].funFacts}</p>
+                    <br />
+              <a href={statesData[res].funFactsUrl} target="_blank"><RiChatSmileFill /> More fun facts!</a>
+                  <br />
+              <a href={statesData[res].travelUrl} target="_blank"><MdTravelExplore /> Travel Info</a>
+                </div>
+
+              </div>
+              <div className='scrolling-wrapper'>
+                <div className='local_states_posts'>
+                  <PostsIndexContainer posts={this.handlePosts(res)}/>
+                </div>
+              </div>  
           
+          </div>
       </div>
     )
   }
