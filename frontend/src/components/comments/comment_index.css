@@ -23,16 +23,28 @@ ul.comment-container {
 }
 
 .comment-body{
-      display: flex;
+    display: flex;
     flex-direction: row-reverse;
     font-family:'Leckerli One', cursive ;
+    font-family: 'Fredoka', sans-serif;
     border:none;
     align-items: center;
-        padding-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.author{
+    font-family:'Leckerli One', cursive ;
+    text-decoration: none;
+    
+}
+
+.author > a {
+    text-decoration: none;
+    color: black;
 }
 
 .comment-items{
-        display: flex;
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row-reverse;
@@ -54,7 +66,7 @@ ul.comment-container {
 }
 
 .comment{
-        background: antiquewhite;
+    background: antiquewhite;
     border-radius: 15px;
     padding: 10px;
     box-shadow: 5px 5px 10px 0px rgba(2, 24, 34, 0.2);
