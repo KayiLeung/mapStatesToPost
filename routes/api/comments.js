@@ -60,20 +60,6 @@ router.get('/:id', (req, res) => {
     const comment = await Comment.findById(req.params.id)
     if (!comment) return res.status(404).json({ nocommentfound: 'No comment found' })
     
-    //   try {
-    //   const updatedComment = await Comment.findByIdAndUpdate(req.params.id, {
-    //     body: req.body.body
-    //   })
-
-    //   console.log(updatedComment)
-    //   res.send(updatedComment)
-    // } catch (error) {
-    //   res.status(422).json({ unprocessable: "Unable to update"})
-    // } 
-
-    // Comment.findByIdAndUpdate(req.params.id, {
-    //     body: req.body.body
-    // }).then(comment => res.json(comment))
     comment.body = req.body.body
     comment.save()
       .then(comment => res.json(comment))
