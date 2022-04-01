@@ -37,10 +37,9 @@ With mapStatesToPost users can:
 
 ## Coding Challenges
 
-CHALLENGE: The MAP!
+CHALLENGE: We took on the task of having a U.S. map that has highlighted states unique to each user.  Every state is by default not highlighted, and we originally only had one map, not one per user.  As demonstrated below, a user can create a post with a photo and once that is complete the state turns red to show that the user has been there, and their post also appears at the top of the posts on the main page.
 
 ![splash](./frontend/public/mstpgif.gif)
-
 
 SOLUTION:  SOLUTION HERE
 
