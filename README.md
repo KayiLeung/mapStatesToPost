@@ -41,8 +41,7 @@ CHALLENGE: We took on the task of having a U.S. map that has highlighted states 
 
 ![splash](./frontend/public/mstpgif.gif)
 
-SOLUTION: 
-At the beginning we fetch all posts from the current users, create an array variable `states`, but this is not working since it should return as objects.  Instead, we use `reduce` on an array, pass in `{}` as accumulator. Then iterate `states` we got before and key each state to `{fill: 'color'}`, get the object as `state : {fill: 'color'}` and return it to get the highlighted states.
+SOLUTION: We begin by fetching all posts from the current user.  Next we map over those posts and extract the name of the state from each post, pushing the state name into an array variable, `states`.  However, we need an object rather than an array. We use `reduce` on the array of `states`, passing in `{}` as accumulator. We then iterate over the `states` array and key each state to `{fill: 'color'}`, get the object as `state : {fill: 'color'}` and return it to get the highlighted states for that user.
 
 ```javascript
 statesFilling = () => {
