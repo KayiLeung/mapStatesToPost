@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { fetchUserPosts } from '../../actions/post_actions';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchComments } from '../../actions/comment_actions';
 import { fetchUsers } from '../../actions/user_actions';				
@@ -10,7 +9,6 @@ import UserShow from './user_show';
 
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.entities.user, 
   userId: ownProps.match.params.userId,  
   users: Object.values(state.entities.users),
   comments: Object.values(state.entities.comments.all),
@@ -19,7 +17,6 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)), 
   fetchPosts: () => dispatch(fetchPosts()),
   fetchComments: () => dispatch(fetchComments()),
   fetchUsers: () => dispatch(fetchUsers()),

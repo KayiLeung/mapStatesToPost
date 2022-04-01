@@ -1,8 +1,5 @@
 import React from 'react'; 
-import { Link } from 'react-router-dom'; 
 import { withRouter } from 'react-router-dom';
-import USAMap from "react-usa-map";
-
 
 import PostsIndexContainer from '../posts/posts_index_container';
 import NavBarContainer from '../navbar/navbar_container';
@@ -17,7 +14,6 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUserPosts();
     this.props.fetchComments();
     this.props.fetchUsers();
     this.props.fetchUser(this.props.userId)

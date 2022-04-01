@@ -128,7 +128,7 @@ class PostCreateForm extends React.Component{
             className="image"
               type="file"
               onChange={e => this.setState({ photo: e.target.files[0] })}
-              // value={this.state.photo} 
+
              />
 
           <br />
