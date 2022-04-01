@@ -30,7 +30,7 @@ With mapStatesToPost users can:
 
 - Signup / Signin to an account
 - View a personalized map where each state they have visited and uploaded a post/photo for is highlighted
-- Click on any state to view fun facts about that state and see all other user's posts associated with that state
+- Click on any state to view general information and a fun fact about that state and see all other user's posts associated with that state. There are also external links to more fun facts and travel/tourism information.
 - View a personalized user's page with all of their posts for all states they have visited
 - Create, read, edit, and delete a post with photo upload for a state they have visited (CRUD)
 - Create, read, edit, and delete comments on other user's posts (CRUD)
