@@ -14,8 +14,8 @@ class PostsIndex extends React.Component {
     const { maxPosts, posts, comments, users, deletePost, openModal, givePostId, userId } = this.props;
     if (!posts) return null;
     
-    const totalPosts = posts.length
-    if (!maxPosts) maxPosts = totalPosts
+    const totalPosts = posts.length;
+    if (maxPosts === null) maxPosts = totalPosts
     const postShow = posts.slice(0, maxPosts).map(post => {
       return (
         <PostIndexItem
