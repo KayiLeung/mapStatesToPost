@@ -11,7 +11,8 @@ const mSTP = (state, ownProps) => ({
     posts: ownProps.posts,
     comments: Object.values(state.entities.comments.all),
     users: Object.values(state.entities.users),
-    userId: state.session.user.id
+    userId: state.session.user.id,
+    maxPosts: ownProps.maxPosts
 });
 
 const mDTP = dispatch => ({

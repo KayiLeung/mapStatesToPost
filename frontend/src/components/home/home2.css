@@ -32,25 +32,25 @@ html, body {
     margin: 25px;
 } */
 
-.top {
+/* .top {
     padding: 25px;
     margin: 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid black;
-}
+} */
 
-.placehold {
+/* .placehold {
     border: 1px solid black;
     height: 593px;
     width: 200px;
-}
+} */
 
 /* Map */
 .home-map {
-    /* padding: 25px;
-    margin: 25px; */
+    padding: 25px;
+    margin: 25px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -78,6 +78,9 @@ html, body {
     margin: 10px; */
     max-width: 100%;
     max-height: 100%;
+    width: 90%;
+    height: 700px;
+    overflow-y: auto;
     border: 1px solid black;
     /* scroll-snap-type: y mandatory; */
 }
