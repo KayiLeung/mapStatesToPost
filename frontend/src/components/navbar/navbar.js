@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-
 import './navbar2.css'
 import { FaGithub, FaRegUserCircle, FaLinkedin } from 'react-icons/fa'
 
@@ -36,29 +35,22 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
-
       return (
-        <div>
-          <section className="nav_bar">
-            
-
-
+        <div className="nav_bar">
             <div className="nav_logo">
                 <Link to="/home">
                   <h1 id="nav_text">mapStatestoPost</h1>
-                  </Link>
+                </Link>
             </div>
             
+            <div className='nav_btn'>
+              {/* <div className="user_msg">
+                <p>Welcome back, {this.handleUser()}!</p>
+              </div> */}
 
-            
-
-            <div className={`nav_btn`}>
-              <div className="user_msg">
-                <p>Welcome back, {this.handleUser()}! </p>
               <div className='create_post' onClick={this.openModal}>Create Post</div>
-              </div>
-                <ul>
+              
+              <ul>
                 <li className="drop-down-menu-1">
                   <a href="#" className="icon-home"><FaRegUserCircle /></a>
                   <ul className='user-dropdown'>
@@ -68,6 +60,7 @@ class NavBar extends React.Component {
                 </li>
               </ul>
 
+              {/*
                 <ul>
                 <li className="drop-down-menu-1">
                   <a href="#" className="icon-home"><FaGithub /></a>
@@ -91,10 +84,9 @@ class NavBar extends React.Component {
                     <li><a href="https://www.linkedin.com/in/yaoxu03/" target="_blank">Yao Xu</a></li>
                   </ul>
                 </li>
-              </ul>
+              </ul> */}
 
             </div>
-          </section>
         </div>
       );
   }

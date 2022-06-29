@@ -73,29 +73,26 @@ class PostIndexItem extends React.Component {
             <img src={`${post.photo.location}`} />
           </div>
           <br />
-
           <div className="post-body">
             <div className="body-top">
               <div className="username">
-              <Link to={`/users/${post.user}`}>
-                {this.handleUser()}
-              </Link>
+                <Link to={`/users/${post.user}`}>
+                  {this.handleUser()}
+                </Link>
               </div>
-
             </div>
 
             <div className="body-mid">
               <p className="caption">
                 {post.caption}
               </p>
-
             </div>
 
           </div>
-          <br />
 
           <div className='comment-box'>
             <CommentIndexContainer postId={post._id} />
+            <br />
             <CreateCommentContainer postId={post._id} />
           </div>
 
