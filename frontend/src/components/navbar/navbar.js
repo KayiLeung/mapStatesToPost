@@ -60,7 +60,7 @@ class NavBar extends React.Component {
                 </li>
               </ul>
 
-              {/*
+              
                 <ul>
                 <li className="drop-down-menu-1">
                   <a href="#" className="icon-home"><FaGithub /></a>
@@ -84,7 +84,7 @@ class NavBar extends React.Component {
                     <li><a href="https://www.linkedin.com/in/yaoxu03/" target="_blank">Yao Xu</a></li>
                   </ul>
                 </li>
-              </ul> */}
+              </ul>
 
             </div>
         </div>
