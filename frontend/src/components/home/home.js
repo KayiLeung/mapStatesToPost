@@ -59,16 +59,19 @@ class HomePage extends Component {
 
         <main className="main">
           <div className="content">
-            <div className="top">
+            {/* <div className="top">
               <div className="home-map">
                 <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
               </div>
               <div className="placehold">
-                
+
               </div>
-            </div>
+            </div> */}
+            <div className="home-map">
+                <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
+              </div>
             <div className= "scroller">
-              <PostsIndexContainer posts={posts}/>
+              <PostsIndexContainer posts={posts} maxPosts={12}/>
             </div>
           </div>
         </main>
