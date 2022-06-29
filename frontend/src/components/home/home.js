@@ -4,6 +4,7 @@ import USAMap from "react-usa-map";
 import PostsIndexContainer from '../posts/posts_index_container'; 
 import NavBarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
+import { AiFillFire, FaFire, ImFire, RiFireFill, MdLocalFireDepart } from 'react-icons/fa'
 
 
 class HomePage extends Component {  
@@ -32,7 +33,7 @@ class HomePage extends Component {
 
     const res = states.reduce((acc, state) => {
        acc[state] = {
-        fill: "#c8808c"
+        fill: "#3ca023"
       };
       return acc;
     }, {})
@@ -59,17 +60,14 @@ class HomePage extends Component {
 
         <main className="main">
           <div className="content">
-            {/* <div className="top">
+            <div className="top">
               <div className="home-map">
                 <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
               </div>
               <div className="placehold">
-
+                Trending <FaFire/>
               </div>
-            </div> */}
-            <div className="home-map">
-                <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
-              </div>
+            </div>
             <div className= "scroller">
               <PostsIndexContainer posts={posts} maxPosts={12}/>
             </div>
