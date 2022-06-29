@@ -53,24 +53,27 @@ class HomePage extends Component {
 
     return (
       <div className="home">
-        <header className='navbar'>
-          <NavBarContainer />
-        </header>
+        <NavBarContainer />
         
+        <hr className="hr-top"/>
 
         <main className="main">
-            <div className="home_container">
-              <div className="home_map">
+          <div className="content">
+            <div className="top">
+              <div className="home-map">
                 <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
               </div>
+              <div className="placehold">
+                
+              </div>
+            </div>
             <div className= "scroller">
-              <section className="home_index">
-                <PostsIndexContainer posts={posts}/>
-              </section>
+              <PostsIndexContainer posts={posts}/>
             </div>
-            </div>
+          </div>
         </main>
 
+        <hr className="hr-bottom"/>
         {/* <div className="btn">
           <Link to="/states/CA"><button>CA</button></Link>
         </div> */}

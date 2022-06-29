@@ -47,15 +47,14 @@ class CommentIndexItem extends React.Component {
             <div className="comment-items">
                 <div className="comment-body">
                     <div className="author">
-                    <Link to={`/users/${comment.author}`}>
-                        {this.handleAuthor()}
-                    </Link>
+                        <Link to={`/users/${comment.author}`}>
+                            {this.handleAuthor()}
+                        </Link>
                     </div>
 
                     <div className="comment">
                         {this.props.comment.body}
                     </div>
-
                 </div>
                 <div className="comment-button">
                     <div className="comment-delete" onClick={this.handleDeleteComment}><TiDelete /></div>
