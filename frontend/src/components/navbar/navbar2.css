@@ -142,6 +142,7 @@ font-family: 'Mali', cursive;
 
 .dropdown-content{
   margin-top: 20px;
+  background: white;
 }
 
 .dropdown-content > button {
@@ -172,6 +173,7 @@ font-family: 'Mali', cursive;
 
 .user-dropdown {
   margin-top: 20px;
+  background: white;
 }
 
 .user-dropdown > a {
