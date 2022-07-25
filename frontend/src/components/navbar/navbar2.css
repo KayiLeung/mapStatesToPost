@@ -133,6 +133,7 @@ font-family: 'Mali', cursive;
 
 .dropdown-content > li > a {
   font-size: 15px;
+  margin: 3px;
 }
 
 .dropdown-content > li {
