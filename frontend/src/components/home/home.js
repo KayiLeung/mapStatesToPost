@@ -81,7 +81,7 @@ class HomePage extends Component {
         {/* <div className="btn">
           <Link to="/states/CA"><button>CA</button></Link>
         </div> */}
-        <hr className='hr-bottom' />
+        
         <footer className="footer">
             <div>
                 <p id="footer_text">Copyright ©2022
