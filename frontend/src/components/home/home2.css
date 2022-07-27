@@ -79,6 +79,7 @@ html, body {
     max-width: 100%;
     max-height: 100%;
     height: auto;
+    cursor: pointer;
 }
 
 /* .home_container {
@@ -104,16 +105,21 @@ html, body {
 }
 
 /* Footer */
+footer {
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: rgb(228, 227, 227);
+}
+
 footer > div > p {
-    display: block;
-    background-color: #efd199;
-    height: 100px;
-    color:#6287a2;
-    margin: auto;
-    font-size: 18px;
+    display: relative;
+    height: 50px;
+    /* color:#6287a2; */
+    font-size: 15px;
+    left: 10px;
 }
 
 .footer-link {
     text-decoration: none;
-    color:#6287a2;
+    /* color:#6287a2; */
 }

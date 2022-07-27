@@ -78,7 +78,7 @@ class NavBar extends React.Component {
                 <li className="drop-down-menu-1">
                   <a href="#" className="icon-home"><FaRegUserCircle /></a>
                   <ul className='user-dropdown'>
-                  <Link to={`/users/${this.props.userId}`}>Profile</Link>
+                    <Link to={`/users/${this.props.userId}`}>Profile</Link>
                     <button className='db-item' id='logout-bt' onClick={this.props.logout}>Logout</button>
                   </ul>
                 </li>

@@ -55,8 +55,6 @@ class HomePage extends Component {
     return (
       <div className="home">
         <NavBarContainer />
-        
-        <hr className="hr-top"/>
 
         <main className="main">
           <div className="content">
@@ -80,11 +78,10 @@ class HomePage extends Component {
           </div>
         </main>
 
-        <hr className="hr-bottom"/>
         {/* <div className="btn">
           <Link to="/states/CA"><button>CA</button></Link>
         </div> */}
-
+        
         <footer className="footer">
             <div>
                 <p id="footer_text">Copyright ©2022
