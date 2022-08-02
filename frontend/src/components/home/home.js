@@ -47,7 +47,6 @@ class HomePage extends Component {
 
   render() {
     const { posts, USAStates } = this.props;
-
     if (!posts || !USAStates) {
       return null;
     }
