@@ -17,7 +17,6 @@ class StateShow extends React.Component{
   constructor(props){
     super(props); 
     this.handlePosts = this.handlePosts.bind(this);
-
   }
 
   componentDidMount() {
@@ -27,7 +26,7 @@ class StateShow extends React.Component{
   }
   
   handlePosts(res) {
-    const {  posts } = this.props;
+    const { posts } = this.props;
     const statePosts = posts.filter(post => post.stateName === res)
     return statePosts
   }
@@ -49,14 +48,16 @@ class StateShow extends React.Component{
       
       <div className="state-show-wrapper">
           <NavBarContainer />
-          <div className="state_container">
-              <div className="state_info">
+          <div className="state-main">
+            <div className="state-top">
+              {/* change to modal */}
+              <div className="state-info">
                 <Link to={`/`}><RiRoadMapFill/> Back to Map </Link>
-                <div>
+                {/* <div>
                   <h1>{statesData[res].name}</h1>
                   <p>{statesData[res].description}</p>
                 </div>
-                  
+                
                 <div className="funfact">
                   <h2>Fun Fact of {statesData[res].name}</h2>
                   <p>{statesData[res].funFacts}</p>
@@ -64,15 +65,20 @@ class StateShow extends React.Component{
                   <a href={statesData[res].funFactsUrl} target="_blank"><RiChatSmileFill /> More fun facts!</a>
                   <br />
                   <a href={statesData[res].travelUrl} target="_blank"><MdTravelExplore /> Travel Info</a>
+                </div> */}
+                <div className="morefiller">
+                  <p>filler</p>
                 </div>
               </div>
-              
-              <div className='scrolling-wrapper'>
-                {/* <div className='local_states_posts'> */}
+
+              <div className="filler">
                 <p>Hi</p>
-                <PostsIndexContainer posts={this.handlePosts(res)}/>
-                {/* </div> */}
-              </div>  
+              </div>
+            </div>
+
+            <div className='state-posts'>
+              <PostsIndexContainer posts={this.handlePosts(res)}/>
+            </div>  
           </div>
       </div>
     )
