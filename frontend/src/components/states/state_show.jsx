@@ -44,6 +44,10 @@ class StateShow extends React.Component{
     })
 
     let statesData = data();
+
+    let posts = this.handlePosts(res)
+    let latestPost = posts[0]
+    let latestImageUrl = latestPost.photo.location
     return (
       
       <div className="state-show-wrapper">
@@ -53,7 +57,7 @@ class StateShow extends React.Component{
               {/* change to modal */}
               <div className="state-info">
                 <Link to={`/`}><RiRoadMapFill/> Back to Map </Link>
-                {/* <div>
+                <div>
                   <h1>{statesData[res].name}</h1>
                   <p>{statesData[res].description}</p>
                 </div>
@@ -65,14 +69,15 @@ class StateShow extends React.Component{
                   <a href={statesData[res].funFactsUrl} target="_blank"><RiChatSmileFill /> More fun facts!</a>
                   <br />
                   <a href={statesData[res].travelUrl} target="_blank"><MdTravelExplore /> Travel Info</a>
-                </div> */}
-                <div className="morefiller">
-                  <p>filler</p>
                 </div>
+                {/* <div className="morefiller">
+                  <p>filler</p>
+                </div> */}
               </div>
 
               <div className="filler">
-                <p>Hi</p>
+                <h1>Most Recent Photo</h1>
+                <img src={latestImageUrl} alt=""/>
               </div>
             </div>
 
